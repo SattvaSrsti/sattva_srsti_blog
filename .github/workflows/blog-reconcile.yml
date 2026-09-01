@@ -1,10 +1,8 @@
-# Daily: fill missing blog_posts for recipes_v2 (12:00 AM IST = 18:30 UTC)
-# Requires repo secrets: OPENAI_API_KEY, FIREBASE_SERVICE_ACCOUNT (JSON body)
+# Daily backup: Cloud Function blogReconcileScheduled is primary (no OPENAI_API_KEY secret).
+# Requires repo secret: FIREBASE_SERVICE_ACCOUNT (JSON body) — optional if using CF only.
 name: Blog reconcile
 
 on:
-  schedule:
-    - cron: "30 18 * * *"
   workflow_dispatch:
 
 jobs:
@@ -28,7 +26,6 @@ jobs:
 
       - name: Reconcile recipes vs blog_posts
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIREBASE_PROJECT_ID: sattva-srsti
           BLOG_PUBLIC_BASE: https://sattvasrsti.blog
           APP_RECIPE_BASE: https://sattvasrsti.com/recipe

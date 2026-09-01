@@ -81,8 +81,9 @@ python scripts/blog_agent.py --reconcile --cleanup-duplicates --sync-firestore
 python scripts/reconcile_blog_posts.py --max-create 3 --sync-firestore
 ```
 
-**GitHub Actions:** `.github/workflows/blog-reconcile.yml` runs daily at **12:00 AM IST** (18:30 UTC).
-Set secrets: `OPENAI_API_KEY`, `FIREBASE_SERVICE_ACCOUNT` (full JSON).
+**GitHub Actions (optional backup):** `.github/workflows/blog-reconcile.yml` — primary schedule is Cloud Function `blogReconcileScheduled` (uses `admin/dummy.oKey`, no GitHub OpenAI secret required).
+
+Set secret **`FIREBASE_SERVICE_ACCOUNT`** only if using the GitHub workflow.
 
 **One-time sync** (local → Firestore):
 
