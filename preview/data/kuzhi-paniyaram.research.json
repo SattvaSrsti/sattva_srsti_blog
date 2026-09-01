@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Kuzhi Paniyaram",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Kuzhi Paniyaram batter not right?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not cook very cold batter, or the centers may stay heavy."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does the oil or fat stage matter for Kuzhi Paniyaram?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add curry leaves from a wet hand because oil may splutter."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Kuzhi Paniyaram taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not brown the onion deeply; it can taste bitter in the batter."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Kuzhi Paniyaram stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overfill the cavities, or the batter may spill and stick."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Kuzhi Paniyaram too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not keep heat too high, or the outside will darken while the center stays soft."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_kuzhi_paniyaram",
+  "slug": "kuzhi-paniyaram"
+}

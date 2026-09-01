@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Rava Idli",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does my Rava Idli taste bitter or burnt?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not stop stirring or the rava may scorch"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does the oil or fat stage matter for Rava Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Stand back when curry leaf hits hot ghee because it may splutter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Rava Idli curdle or split?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add curd while the mixture is hot or it may split"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Rava Idli batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not make the batter runny; rava idli batter should be thick"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Rava Idli too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave lumps of dry rava at the bottom"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_rava_idli",
+  "slug": "rava-idli"
+}

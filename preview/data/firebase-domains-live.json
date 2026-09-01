@@ -1,0 +1,51 @@
+{
+  "domains": [
+    {
+      "site": "projects/sattva-srsti/sites/sattva-srsti",
+      "domainName": "sattvasrsti.blog",
+      "updateTime": "2026-08-12T15:20:17.930087497Z",
+      "provisioning": {
+        "certStatus": "CERT_PENDING",
+        "certChallengeDns": {
+          "domainName": "_acme-challenge.sattvasrsti.blog",
+          "token": "uLZPAnFYELwI8asUUXpuyjjn4NDGRbN_JqFbbPl-H4s"
+        },
+        "certChallengeHttp": {
+          "path": "/.well-known/acme-challenge/Z10_2WsKxkRNCkfaNsITX997c5DwtDaV7OeD9IDy9PaDMXD7jXAYmIqLiTHtm52s",
+          "token": "Z10_2WsKxkRNCkfaNsITX997c5DwtDaV7OeD9IDy9PaDMXD7jXAYmIqLiTHtm52s.M0-GObbb5ePi63ASQsPKBrDqfgayGnOWpyrEF0nHqug"
+        },
+        "dnsStatus": "DNS_MISSING",
+        "expectedIps": [
+          "199.36.158.100"
+        ]
+      },
+      "status": "DOMAIN_ACTIVE"
+    },
+    {
+      "site": "projects/sattva-srsti/sites/sattva-srsti",
+      "domainName": "sattvasrsti.com",
+      "updateTime": "2025-05-22T15:22:16.582560256Z",
+      "provisioning": {
+        "certStatus": "CERT_ACTIVE",
+        "dnsStatus": "DNS_MATCH",
+        "expectedIps": [
+          "199.36.158.100"
+        ]
+      },
+      "status": "DOMAIN_ACTIVE"
+    },
+    {
+      "site": "projects/sattva-srsti/sites/sattva-srsti",
+      "domainName": "sattvasrsti.in",
+      "updateTime": "2026-08-12T15:45:16.264675607Z",
+      "provisioning": {
+        "certStatus": "CERT_ACTIVE",
+        "dnsStatus": "DNS_MATCH",
+        "expectedIps": [
+          "199.36.158.100"
+        ]
+      },
+      "status": "DOMAIN_ACTIVE"
+    }
+  ]
+}

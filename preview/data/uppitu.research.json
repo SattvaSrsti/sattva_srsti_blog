@@ -1,0 +1,74 @@
+{
+  "recipe": {
+    "title": "Uppitu",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does the oil or fat stage matter for Uppitu?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not overheat the ghee."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Uppitu too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Uppitu, also known as Upma, is a popular South Indian breakfast dish made from semolina, vegetables, and spices.",
+        "It is known for its savory flavor and is often enjoyed with coconut chutney or pickle.",
+        "Uppitu is a staple in many South Indian households and is appreciated for its simplicity and quick preparation."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overheat the ghee.",
+        "Avoid burning the onions.",
+        "Do not stop stirring to prevent burning.",
+        "Adding water too quickly can cause lumps.",
+        "Do not undercook, ensure water is absorbed."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overheat the ghee.",
+        "Avoid burning the onions.",
+        "Do not stop stirring to prevent burning.",
+        "Adding water too quickly can cause lumps.",
+        "Do not undercook, ensure water is absorbed."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overheat the ghee.",
+        "Avoid burning the onions.",
+        "Do not stop stirring to prevent burning.",
+        "Adding water too quickly can cause lumps.",
+        "Do not undercook, ensure water is absorbed."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_uppituu",
+  "slug": "uppitu"
+}

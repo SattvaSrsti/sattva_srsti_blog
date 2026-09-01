@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-gulab-jamun-stick-or-tear",
+  "recipe_id": "rec_gulab_jamun",
+  "slug": "why-does-my-gulab-jamun-stick-or-tear",
+  "status": "ready",
+  "primary_question": "Why does my Gulab Jamun stick or tear?",
+  "seo_title": "Why does my Gulab Jamun stick or tear? | SattvaSrsti",
+  "meta_description": "Discover why your Gulab Jamun sticks or tears and learn how to fix it for a perfect treat.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-gulab-jamun-stick-or-tear",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Sticky Gulab Jamun can be frustrating.",
+    "story": "Imagine preparing a festive treat, only to find your Gulab Jamun tearing apart. It’s disheartening when all you want is that perfect, soft bite.",
+    "useful_answer": "The main reason your Gulab Jamun might stick or tear is due to using hot milk in the dough. Boiling the milk can make the mixture too sticky, leading to issues while shaping and frying.",
+    "related_problems": [
+      {
+        "q": "Why is my Gulab Jamun too dense or dry?",
+        "a": "If your Gulab Jamun turns out dense, it might be due to kneading the dough too firmly. Gentle handling is key to achieving that soft texture."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Gulab Jamun?",
+        "a": "The oil temperature is crucial. If you add rose water while the oil is too hot, the delicate aroma can dissipate, affecting the overall flavor."
+      },
+      {
+        "q": "Why is my Gulab Jamun too spicy or bland?",
+        "a": "Frying at high heat can lead to uneven cooking, making the jamuns taste bland or overly spicy. Maintaining a moderate temperature is essential."
+      },
+      {
+        "q": "How can I improve my Gulab Jamun?",
+        "a": "To enhance your Gulab Jamun, avoid leaving large khoya chunks, as they may crack during frying. Also, be cautious with baking powder and milk to prevent breakage."
+      }
+    ],
+    "emotional_ending": "Perfecting Gulab Jamun takes practice, but with attention to detail, you can achieve that delightful texture. Enjoy the process and the sweet rewards."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Gulab Jamun stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Gulab Jamun too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Gulab Jamun?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Gulab Jamun too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Gulab Jamun?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

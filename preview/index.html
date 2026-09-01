@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SattvaSrsti Blog — cooking answers that help</title>
+  <meta name="description" content="Clear answers to real cooking problems, tied to live SattvaSrsti recipes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-wash" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./index.html">
+      <img class="brand-logo" src="./assets/sattva-srsti-logo.png" alt="" width="36" height="36" />
+      <span class="brand-text"><strong>SattvaSrsti</strong><em>Blog</em></span>
+    </a>
+    <nav class="nav">
+      <div class="header-search-wrap">
+        <label class="visually-hidden" for="header-search">Search blog</label>
+        <input
+          type="search"
+          id="header-search"
+          class="header-search"
+          placeholder="Search recipe or problem…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+      <a href="#posts">Posts</a>
+      <a class="nav-cta" href="https://sattvasrsti.com">Open app</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="landing-hero">
+      <div class="landing-hero-copy">
+        <p class="eyebrow">SattvaSrsti Blog</p>
+        <h1>Cook smarter. Fix what went wrong.</h1>
+        <p class="lede">
+          Each article starts with a real kitchen problem — why the dosa won't crisp,
+          why the batter feels off — and walks you through what to notice and adjust.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#posts">Browse cooking answers</a>
+        </div>
+      </div>
+      <div class="landing-hero-visual" id="hero-visual" aria-hidden="true"></div>
+    </section>
+
+    <section class="block landing-purpose">
+      <h2>Why this blog exists</h2>
+      <p>
+        Recipes fail for small, fixable reasons. We write about those first —
+        texture, timing, cues — so you can cook with more confidence.
+        When you want every step, the full recipe is on SattvaSrsti.
+      </p>
+    </section>
+
+    <section class="block" id="posts">
+      <div class="block-head posts-head">
+        <div>
+          <h2>Latest posts</h2>
+          <p>Problem-led articles powered by live SattvaSrsti recipes</p>
+        </div>
+        <div class="post-search-wrap">
+          <label class="visually-hidden" for="post-search">Search posts</label>
+          <input
+            type="search"
+            id="post-search"
+            class="post-search"
+            placeholder="Search recipe name, problem, or question…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <span class="search-meta fine" id="search-meta" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="post-grid" id="post-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>SattvaSrsti Blog</strong> — useful cooking help, one problem at a time.</p>
+  </footer>
+
+  <script src="./fs-client.js"></script>
+  <script src="./landing.js"></script>
+</body>
+</html>

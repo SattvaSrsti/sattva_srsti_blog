@@ -1,0 +1,46 @@
+{
+  "blog_id": "blog_gulab-jamun-common-mistakes",
+  "recipe_id": "rec_gulab_jamun",
+  "slug": "gulab-jamun-common-mistakes",
+  "status": "ready",
+  "primary_question": "How do I fix common mistakes when making Gulab Jamun?",
+  "seo_title": "How do I fix common mistakes when making Gulab Jamun? | SattvaSrsti",
+  "meta_description": "Fix common Gulab Jamun mistakes and cook the full customizable recipe on SattvaSrsti.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=gulab-jamun-common-mistakes",
+  "humanized": {
+    "hook": "If gulab jamun keeps going wrong in your kitchen, you are not alone.",
+    "story": [
+      "Home cooks often struggle with Gulab Jamun for small, fixable reasons.",
+      "The warnings in this recipe usually point straight at the real problem."
+    ],
+    "useful_answer": "Do not leave large khoya chunks, or the jamuns may crack while frying. Also watch for khoya looks like soft crumbs. Fix that first, then finish the full cook where you can customize.",
+    "common_questions": [
+      {
+        "q": "How do I fix common mistakes when making Gulab Jamun?",
+        "a": "Do not leave large khoya chunks, or the jamuns may crack while frying. Keep that in mind while you cook, and watch for khoya looks like soft crumbs. Once you catch that cue once, the dish usually cooperates."
+      },
+      {
+        "q": "What else goes wrong with Gulab Jamun?",
+        "a": "Do not add extra baking powder, because too much can make the jamuns break. Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How can I improve my Gulab Jamun?",
+        "a": "Do not boil the milk, because hot milk can make the dough sticky. Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How do I know Gulab Jamun is ready?",
+        "a": "Look for khoya looks like soft crumbs. Trust that signal more than the clock. When it looks and smells right, pull it."
+      },
+      {
+        "q": "Is Gulab Jamun beginner friendly?",
+        "a": "Yes — start with the warnings above, then finish and customize on SattvaSrsti. Beginners do fine when the first mistakes are named out loud."
+      }
+    ],
+    "emotional_ending": "Once those details click, Gulab Jamun becomes a reliable dish you can make your own."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  }
+}

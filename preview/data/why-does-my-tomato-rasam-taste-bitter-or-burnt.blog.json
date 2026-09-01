@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-tomato-rasam-taste-bitter-or-burnt",
+  "recipe_id": "rec_tomato_rasam",
+  "slug": "why-does-my-tomato-rasam-taste-bitter-or-burnt",
+  "status": "ready",
+  "primary_question": "Why does my Tomato Rasam taste bitter or burnt?",
+  "seo_title": "Why does my Tomato Rasam taste bitter or burnt? | SattvaSrsti",
+  "meta_description": "Discover why your Tomato Rasam tastes bitter or burnt and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-tomato-rasam-taste-bitter-or-burnt",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Bitter rasam can be quite disappointing.",
+    "story": "Imagine eagerly waiting for that perfect bowl of Tomato Rasam. But when you taste it, a bitter note hits your palate, leaving you puzzled.",
+    "useful_answer": "The bitterness in your Tomato Rasam likely comes from using too little water, which can cause the dal to scorch. Ensure you have enough water in your pot to prevent this from happening.",
+    "related_problems": [
+      {
+        "q": "Why is my Tomato Rasam too spicy or bland?",
+        "a": "If your Tomato Rasam is too spicy, you might have finely powdered the dried red chilli. This can intensify the heat, so keep the chilli coarsely ground for a balanced flavor."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Tomato Rasam?",
+        "a": "The oil or fat stage is crucial because boiling on very high heat can reduce the liquid too much. This can lead to a concentrated flavor that's not pleasant."
+      },
+      {
+        "q": "Why does my Tomato Rasam stick or tear?",
+        "a": "If your rasam sticks or tears, it could be because the rasam powder has stuck to the bottom. Make sure to stir it well after adding to avoid this issue."
+      },
+      {
+        "q": "How can I improve my Tomato Rasam?",
+        "a": "To enhance your Tomato Rasam, avoid opening the cooker while it's under pressure. Also, ensure you use enough water and keep the dal smooth for better blending."
+      }
+    ],
+    "emotional_ending": "A well-made Tomato Rasam can warm your heart. With a few adjustments, you can achieve that perfect taste."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Tomato Rasam taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Tomato Rasam too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Tomato Rasam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Tomato Rasam stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Tomato Rasam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

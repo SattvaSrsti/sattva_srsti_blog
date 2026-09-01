@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-butter-chicken-too-spicy-or-bland",
+  "recipe_id": "rec_butter_chicken",
+  "slug": "why-is-my-butter-chicken-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Butter Chicken too spicy or bland?",
+  "seo_title": "Why is my Butter Chicken too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Butter Chicken might be too spicy or bland and how to achieve the perfect flavor balance.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-butter-chicken-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Finding the right balance in Butter Chicken can be tricky.",
+    "story": "Imagine preparing a delicious Butter Chicken, only to taste it and find it off. The spices can sometimes overpower or get lost, leaving you puzzled.",
+    "useful_answer": "If your Butter Chicken is too spicy or bland, check for dry spice pockets in the yogurt. These can lead to uneven flavor distribution, making some bites too intense while others lack seasoning.",
+    "related_problems": [
+      {
+        "q": "Why is my Butter Chicken too dense or dry?",
+        "a": "A dense or dry Butter Chicken often results from cooking it fully dry. It's important to maintain some moisture during cooking to keep the dish tender."
+      },
+      {
+        "q": "Why does my Butter Chicken taste bitter or burnt?",
+        "a": "If your Butter Chicken tastes bitter, it might be due to burnt onions. Ensure the onions don’t turn dark brown, as this can negatively affect the sauce's flavor."
+      },
+      {
+        "q": "Why does my Butter Chicken stick or tear?",
+        "a": "Sticking or tearing can occur if the pan dries out. Adding a splash of water can help prevent this and keep the chicken intact."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Butter Chicken?",
+        "a": "The oil or fat stage is crucial because blending boiling-hot sauce in a sealed blender jar can create pressure and lead to spills or burns."
+      }
+    ],
+    "emotional_ending": "Cooking is all about adjustments and learning. With a few tweaks, your Butter Chicken can become the perfect dish you envision."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Butter Chicken too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Butter Chicken too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Butter Chicken taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Butter Chicken stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Butter Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

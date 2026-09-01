@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Puliyogare stick or tear?",
+  "hook": "Sticky Puliyogare can be frustrating.",
+  "story": "Imagine preparing a delicious Puliyogare, only to find it sticking together. It can ruin the texture and enjoyment of this classic dish. Understanding the reasons behind this issue can help you achieve the perfect consistency.",
+  "useful_answer": "The main reason your Puliyogare might stick or tear is skipping the rinsing step for the rice. Rinsing helps remove excess starch, which can make the rice sticky. Always ensure you rinse the rice thoroughly before cooking to achieve the right texture.",
+  "related_problems": [
+    {
+      "q": "Why does rinsing or soaking affect my Puliyogare?",
+      "a": "Rinsing or soaking the rice is crucial for texture. Discarding the dark soaking water can lead to a less flavorful dish. The soaking water contains nutrients that enhance the taste."
+    },
+    {
+      "q": "Why is my Puliyogare too spicy or bland?",
+      "a": "The spice level can be impacted by how you roast the ingredients. Roasting on very high heat may cause uneven flavor distribution, leading to an overpowering spice or blandness."
+    },
+    {
+      "q": "Why does my Puliyogare taste bitter or burnt?",
+      "a": "Bitterness in Puliyogare often comes from over-roasting fenugreek. It's important to roast it just enough to release its flavor without crossing the line into bitterness."
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Puliyogare?",
+      "a": "The oil or fat stage is critical for flavor. If you over-grind the ingredients until the sesame and coconut release oil, it can alter the intended taste and texture of the dish."
+    }
+  ],
+  "emotional_ending": "Perfecting your Puliyogare takes attention to detail. With a few adjustments, you can enjoy a delicious, non-sticky version of this beloved dish.",
+  "meta_description": "Discover why your Puliyogare sticks or tears and how to achieve the perfect texture.",
+  "capability_id": "guided_recipe_customization"
+}

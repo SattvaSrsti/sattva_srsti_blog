@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-kuzhi-paniyaram-not-turn-out-right",
+  "recipe_id": "rec_kuzhi_paniyaram",
+  "slug": "why-does-my-kuzhi-paniyaram-not-turn-out-right",
+  "status": "ready",
+  "primary_question": "Why does my Kuzhi Paniyaram not turn out right?",
+  "seo_title": "Why does my Kuzhi Paniyaram not turn out right? | SattvaSrsti",
+  "meta_description": "Discover why your Kuzhi Paniyaram may not turn out right and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-kuzhi-paniyaram-not-turn-out-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Getting Kuzhi Paniyaram just right can be tricky.",
+    "story": "Imagine preparing for a festive breakfast, excited to serve Kuzhi Paniyaram. But when you take them out of the pan, they don’t look or feel right.",
+    "useful_answer": "The key issue might be the temperature of your batter. If it's too cold, the centers can remain heavy. Ensure your batter is at room temperature and has a relaxed consistency, not stiff. A mild sour aroma should be noticeable, indicating proper fermentation.",
+    "related_problems": [
+      {
+        "q": "How do I get better texture for Kuzhi Paniyaram?",
+        "a": "Ensure your batter is at room temperature and has a relaxed consistency."
+      },
+      {
+        "q": "What are the key things to watch while making Kuzhi Paniyaram?",
+        "a": "Watch for the batter's temperature and consistency; it should be relaxed, not stiff."
+      },
+      {
+        "q": "How do I know when Kuzhi Paniyaram is ready?",
+        "a": "Look for a crisp outside and soft inside, and check the aroma of the batter."
+      },
+      {
+        "q": "How can I improve the taste of my Kuzhi Paniyaram?",
+        "a": "Proper fermentation and the right batter consistency enhance the taste."
+      }
+    ],
+    "emotional_ending": "With these tips, your Kuzhi Paniyaram can be the star of your breakfast table. Enjoy perfecting this delightful dish!"
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Kuzhi Paniyaram not turn out right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I get better texture for Kuzhi Paniyaram?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "What are the key things to watch while making Kuzhi Paniyaram?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I know when Kuzhi Paniyaram is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How can I improve the taste of my Kuzhi Paniyaram?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    }
+  ]
+}

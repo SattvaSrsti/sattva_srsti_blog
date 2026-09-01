@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-mysore-masala-dosa-not-crispy",
+  "seo_title": "Why is my Mysore masala dosa not crispy? | SattvaSrsti",
+  "humanized": {
+    "hook": "Crispy dosas are a delight, but they can be tricky.",
+    "useful_answer": "To achieve a crispy Mysore masala dosa, ensure your batter is flowy—not watery or thick. A well-heated iron tawa is crucial; sprinkle water to check if it sizzles before spreading the batter. Oil around the edges helps with crispness, but too much oil can make it greasy. Remember, a good Mysore dosa is crisp outside and slightly soft inside, not a paper-thin roast.",
+    "story": "Imagine preparing a Mysore masala dosa, excited for that perfect crisp. But when you flip it, it’s soft and sad instead of golden and crunchy.",
+    "emotional_ending": "With these tips, your next Mysore masala dosa can be a crispy triumph. Enjoy the deliciousness that comes with practice.",
+    "related_problems": [
+      {
+        "q": "What makes Mysore masala dosa different from regular masala dosa?",
+        "a": "The difference is the fiery red chilli-garlic chutney smeared inside before the potato filling."
+      },
+      {
+        "q": "Why does my dosa stick to the pan?",
+        "a": "Pan neither too hot nor too cold — water should sizzle, not explode into steam."
+      },
+      {
+        "q": "Should dosa batter be thick or thin?",
+        "a": "For crisp dosa, batter should pour like thin cream / thin pancake batter — spreadable, not stiff."
+      },
+      {
+        "q": "Why does the potato filling make my dosa soggy?",
+        "a": "Add potato masala only at the end, once the dosa has set."
+      }
+    ]
+  },
+  "research": [
+    {
+      "evidence_type": "community",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-we-make-perfectly-crisp-dosas-that-are-not-roasted-but-are-golden-brown",
+      "q": "Why is my Mysore masala dosa not crispy?"
+    },
+    {
+      "source": "food_site",
+      "q": "What makes Mysore masala dosa different from regular masala dosa?",
+      "evidence_type": "food_site",
+      "source_url": "https://zeezest.com/food/how-is-mysore-masala-different-from-other-dosas-zee-zest-44"
+    },
+    {
+      "source": "quora",
+      "source_url": "https://www.quora.com/My-dosa-always-sticks-to-pan-whats-the-solution",
+      "q": "Why does my dosa stick to the pan?",
+      "evidence_type": "community"
+    },
+    {
+      "q": "Should dosa batter be thick or thin?",
+      "source": "food_site",
+      "evidence_type": "food_site",
+      "source_url": "https://eat-fresh.in/should-dosa-batter-be-thick-or-thin-the-ultimate-texture-guide"
+    },
+    {
+      "source": "food_site",
+      "evidence_type": "food_site",
+      "q": "Why does the potato filling make my dosa soggy?",
+      "source_url": "https://www.timesnownews.com/lifestyle/food/chef-sanjeev-kapoor-shares-7-common-dosa-mistakes-and-how-to-fix-them-article-153244648"
+    }
+  ],
+  "recipe_id": "rec_mysore_masala_dosa",
+  "capability_id": "guided_recipe_customization",
+  "customize_fixed": {
+    "cta_label": "Customize & cook on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "title": "Customize your recipe on SattvaSrsti"
+  },
+  "primary_question": "Why is my Mysore masala dosa not crispy?",
+  "slug": "why-is-my-mysore-masala-dosa-not-crispy",
+  "status": "ready",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-mysore-masala-dosa-not-crispy",
+  "meta_description": "Learn why your Mysore masala dosa isn't crispy and how to fix it for a perfect treat."
+}

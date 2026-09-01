@@ -1,0 +1,339 @@
+{
+  "site": {
+    "brand": "SattvaSrsti",
+    "tagline": "Real cooking problems. Useful answers. Full recipes on SattvaSrsti.",
+    "purpose": "cooking_help"
+  },
+  "posts": [
+    {
+      "slug": "why-is-my-veg-palav-too-spicy-or-bland",
+      "title": "Why is my Veg Palav too spicy or bland?",
+      "hook": "Spice balance is key in Veg Palav.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_veg_palav.jpg?generation=1787774229877128&alt=media",
+      "data_file": "./data/why-is-my-veg-palav-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_veg_palav",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-veg-pakora-too-spicy-or-bland",
+      "title": "Why is my Veg Pakora too spicy or bland?",
+      "hook": "Finding the right spice balance is key.",
+      "cuisine": "Indian",
+      "meal": "Snack",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_veg_pakora.jpg?generation=1787774733121771&alt=media",
+      "data_file": "./data/why-is-my-veg-pakora-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_veg_pakora",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-the-oil-or-fat-stage-matter-for-uppitu",
+      "title": "Why does the oil or fat stage matter for Uppitu?",
+      "hook": "The oil stage is crucial for perfect Uppitu.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_uppituu.jpg?generation=1788174578050519&alt=media",
+      "data_file": "./data/why-does-the-oil-or-fat-stage-matter-for-uppitu.blog.json",
+      "recipe_id": "rec_uppituu",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-rajma-chawal-too-dense-or-dry",
+      "title": "Why is my Rajma Chawal too dense or dry?",
+      "hook": "A common issue that can ruin a comforting meal.",
+      "cuisine": "North Indian",
+      "meal": "Lunch",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_rajma_chawal.jpg?generation=1787775308267736&alt=media",
+      "data_file": "./data/why-is-my-rajma-chawal-too-dense-or-dry.blog.json",
+      "recipe_id": "rec_rajma_chawal",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-mutton-chops-too-spicy-or-bland",
+      "title": "Why is my Mutton Chops too spicy or bland?",
+      "hook": "Finding the right balance in flavor can be tricky.",
+      "cuisine": "Indian",
+      "meal": "Dinner",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_mutton_chops.jpg?generation=1787772819377220&alt=media",
+      "data_file": "./data/why-is-my-mutton-chops-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_mutton_chops",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-idli-batter-not-right",
+      "title": "Why is my Idli batter not right?",
+      "hook": "Fermentation is key for Idli batter.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_idli.jpg?generation=1787770743607948&alt=media",
+      "data_file": "./data/why-is-my-idli-batter-not-right.blog.json",
+      "recipe_id": "rec_idli",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-chole-bhature-too-spicy-or-bland",
+      "title": "Why is my Chole Bhature too spicy or bland?",
+      "hook": "Finding the right spice balance can be tricky.",
+      "cuisine": "North Indian",
+      "meal": "Lunch",
+      "image_url": "https://storage.googleapis.com/download/storage/v1/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_chole_bhature.jpg?generation=1788173066889461&alt=media",
+      "data_file": "./data/why-is-my-chole-bhature-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_chole_bhature",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-the-oil-or-fat-stage-matter-for-upma",
+      "title": "Why does the oil or fat stage matter for Upma?",
+      "hook": "Timing is everything in cooking Upma.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_upma.jpg?alt=media&token=e0496d4a-0ac5-406d-98bc-66343a812569",
+      "data_file": "./data/why-does-the-oil-or-fat-stage-matter-for-upma.blog.json",
+      "recipe_id": "rec_upma",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-my-tomato-rasam-taste-bitter-or-burnt",
+      "title": "Why does my Tomato Rasam taste bitter or burnt?",
+      "hook": "Bitter rasam can be quite disappointing.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_tomato_rasam.jpg?alt=media&token=932ef942-0c94-4fa3-a518-c02c806297e4",
+      "data_file": "./data/why-does-my-tomato-rasam-taste-bitter-or-burnt.blog.json",
+      "recipe_id": "rec_tomato_rasam",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-my-rava-idli-taste-bitter-or-burnt",
+      "title": "Why does my Rava Idli taste bitter or burnt?",
+      "hook": "A simple stirring mistake can ruin your Rava Idli.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_rava_idli.jpg?alt=media&token=49dca40f-a78e-40c9-992a-30c020dd0a1c",
+      "data_file": "./data/why-does-my-rava-idli-taste-bitter-or-burnt.blog.json",
+      "recipe_id": "rec_rava_idli",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-my-puliyogare-stick-or-tear",
+      "title": "Why does my Puliyogare stick or tear?",
+      "hook": "Sticky Puliyogare can be frustrating.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_puliyogare.jpg?alt=media&token=481be50d-7c28-4bd7-b12f-db86f02ab619",
+      "data_file": "./data/why-does-my-puliyogare-stick-or-tear.blog.json",
+      "recipe_id": "rec_puliyogare",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-mysore-masala-dosa-turning-out-soggy",
+      "title": "Why is my Mysore Masala Dosa turning out soggy?",
+      "hook": "Soggy dosa can be a real letdown.",
+      "cuisine": "South Indian, Karnataka",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_mysore_masala_dosa.jpg?alt=media&token=bb64d7f6-bf28-416f-b8a6-a9332300d296",
+      "data_file": "./data/why-is-my-mysore-masala-dosa-turning-out-soggy.blog.json",
+      "recipe_id": "rec_mysore_masala_dosa",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-rinsing-or-soaking-affect-my-medu-vada",
+      "title": "Why does rinsing or soaking affect my Medu Vada?",
+      "hook": "Soaking can make or break your Medu Vada.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_medu_vada.jpg?alt=media&token=980692bc-e0a7-4f77-a55f-f2b2013a11a4",
+      "data_file": "./data/why-does-rinsing-or-soaking-affect-my-medu-vada.blog.json",
+      "recipe_id": "rec_medu_vada",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-my-lemon-rice-stick-or-tear",
+      "title": "Why does my Lemon Rice stick or tear?",
+      "hook": "Sticky rice can ruin your dish.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_lemon_rice.jpg?alt=media&token=512246a0-0064-4c1d-870d-e89591f291a7",
+      "data_file": "./data/why-does-my-lemon-rice-stick-or-tear.blog.json",
+      "recipe_id": "rec_lemon_rice",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-kuzhi-paniyaram-batter-not-right",
+      "title": "Why is my Kuzhi Paniyaram batter not right?",
+      "hook": "Getting the batter right is crucial for perfect Kuzhi Paniyaram.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_kuzhi_paniyaram.jpg?alt=media&token=d972e013-8275-4812-b741-8b6a1490b993",
+      "data_file": "./data/why-is-my-kuzhi-paniyaram-batter-not-right.blog.json",
+      "recipe_id": "rec_kuzhi_paniyaram",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-kebab-too-spicy-or-bland",
+      "title": "Why is my Kebab too spicy or bland?",
+      "hook": "Finding the right balance in kebabs can be tricky.",
+      "cuisine": "Middle Eastern",
+      "meal": "Snack",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_kebab.jpg?alt=media&token=e8a09bbf-6414-40f5-bae1-c8001e5599b1",
+      "data_file": "./data/why-is-my-kebab-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_kebab",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-instant-rava-dosa-too-dense-or-dry",
+      "title": "Why is my Instant Rava Dosa too dense or dry?",
+      "hook": "A light and crispy dosa is the goal.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_instant_rava_dosa.jpg?alt=media&token=ca55fe82-0cc5-45bb-a0c5-f1b5000ba82c",
+      "data_file": "./data/why-is-my-instant-rava-dosa-too-dense-or-dry.blog.json",
+      "recipe_id": "rec_instant_rava_dosa",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-the-oil-or-fat-stage-matter-for-idiyappam",
+      "title": "Why does the oil or fat stage matter for Idiyappam?",
+      "hook": "The right amount of oil is crucial for perfect Idiyappam.",
+      "cuisine": "South Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_idiyappam.jpg?alt=media&token=39739c8a-c0ed-4ca9-a937-c8296e8e869b",
+      "data_file": "./data/why-does-the-oil-or-fat-stage-matter-for-idiyappam.blog.json",
+      "recipe_id": "rec_idiyappam",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-the-oil-or-fat-stage-matter-for-hyderabadi-biryani",
+      "title": "Why does the oil or fat stage matter for Hyderabadi Biryani?",
+      "hook": "The oil stage is crucial for flavor.",
+      "cuisine": "Hyderabadi Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_hyderabadi_biryani.jpg?alt=media&token=430f6122-0466-4d09-8ceb-6cfaa6cd4dfa",
+      "data_file": "./data/why-does-the-oil-or-fat-stage-matter-for-hyderabadi-biryani.blog.json",
+      "recipe_id": "rec_hyderabadi_biryani",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-the-oil-or-fat-stage-matter-for-honey-garlic-chicken",
+      "title": "Why does the oil or fat stage matter for Honey Garlic Chicken?",
+      "hook": "The oil stage is crucial for perfecting your dish.",
+      "cuisine": "American",
+      "meal": "Dinner",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_honey_garlic_chicken.jpg?alt=media&token=7e1b5a56-ab21-4d9b-969a-69841c62739d",
+      "data_file": "./data/why-does-the-oil-or-fat-stage-matter-for-honey-garlic-chicken.blog.json",
+      "recipe_id": "rec_honey_garlic_chicken",
+      "status": "ready"
+    },
+    {
+      "slug": "why-does-my-gulab-jamun-stick-or-tear",
+      "title": "Why does my Gulab Jamun stick or tear?",
+      "hook": "Sticky Gulab Jamun can be frustrating.",
+      "cuisine": "Indian",
+      "meal": "Dessert",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_gulab_jamun.jpg?alt=media&token=0d2998da-3862-494d-bc6b-fec9d4a97d5a",
+      "data_file": "./data/why-does-my-gulab-jamun-stick-or-tear.blog.json",
+      "recipe_id": "rec_gulab_jamun",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-curd-rice-too-dense-or-dry",
+      "title": "Why is my Curd Rice too dense or dry?",
+      "hook": "Curd Rice should be creamy and smooth.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_curd_rice.jpg?alt=media&token=64e8f1dc-3d6c-4650-b081-d62114b3719c",
+      "data_file": "./data/why-is-my-curd-rice-too-dense-or-dry.blog.json",
+      "recipe_id": "rec_curd_rice",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-chicken-sukka-too-spicy-or-bland",
+      "title": "Why is my Chicken Sukka too spicy or bland?",
+      "hook": "Balancing spices in Chicken Sukka is crucial.",
+      "cuisine": "Mangalorean Coastal Karnataka",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_chicken_sukka.jpg?alt=media&token=5b187ed0-7e73-40b6-879d-0258e8fb6d0a",
+      "data_file": "./data/why-is-my-chicken-sukka-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_chicken_sukka",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-chettinad-chicken-curry-too-spicy-or-bland",
+      "title": "Why is my Chettinad Chicken Curry too spicy or bland?",
+      "hook": "Spice levels can make or break your curry.",
+      "cuisine": "Chettinad South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_chettinad_chicken_curry.jpg?alt=media&token=39f8f383-a703-4e41-9087-ce55cdeab90d",
+      "data_file": "./data/why-is-my-chettinad-chicken-curry-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_chettinad_chicken_curry",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-butter-chicken-too-spicy-or-bland",
+      "title": "Why is my Butter Chicken too spicy or bland?",
+      "hook": "Finding the right balance in Butter Chicken can be tricky.",
+      "cuisine": "North Indian",
+      "meal": "Dinner",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_butter_chicken.jpg?alt=media&token=c0e339f8-3a5a-43e5-9419-cb163923d77e",
+      "data_file": "./data/why-is-my-butter-chicken-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_butter_chicken",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-bisi-bele-bath-too-dense-or-dry",
+      "title": "Why is my Bisi Bele Bath too dense or dry?",
+      "hook": "A common issue in making Bisi Bele Bath.",
+      "cuisine": "Karnataka, South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_bisi_bele_bath.jpg?alt=media&token=9d9691e5-75ff-4be7-a0ba-cec527db7eca",
+      "data_file": "./data/why-is-my-bisi-bele-bath-too-dense-or-dry.blog.json",
+      "recipe_id": "rec_bisi_bele_bath",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-avial-turning-out-soggy",
+      "title": "Why is my Avial turning out soggy?",
+      "hook": "Soggy Avial can be frustrating.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_avial.jpg?alt=media&token=4dffbf6f-43a3-433b-ac32-0e84b451f15f",
+      "data_file": "./data/why-is-my-avial-turning-out-soggy.blog.json",
+      "recipe_id": "rec_avial",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-arachuvitta-sambar-too-spicy-or-bland",
+      "title": "Why is my Arachuvitta Sambar too spicy or bland?",
+      "hook": "Finding the right balance in Arachuvitta Sambar can be tricky.",
+      "cuisine": "South Indian",
+      "meal": "Lunch",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_arachuvitta_sambar.jpg?alt=media&token=6c130e69-f3ea-4982-8d89-277bedb2c9b1",
+      "data_file": "./data/why-is-my-arachuvitta-sambar-too-spicy-or-bland.blog.json",
+      "recipe_id": "rec_arachuvitta_sambar",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-appam-with-vegetable-stew-batter-not-right",
+      "title": "Why is my Appam With Vegetable Stew batter not right?",
+      "hook": "Batter issues can be frustrating.",
+      "cuisine": "Kerala",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_appam_with_vegetable_stew.jpg?alt=media&token=3c25b1f8-1260-4b15-9092-d6e317914985",
+      "data_file": "./data/why-is-my-appam-with-vegetable-stew-batter-not-right.blog.json",
+      "recipe_id": "rec_appam_with_vegetable_stew",
+      "status": "ready"
+    },
+    {
+      "slug": "why-is-my-aloo-paratha-turning-out-soggy",
+      "title": "Why is my Aloo Paratha turning out soggy?",
+      "hook": "Soggy Aloo Paratha can be frustrating.",
+      "cuisine": "North Indian",
+      "meal": "Breakfast",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sattva-srsti.appspot.com/o/recipe_v1_image%2Frec_aloo_paratha.jpg?alt=media&token=3dabdd3f-d114-46db-8208-ca682e5400a1",
+      "data_file": "./data/aloo-paratha.blog.json",
+      "recipe_id": "rec_aloo_paratha",
+      "status": "ready"
+    }
+  ]
+}

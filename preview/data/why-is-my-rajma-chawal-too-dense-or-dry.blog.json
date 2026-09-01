@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-rajma-chawal-too-dense-or-dry",
+  "recipe_id": "rec_rajma_chawal",
+  "slug": "why-is-my-rajma-chawal-too-dense-or-dry",
+  "status": "ready",
+  "primary_question": "Why is my Rajma Chawal too dense or dry?",
+  "seo_title": "Why is my Rajma Chawal too dense or dry? | SattvaSrsti",
+  "meta_description": "Learn why your Rajma Chawal is too dense or dry and how to fix it for a comforting North Indian meal.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-rajma-chawal-too-dense-or-dry",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "A common issue that can ruin a comforting meal.",
+    "story": "Imagine sitting down to a plate of Rajma Chawal, only to find it dense and dry. It’s disappointing when a beloved dish doesn’t live up to expectations.",
+    "useful_answer": "The likely reason your Rajma Chawal is too dense or dry is that the mixture may have dried out during cooking. To prevent this, ensure that the rajma is cooked in enough liquid and keep an eye on it to avoid drying out.",
+    "related_problems": [
+      {
+        "q": "Why is my Rajma Chawal too spicy or bland?",
+        "a": "Rajma Chawal should have a balanced flavor, but if it's too spicy or bland, it might stem from uneven seasoning. Remember, the dish features rich flavors from the spiced tomato gravy, so adjust the spices carefully."
+      },
+      {
+        "q": "How can I improve my Rajma Chawal?",
+        "a": "Improving Rajma Chawal starts with ensuring the beans are fully submerged in water and rinsing the rice to remove excess starch. Proper cooking of the rajma is essential; it should be soft and not undercooked."
+      },
+      {
+        "q": "How do I get better texture for Rajma Chawal?",
+        "a": "For better texture, make sure the rajma is cooked until soft and avoid burning the cumin seeds and onions. Rinsing the rice and ensuring the beans are submerged in water also contribute to a better overall texture."
+      },
+      {
+        "q": "How can I improve the taste of my Rajma Chawal?",
+        "a": "To enhance the taste, ensure the rajma is well-cooked and the spices are balanced. Rinsing the rice and avoiding burning the cumin seeds and onions will also help elevate the dish's flavor."
+      }
+    ],
+    "emotional_ending": "Getting Rajma Chawal just right can take a little practice. With attention to detail, you can create a comforting dish that warms the heart."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Rajma Chawal too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Rajma Chawal too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Rajma Chawal?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Rajma Chawal?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Rajma Chawal?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

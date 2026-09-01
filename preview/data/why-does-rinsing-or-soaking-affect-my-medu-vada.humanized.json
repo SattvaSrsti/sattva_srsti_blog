@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does rinsing or soaking affect my Medu Vada?",
+  "hook": "Soaking can make or break your Medu Vada.",
+  "story": "Imagine preparing for a festive breakfast, excited to serve crispy Medu Vada. You rinse the urad dal, but the results aren't as expected. The texture feels off, and the vadas don't have that perfect bite.",
+  "useful_answer": "Rinsing or soaking urad dal is crucial for texture. If you soak in very little water, the dal may stay hard, affecting the final result. Always ensure the dal is adequately soaked to achieve the right consistency.",
+  "related_problems": [
+    {
+      "q": "Why is my Medu Vada batter not right?",
+      "a": "If your batter is too loose, it can lead to vadas that fall apart while frying. This often happens when there is too much leftover water after soaking."
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Medu Vada?",
+      "a": "The temperature of the oil is vital for crispy vadas. If the oil smokes, it indicates it's too hot, which can burn the vadas and ruin their texture."
+    },
+    {
+      "q": "Why does my Medu Vada stick or tear?",
+      "a": "Using a dry hand when shaping the vadas can cause the batter to stick. It's important to keep your hands slightly wet to prevent tearing."
+    },
+    {
+      "q": "Why is my Medu Vada not crispy?",
+      "a": "Medu Vada should be crisp and doughnut-shaped. If they aren't crispy, it might be due to improper batter consistency or frying temperature."
+    }
+  ],
+  "emotional_ending": "Perfecting Medu Vada takes practice, but the reward is worth it. Enjoy the delightful crunch and flavors with every bite.",
+  "meta_description": "Discover how rinsing or soaking affects your Medu Vada for that perfect South Indian fritter.",
+  "capability_id": "guided_recipe_customization"
+}

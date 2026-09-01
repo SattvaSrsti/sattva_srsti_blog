@@ -1,0 +1,43 @@
+{
+  "collection": "blog_posts",
+  "description": "Blog-unique marketing content only. Join recipes_v2 / all_ingredients at read time. Never copy recipe facts.",
+  "document_id_pattern": "blog_{slug}",
+  "write_policy": "blog_posts only",
+  "fields": {
+    "blog_id": "string",
+    "recipe_id": "string — pointer into recipes_v2 only",
+    "slug": "string",
+    "status": "draft | ready | published | skipped_*",
+    "primary_question": "string",
+    "seo_title": "string",
+    "meta_description": "string — SEO snippet (~155 chars)",
+    "blog_public_url": "string|null — Hostinger URL after publish",
+    "capability_id": "string — from prompts/capabilities.json (code-selected)",
+    "humanized": {
+      "hook": "string",
+      "story": "string — may be legacy string[]",
+      "useful_answer": "string",
+      "related_problems": [{ "q": "string", "a": "string" }],
+      "emotional_ending": "string"
+    },
+    "research": [{ "q": "string", "source": "quora|reddit|food_site|generated_intent", "source_url": "string|null" }],
+    "customize_fixed": {
+      "title": "string",
+      "body": "string",
+      "cta_label": "string"
+    }
+  },
+  "never_store": [
+    "base_ratio / Try this base ratio UI fields",
+    "ingredients / quantities (recipes_v2 — live-join for Ingredients section only)",
+    "ingredient_groups",
+    "preview_steps (recipes_v2 instructions)",
+    "about_recipe / pairings / storage / image (recipes_v2)",
+    "ayurveda (all_ingredients)",
+    "nutrition (derive from ingredients)",
+    "related_recipes",
+    "hashtags (recipe search_tags)",
+    "purpose / timestamps / pipeline_version / api_report",
+    "full page duplicate blob"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does the oil or fat stage matter for Idiyappam?",
+  "hook": "The right amount of oil is crucial for perfect Idiyappam.",
+  "story": "Imagine preparing Idiyappam for breakfast. You want those delicate strands to be just right, not too oily or dry. A small mistake in greasing can change everything.",
+  "useful_answer": "The oil or fat stage is important because over-greasing the plates can make the Idiyappam strands feel oily. It's best to apply just enough oil to prevent sticking without overwhelming the dish's natural texture.",
+  "related_problems": [
+    {
+      "q": "Why is my Idiyappam too dense or dry?",
+      "a": "If your Idiyappam turns out dense or dry, it might be because the dough was left uncovered. This can cause the surface to dry out, affecting the final texture."
+    },
+    {
+      "q": "Why does my Idiyappam stick or tear?",
+      "a": "Sticking or tearing often happens if you remove the Idiyappam too quickly and with force. Allow them to cool slightly before gently lifting them to maintain their shape."
+    },
+    {
+      "q": "How can I improve my Idiyappam?",
+      "a": "To enhance your Idiyappam, avoid adding too much water that can touch the strands while steaming. Also, ensure you don’t over-grease the plates, as this can lead to an oily texture."
+    },
+    {
+      "q": "How do I get better texture for Idiyappam?",
+      "a": "For better texture, be mindful of the water used; it shouldn't touch the Idiyappam during steaming. Additionally, using lukewarm water can make the dough crumbly, so stick to the right temperature."
+    }
+  ],
+  "emotional_ending": "Getting the oil stage right can make your Idiyappam truly shine. Enjoy the process and the delicious results.",
+  "meta_description": "Discover why the oil or fat stage matters for perfect Idiyappam in this insightful guide.",
+  "capability_id": "guided_recipe_customization"
+}

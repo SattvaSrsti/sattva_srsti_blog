@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Gulab Jamun stick or tear?",
+  "hook": "Sticky Gulab Jamun can be frustrating.",
+  "story": "Imagine preparing a festive treat, only to find your Gulab Jamun tearing apart. It’s disheartening when all you want is that perfect, soft bite.",
+  "useful_answer": "The main reason your Gulab Jamun might stick or tear is due to using hot milk in the dough. Boiling the milk can make the mixture too sticky, leading to issues while shaping and frying.",
+  "related_problems": [
+    {
+      "q": "Why is my Gulab Jamun too dense or dry?",
+      "a": "If your Gulab Jamun turns out dense, it might be due to kneading the dough too firmly. Gentle handling is key to achieving that soft texture."
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Gulab Jamun?",
+      "a": "The oil temperature is crucial. If you add rose water while the oil is too hot, the delicate aroma can dissipate, affecting the overall flavor."
+    },
+    {
+      "q": "Why is my Gulab Jamun too spicy or bland?",
+      "a": "Frying at high heat can lead to uneven cooking, making the jamuns taste bland or overly spicy. Maintaining a moderate temperature is essential."
+    },
+    {
+      "q": "How can I improve my Gulab Jamun?",
+      "a": "To enhance your Gulab Jamun, avoid leaving large khoya chunks, as they may crack during frying. Also, be cautious with baking powder and milk to prevent breakage."
+    }
+  ],
+  "emotional_ending": "Perfecting Gulab Jamun takes practice, but with attention to detail, you can achieve that delightful texture. Enjoy the process and the sweet rewards.",
+  "meta_description": "Discover why your Gulab Jamun sticks or tears and learn how to fix it for a perfect treat.",
+  "capability_id": "guided_recipe_customization"
+}

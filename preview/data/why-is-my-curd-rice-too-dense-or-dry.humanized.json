@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why is my Curd Rice too dense or dry?",
+  "hook": "Curd Rice should be creamy and smooth.",
+  "story": "Imagine preparing a comforting bowl of Curd Rice after a long day. You mix the rice and yogurt, but it feels heavier than expected. What went wrong?",
+  "useful_answer": "The density or dryness in your Curd Rice likely comes from leaving dry pockets of rice unmixed. Make sure to thoroughly combine the rice with the yogurt to achieve that desired creamy texture.",
+  "related_problems": [
+    {
+      "q": "Why does the oil or fat stage matter for Curd Rice?",
+      "a": "The oil stage is crucial for flavor. If you add wet curry leaves directly to hot oil, they can splutter strongly, affecting the tempering and overall taste."
+    },
+    {
+      "q": "Why does my Curd Rice taste bitter or burnt?",
+      "a": "If the oil smokes during tempering, it can lead to a bitter taste. Keeping an eye on the oil temperature is essential to avoid this."
+    },
+    {
+      "q": "Why is my Curd Rice turning out soggy?",
+      "a": "Stirring roughly can make the rice mushy. It's important to mix gently to maintain the right texture for your Curd Rice."
+    },
+    {
+      "q": "Why is my Curd Rice too spicy or bland?",
+      "a": "Curd Rice is meant to be a cooling dish. Balancing the spices is key, as it should complement the soft rice and yogurt without overpowering it."
+    }
+  ],
+  "emotional_ending": "Perfecting Curd Rice takes a bit of practice. With attention to detail, you can enjoy a delightful and soothing dish.",
+  "meta_description": "Learn why your Curd Rice is too dense or dry and how to achieve the perfect creamy texture.",
+  "capability_id": "guided_recipe_customization"
+}

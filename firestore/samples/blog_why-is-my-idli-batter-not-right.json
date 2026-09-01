@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-idli-batter-not-right",
+  "recipe_id": "rec_idli",
+  "slug": "why-is-my-idli-batter-not-right",
+  "status": "ready",
+  "primary_question": "Why is my Idli batter not right?",
+  "seo_title": "Why is my Idli batter not right? | SattvaSrsti",
+  "meta_description": "Discover why your Idli batter isn't right and how to perfect it for soft, fluffy Idlis.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-idli-batter-not-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Fermentation is key for Idli batter.",
+    "story": "Making Idli can be tricky, especially when it comes to the batter. A small mistake during fermentation can lead to disappointing results.",
+    "useful_answer": "If your Idli batter isn't right, it might be due to disturbing it during fermentation. Keep the batter undisturbed to allow it to rise properly, which is essential for achieving that soft, fluffy texture.",
+    "related_problems": [
+      {
+        "q": "How can I improve my Idli?",
+        "a": "To enhance your Idli, start by rinsing the rice properly to remove excess starch. Ensure both the rice and dal are fully submerged in water during soaking."
+      },
+      {
+        "q": "How do I get better texture for Idli?",
+        "a": "For better texture, avoid over-grinding the batter to a smooth paste. The right consistency should be slightly coarse, which helps in achieving that desired fluffiness."
+      },
+      {
+        "q": "How can I improve the taste of my Idli?",
+        "a": "Improving the taste involves the same steps: rinse the rice and dal thoroughly and ensure they are well-soaked. This helps in developing a richer flavor."
+      },
+      {
+        "q": "How do I know Idli is ready?",
+        "a": "Your Idli batter is ready when it doubles in volume and has a smooth yet slightly coarse texture. A good cue is when the water runs clear after rinsing."
+      }
+    ],
+    "emotional_ending": "Perfecting Idli batter takes patience and care. With the right approach, you'll soon enjoy soft, delicious Idlis."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Idli batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I know Idli is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue"
+    }
+  ]
+}

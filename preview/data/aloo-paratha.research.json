@@ -1,0 +1,69 @@
+{
+  "recipe": {
+    "title": "Aloo Paratha",
+    "cuisine": "North Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Aloo Paratha turning out soggy?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not overboil, they should not be mushy."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Aloo Paratha stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not make the dough too sticky."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Aloo Paratha too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Aloo Paratha is a popular North Indian flatbread stuffed with a spiced potato filling.",
+        "It's a comforting and hearty dish often enjoyed for breakfast or brunch, served with yogurt or pickle."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Aloo Paratha?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overboil, they should not be mushy.",
+        "Ensure no lumps remain in the potatoes.",
+        "Do not make the dough too sticky.",
+        "Ensure the filling does not spill out.",
+        "Do not press too hard to avoid tearing."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Aloo Paratha?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overboil, they should not be mushy.",
+        "Ensure no lumps remain in the potatoes.",
+        "Do not make the dough too sticky.",
+        "Ensure the filling does not spill out.",
+        "Do not press too hard to avoid tearing."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_aloo_paratha",
+  "slug": "aloo-paratha"
+}

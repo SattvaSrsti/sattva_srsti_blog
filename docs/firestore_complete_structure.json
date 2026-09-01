@@ -1,0 +1,131 @@
+{
+  "project_id": "sattva-srsti",
+  "doc": "docs/FIRESTORE_COMPLETE_STRUCTURE.md",
+  "collections": {
+    "recipes_v2": {
+      "role": "canonical_recipes",
+      "doc_id_example": "rec_aloo_paratha",
+      "root_fields": {
+        "recipe_id": "string",
+        "title": "string",
+        "slug": "string",
+        "status": "string",
+        "about_recipe": "string",
+        "image_primary_url": "string",
+        "cuisine": "string",
+        "dish_type": "string",
+        "difficulty": "string",
+        "meal_type": "string",
+        "servings": "number",
+        "prep_time_minutes": "number",
+        "cook_time_minutes": "number",
+        "total_time_minutes": "number",
+        "ingredient_count": "number",
+        "step_count": "number",
+        "diet_tags": "array<string>",
+        "alternative_names": "array<string>",
+        "search_tags": "array<string>",
+        "dish_categories": "array<string>",
+        "meal_preference_tags": "array<string>",
+        "cooking_method_tags": "array<string>",
+        "equipment_required": "array<string>",
+        "pairing_recommendations": "array<string>",
+        "age_group_tags": "array<string>",
+        "spice_tolerance_level": "string",
+        "choking_risk_level": "string",
+        "flavor_profile": "map<string,number>",
+        "occasions": "array<object:{type,name,region}>",
+        "sections_available": "array<string>",
+        "q123_total_tokens": "number",
+        "mood_tags": "array<string>|optional",
+        "effort_level": "string|optional"
+      },
+      "subcollections": {
+        "ingredients/details": {
+          "recipe_id": "string",
+          "base_yield": "map:{servings:number,description:string}",
+          "ingredients": "array<object:{ingredient_id,display_name,amount,unit,canonical_amount,canonical_unit,ingredient_role,preparation_state,requirement_level}>"
+        },
+        "instructions/details": {
+          "recipe_id": "string",
+          "timing_model": "map:{total_active_minutes,total_passive_minutes,total_elapsed_minutes}",
+          "leftover_storage": "map:{refrigeration,reheat,shelf_life}",
+          "steps": "array<object:{step,duration_minutes,instruction_text,voice_text,ingredient_refs,mistake_warnings,safety_notes,sensory_cues,step_temperature_level,cooking_temperature}>"
+        },
+        "identity_ingredient_ids/details": {
+          "recipe_id": "string",
+          "identity_ingredient_ids": "array<string>"
+        },
+        "nutrition/details": "optional map nutrition_per_serving|aggregated_nutrition|total_nutrition",
+        "nutritional_content_v2/details": "optional alternate nutrition"
+      }
+    },
+    "all_ingredients": {
+      "role": "canonical_ingredient_master",
+      "doc_id_example": "ing_potato",
+      "root_fields": {
+        "ingredient_id": "string",
+        "status": "string",
+        "updated_at": "timestamp"
+      },
+      "subcollections": {
+        "ingredient_core/details": [
+          "ingredient_id", "display_name", "display_names", "slug", "status", "version",
+          "ingredient_form_type", "physical_state", "canonical_unit", "measurement_behavior",
+          "storage_category", "ingredient_category_tags", "diet_tags", "allergen_tags",
+          "search_keywords", "aliases", "direct_tags", "ingredient_image_url"
+        ],
+        "ingredient_intelligence/details": [
+          "food_science", "how_it_is_made", "how_it_looks", "how_to_store",
+          "ingredient_health_benefits", "quality_and_adulteration", "unit_conversions",
+          "g_per_ml", "serving_reference", "substitution_candidates"
+        ],
+        "ingredient_nutrition/details": [
+          "nutrition_per_100g", "wellness_tags", "health_alerts", "glycemic_metrics", "protein_quality"
+        ],
+        "ingredient_flavour/profile": ["ingredient_name", "ingredient_flavour", "source", "prompt_version"],
+        "ingredient_behavior/profile": ["ingredient_name", "heat", "timing", "texture", "flavor_change", "failures"],
+        "ingredient_ayurveda/profile": ["ingredient_name", "confidence", "ingredient_ayurveda"]
+      }
+    },
+    "users": {
+      "role": "user_profiles",
+      "subcollections": [
+        "taste_profile/main",
+        "health_profile/main",
+        "nutrition_profile/main",
+        "cooking_preferences/main",
+        "ai_preferences/main",
+        "dashboard_preferences/main",
+        "subscriptions/main",
+        "user_pantry/{itemId}",
+        "shopping_list/{itemId}",
+        "saved_recipes/{recipeId}",
+        "cooking_history/{entryId}",
+        "recipe_collections/{collectionId}",
+        "address", "wishlist", "orders", "cart"
+      ]
+    },
+    "blog_posts": {
+      "role": "blog_write_target_slim",
+      "fields": [
+        "blog_id", "recipe_id", "slug", "status", "primary_question",
+        "seo_title", "meta_description", "blog_public_url",
+        "humanized", "customize_fixed"
+      ],
+      "never_store": [
+        "base_ratio", "ingredient_groups", "ingredients/quantities",
+        "preview_steps", "ayurveda", "nutrition", "hashtags", "image_url"
+      ]
+    },
+    "content_hashtags": {
+      "role": "planned_hashtag_keyword_pack",
+      "fields": [
+        "recipe_id", "slug", "keywords", "brand_hashtags", "recipe_hashtags",
+        "ingredient_hashtags", "category_hashtags", "instagram_hashtags",
+        "youtube_keywords", "full_display_string", "updated_at"
+      ]
+    },
+    "legacy": ["recipe", "recipes", "category", "ingredients", "admin", "recipe_v2_failed_generations", "recipe_v2_pending_ingredient_mappings"]
+  }
+}

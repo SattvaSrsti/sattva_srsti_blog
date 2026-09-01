@@ -1,0 +1,65 @@
+{
+  "recipe": {
+    "title": "Veg Pakora",
+    "cuisine": "Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Veg Pakora too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Ensure even mixing of spices."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Veg Pakora batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid making the batter too runny."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Veg Pakora?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not overheat the oil."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Veg Pakora not crispy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Veg Pakora is a popular Indian snack made by deep-frying a spiced batter of chickpea flour and mixed vegetables.",
+        "It's crispy, flavorful, and often enjoyed with chutney or tea, especially during rainy days or festive occasions."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Veg Pakora?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting the slices too thick.",
+        "Ensure even mixing of spices.",
+        "Avoid making the batter too runny.",
+        "Ensure all pieces are evenly coated.",
+        "Do not overheat the oil."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_veg_pakora",
+  "slug": "veg-pakora"
+}

@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Lemon Rice",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does my Lemon Rice stick or tear?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not use very hot rice, or it may turn sticky"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Lemon Rice too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not touch your eyes after handling green chilli"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Lemon Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add lemon juice to hot oil"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Lemon Rice taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not cook too long after adding asafoetida, or it may taste bitter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Lemon Rice too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add wet curry leaves without patting them dry"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_lemon_rice",
+  "slug": "lemon-rice"
+}

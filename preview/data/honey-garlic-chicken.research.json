@@ -1,0 +1,76 @@
+{
+  "recipe": {
+    "title": "Honey Garlic Chicken",
+    "cuisine": "American"
+  },
+  "primary_question": {
+    "question": "Why does the oil or fat stage matter for Honey Garlic Chicken?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not overheat the oil."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "How can I improve my Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid leaving lumps of honey.",
+        "Ensure all chicken pieces are coated.",
+        "Do not overheat the oil.",
+        "Avoid undercooking the chicken.",
+        "Honey Garlic Chicken is a flavorful dish combining sweet honey and savory garlic with tender chicken."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid leaving lumps of honey.",
+        "Ensure all chicken pieces are coated.",
+        "Do not overheat the oil.",
+        "Avoid undercooking the chicken.",
+        "Honey Garlic Chicken is a flavorful dish combining sweet honey and savory garlic with tender chicken."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid leaving lumps of honey.",
+        "Ensure all chicken pieces are coated.",
+        "Do not overheat the oil.",
+        "Avoid undercooking the chicken.",
+        "Honey Garlic Chicken is a flavorful dish combining sweet honey and savory garlic with tender chicken."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I know Honey Garlic Chicken is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue",
+      "evidence": [
+        "smooth consistency",
+        "aromatic garlic smell",
+        "chicken fully covered in marinade",
+        "oil shimmering",
+        "golden brown color"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_honey_garlic_chicken",
+  "slug": "honey-garlic-chicken"
+}

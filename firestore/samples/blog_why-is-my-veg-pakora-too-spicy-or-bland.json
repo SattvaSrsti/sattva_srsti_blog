@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-veg-pakora-too-spicy-or-bland",
+  "recipe_id": "rec_veg_pakora",
+  "slug": "why-is-my-veg-pakora-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Veg Pakora too spicy or bland?",
+  "seo_title": "Why is my Veg Pakora too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Veg Pakora might be too spicy or bland and how to fix it for a perfect snack.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-veg-pakora-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Finding the right spice balance is key.",
+    "story": "Imagine biting into a Veg Pakora that either burns your tongue or leaves you wanting more flavor. It can be frustrating when the spices don’t hit just right. Understanding how to mix them properly can make a big difference.",
+    "useful_answer": "The spice level in your Veg Pakora may be off due to uneven mixing of the spices. Ensure that all spices are thoroughly combined before adding them to the batter, which helps achieve a balanced flavor throughout.",
+    "related_problems": [
+      {
+        "q": "Why is my Veg Pakora batter not right?",
+        "a": "A common issue with the batter is that it can become too runny. This affects the texture and coating of the pakoras, making them less satisfying."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Veg Pakora?",
+        "a": "The oil temperature is crucial for frying. If the oil is overheated, it can lead to burnt pakoras on the outside while remaining undercooked inside."
+      },
+      {
+        "q": "Why is my Veg Pakora not crispy?",
+        "a": "For Veg Pakora to be crispy, the batter must be just right, and the frying oil should be at the correct temperature. If the batter is too thick or the oil too cool, the pakoras won't achieve that desired crunch."
+      },
+      {
+        "q": "How can I improve my Veg Pakora?",
+        "a": "To enhance your Veg Pakora, avoid cutting the vegetable slices too thick and ensure even mixing of spices. Also, make sure the batter isn't too runny and that all pieces are evenly coated before frying."
+      }
+    ],
+    "emotional_ending": "Perfecting your Veg Pakora can turn a simple snack into a delightful treat. With a few adjustments, you can enjoy the crispy, flavorful bites you crave."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Veg Pakora too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Veg Pakora batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Veg Pakora?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Veg Pakora not crispy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Veg Pakora?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

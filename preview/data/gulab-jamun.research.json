@@ -1,0 +1,64 @@
+{
+  "recipe": {
+    "title": "Gulab Jamun",
+    "cuisine": "Indian"
+  },
+  "primary_question": {
+    "question": "Why does my Gulab Jamun stick or tear?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not boil the milk, because hot milk can make the dough sticky."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Gulab Jamun too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not knead firmly, or the jamuns can become dense."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Gulab Jamun?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add rose water while boiling hard, or its aroma can fade."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Gulab Jamun too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not fry on high heat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Gulab Jamun?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave large khoya chunks, or the jamuns may crack while frying.",
+        "Do not add extra baking powder, because too much can make the jamuns break.",
+        "Do not boil the milk, because hot milk can make the dough sticky.",
+        "Do not pour in all the milk at once.",
+        "Do not knead firmly, or the jamuns can become dense."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_gulab_jamun",
+  "slug": "gulab-jamun"
+}

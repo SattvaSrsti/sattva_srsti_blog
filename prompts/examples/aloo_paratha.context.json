@@ -1,0 +1,32 @@
+{
+  "title": "Aloo Paratha",
+  "cuisine": "North Indian",
+  "meal_filters": {
+    "meal_type": "Breakfast",
+    "diet_tags": ["vegetarian", "high-fiber", "egg-free", "nut-free"],
+    "difficulty": "Medium"
+  },
+  "primary_question": "Why does my aloo paratha keep tearing?",
+  "candidate_questions": [
+    "Why does my aloo paratha keep tearing?",
+    "Why does the stuffing come out while rolling Aloo Paratha?",
+    "How do I know the dough/batter is ready for Aloo Paratha?",
+    "Why is my filling lumpy for Aloo Paratha?",
+    "What should I serve with Aloo Paratha?"
+  ],
+  "mistake_warnings": [
+    "Do not overboil, they should not be mushy.",
+    "Ensure no lumps remain in the potatoes.",
+    "Do not make the dough too sticky.",
+    "Ensure the filling does not spill out.",
+    "Do not press too hard to avoid tearing.",
+    "Do not burn the paratha."
+  ],
+  "sensory_cues": [
+    "soft texture",
+    "uniform mixture",
+    "spicy aroma",
+    "smooth dough",
+    "sealed edges"
+  ]
+}

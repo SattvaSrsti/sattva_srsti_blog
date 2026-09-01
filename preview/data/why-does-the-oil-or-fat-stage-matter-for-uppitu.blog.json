@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-the-oil-or-fat-stage-matter-for-uppitu",
+  "recipe_id": "rec_uppituu",
+  "slug": "why-does-the-oil-or-fat-stage-matter-for-uppitu",
+  "status": "ready",
+  "primary_question": "Why does the oil or fat stage matter for Uppitu?",
+  "seo_title": "Why does the oil or fat stage matter for Uppitu? | SattvaSrsti",
+  "meta_description": "Discover why the oil stage matters for Uppitu and how to perfect this South Indian dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-the-oil-or-fat-stage-matter-for-uppitu",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "The oil stage is crucial for perfect Uppitu.",
+    "story": "Imagine starting your morning with a warm plate of Uppitu. The aroma of spices and ghee fills the kitchen, but something feels off. The texture or flavor just doesn’t match your expectations.",
+    "useful_answer": "The oil or fat stage is important because overheating the ghee can lead to a burnt taste and affect the overall flavor of your Uppitu. Properly heated ghee enhances the dish's richness and helps in evenly cooking the semolina, ensuring a delightful breakfast experience.",
+    "related_problems": [
+      {
+        "q": "Why is my Uppitu too spicy or bland?",
+        "a": "Uppitu's flavor comes from the right balance of spices and ingredients. If it's too spicy or bland, consider adjusting the spice levels and ensuring the vegetables are well-cooked to enhance the dish's savory profile."
+      },
+      {
+        "q": "How can I improve my Uppitu?",
+        "a": "Improving Uppitu involves careful attention to cooking techniques. Avoid overheating the ghee, burning the onions, and ensure you stir continuously to prevent burning and lumps."
+      },
+      {
+        "q": "How do I get better texture for Uppitu?",
+        "a": "To achieve a better texture, ensure the ghee is at the right temperature and avoid adding water too quickly. Stirring consistently will help prevent lumps and ensure the semolina absorbs water properly."
+      },
+      {
+        "q": "How can I improve the taste of my Uppitu?",
+        "a": "Taste can be improved by ensuring the ghee is not overheated and by using fresh ingredients. Proper cooking techniques, like not burning the onions and stirring continuously, will also enhance the overall flavor."
+      }
+    ],
+    "emotional_ending": "With these tips, your Uppitu can become a comforting staple. Enjoy the warm flavors and perfect texture with every bite."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does the oil or fat stage matter for Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Uppitu too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Uppitu?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

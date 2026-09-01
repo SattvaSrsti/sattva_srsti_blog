@@ -1,0 +1,28 @@
+{
+  "capabilities": [
+    {
+      "id": "guided_recipe_customization",
+      "label": "Guided recipe customization",
+      "description": "Cook the full recipe and adjust ingredients, spice, and taste in SattvaSrsti."
+    },
+    {
+      "id": "spice_customization",
+      "label": "Spice level customization",
+      "description": "Adjust heat and spice to match preference.",
+      "enabled": false
+    },
+    {
+      "id": "serving_scaling",
+      "label": "Serving size scaling",
+      "description": "Scale the recipe for more or fewer servings.",
+      "enabled": false
+    },
+    {
+      "id": "ingredient_substitution",
+      "label": "Ingredient substitution",
+      "description": "Swap ingredients based on what you have.",
+      "enabled": false
+    }
+  ],
+  "default_id": "guided_recipe_customization"
+}

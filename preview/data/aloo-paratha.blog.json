@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-aloo-paratha-turning-out-soggy",
+  "recipe_id": "rec_aloo_paratha",
+  "slug": "why-is-my-aloo-paratha-turning-out-soggy",
+  "status": "ready",
+  "primary_question": "Why is my Aloo Paratha turning out soggy?",
+  "seo_title": "Why is my Aloo Paratha turning out soggy? | SattvaSrsti",
+  "meta_description": "Discover why your Aloo Paratha is soggy and how to fix it for a delightful North Indian meal.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-aloo-paratha-turning-out-soggy",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Soggy Aloo Paratha can be frustrating.",
+    "story": "Imagine sitting down to enjoy a warm Aloo Paratha, only to find it soggy and unappetizing. This can happen if the potatoes are overboiled, leading to a mushy filling that doesn't hold up.",
+    "useful_answer": "To avoid soggy Aloo Parathas, make sure not to overboil the potatoes. They should be cooked just enough to be soft but not mushy, allowing for a firm filling that holds its shape.",
+    "related_problems": [
+      {
+        "q": "Why does my Aloo Paratha stick or tear?",
+        "a": "If your Aloo Paratha is sticking or tearing, it might be due to the dough being too sticky. Ensure you add enough flour while kneading to achieve a smooth, pliable dough."
+      },
+      {
+        "q": "Why is my Aloo Paratha too spicy or bland?",
+        "a": "The flavor of Aloo Paratha comes from the spiced potato filling. Adjust the spices to your taste, keeping in mind that it's a comforting dish often enjoyed with yogurt or pickle."
+      },
+      {
+        "q": "How can I improve my Aloo Paratha?",
+        "a": "Improving your Aloo Paratha involves several factors. Avoid overboiling the potatoes, ensure there are no lumps, and make sure the dough isn't too sticky."
+      },
+      {
+        "q": "How do I get better texture for Aloo Paratha?",
+        "a": "For better texture, ensure the potatoes are not overboiled and are lump-free. Also, be careful not to press too hard while rolling to prevent tearing."
+      }
+    ],
+    "emotional_ending": "A perfect Aloo Paratha can bring joy to any meal. With a few adjustments, you can enjoy a deliciously satisfying dish."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Aloo Paratha turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Aloo Paratha stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Aloo Paratha too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Aloo Paratha?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Aloo Paratha?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

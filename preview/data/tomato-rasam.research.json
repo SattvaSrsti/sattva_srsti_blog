@@ -1,0 +1,64 @@
+{
+  "recipe": {
+    "title": "Tomato Rasam",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does my Tomato Rasam taste bitter or burnt?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not use too little water, or the dal may scorch."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Tomato Rasam too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not finely powder the dried red chilli unless you want extra heat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Tomato Rasam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not boil on very high heat, or the liquid may reduce too much."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Tomato Rasam stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let rasam powder stick to the bottom; stir after adding it."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Tomato Rasam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not open the cooker while it is still under pressure.",
+        "Do not use too little water, or the dal may scorch.",
+        "Do not leave the dal thick and lumpy, or the rasam will not blend well.",
+        "Do not finely powder the dried red chilli unless you want extra heat.",
+        "Do not boil on very high heat, or the liquid may reduce too much."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_tomato_rasam",
+  "slug": "tomato-rasam"
+}

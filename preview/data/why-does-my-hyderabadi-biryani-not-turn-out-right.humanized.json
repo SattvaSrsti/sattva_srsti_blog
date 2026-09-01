@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Hyderabadi Biryani not turn out right?",
+  "hook": "Perfecting Hyderabadi Biryani can be tricky.",
+  "story": "Many cooks find themselves puzzled when their biryani doesn't come out as expected. The aroma might be there, but the texture often falls short.",
+  "useful_answer": "To get your Hyderabadi Biryani just right, focus on the rice. Don’t rub the grains too hard while rinsing; this can break them. Ensure the water changes from cloudy to mostly clear, indicating the rice is clean but not crushed. Soaking is essential, but avoid soaking for too long, as it can make the grains fragile and lead to uneven cooking.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Hyderabadi Biryani?",
+      "a": "Do not rub the rice too hard, or the grains may break."
+    },
+    {
+      "q": "What are the key things to watch while making Hyderabadi Biryani?",
+      "a": "Do not skip soaking, or the rice may cook unevenly."
+    },
+    {
+      "q": "How do I know when Hyderabadi Biryani is ready?",
+      "a": "Rinsing water changes from cloudy to mostly clear."
+    },
+    {
+      "q": "How can I improve the taste of my Hyderabadi Biryani?",
+      "a": "Rice grains feel clean but not crushed."
+    }
+  ],
+  "emotional_ending": "With these tips, your Hyderabadi Biryani can shine. Enjoy the process and the delightful results.",
+  "meta_description": "Discover why your Hyderabadi Biryani may not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

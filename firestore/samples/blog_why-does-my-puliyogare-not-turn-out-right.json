@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-puliyogare-not-turn-out-right",
+  "recipe_id": "rec_puliyogare",
+  "slug": "why-does-my-puliyogare-not-turn-out-right",
+  "status": "ready",
+  "primary_question": "Why does my Puliyogare not turn out right?",
+  "seo_title": "Why does my Puliyogare not turn out right? | SattvaSrsti",
+  "meta_description": "Discover why your Puliyogare may not turn out right and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-puliyogare-not-turn-out-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Getting Puliyogare just right can be tricky.",
+    "story": "Imagine preparing a comforting meal for yourself. You’ve followed the steps, but something feels off. The rice just doesn’t have that perfect texture.",
+    "useful_answer": "The key issue might be how you rinse the rice. Make sure to rinse it thoroughly; the water should change from very cloudy to lightly cloudy. If you skip this step, the rice can turn sticky. Also, be gentle while rinsing to avoid breaking the grains.",
+    "related_problems": [
+      {
+        "q": "How do I get better texture for Puliyogare?",
+        "a": "Ensure you rinse the rice properly; it should go from very cloudy to lightly cloudy."
+      },
+      {
+        "q": "What are the key things to watch while making Puliyogare?",
+        "a": "Focus on rinsing the rice well to prevent stickiness and handle it gently."
+      },
+      {
+        "q": "How do I know when Puliyogare is ready?",
+        "a": "Check the texture of the rice; it should be separate and not sticky."
+      },
+      {
+        "q": "How can I improve the taste of my Puliyogare?",
+        "a": "Properly rinsed rice enhances the overall texture and taste."
+      }
+    ],
+    "emotional_ending": "With a few adjustments, you can achieve that authentic Puliyogare experience. Enjoy the flavors and the memories they bring."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Puliyogare not turn out right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I get better texture for Puliyogare?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "What are the key things to watch while making Puliyogare?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I know when Puliyogare is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How can I improve the taste of my Puliyogare?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    }
+  ]
+}

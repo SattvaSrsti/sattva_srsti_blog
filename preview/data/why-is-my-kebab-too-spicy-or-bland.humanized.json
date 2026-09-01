@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why is my Kebab too spicy or bland?",
+  "hook": "Finding the right balance in kebabs can be tricky.",
+  "story": "Imagine preparing a delicious kebab for a gathering. You mix spices, but the result is either overwhelming or flat.",
+  "useful_answer": "The issue often lies in how spices are mixed. If you leave dry spice pockets in the bowl, some bites may be overly spicy while others lack flavor. Make sure to blend the spices thoroughly into the meat for an even taste.",
+  "related_problems": [
+    {
+      "q": "Why is my Kebab turning out soggy?",
+      "a": "Sogginess can occur if the kebabs marinate too long with high lemon content. The acid can break down the surface, making it mushy. Keep marinating time in check."
+    },
+    {
+      "q": "How can I improve my Kebab?",
+      "a": "To enhance your kebab, avoid letting raw chicken sit at room temperature for too long. Also, cut the pieces small enough to cook evenly without burning the outside."
+    },
+    {
+      "q": "How do I get better texture for Kebab?",
+      "a": "For a better texture, ensure your chicken pieces are not too large. This prevents the outside from charring before the inside is cooked through."
+    },
+    {
+      "q": "How can I improve the taste of my Kebab?",
+      "a": "Improving taste involves careful preparation. Avoid leaving dry spice pockets and do not add extra liquid, as it can cause the marinade to slide off."
+    }
+  ],
+  "emotional_ending": "Cooking kebabs is an art that requires attention to detail. With a few adjustments, you can create a dish that impresses everyone.",
+  "meta_description": "Discover why your Kebab might be too spicy or bland and how to fix it for perfect flavor.",
+  "capability_id": "guided_recipe_customization"
+}

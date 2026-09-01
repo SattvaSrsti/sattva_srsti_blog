@@ -1,0 +1,48 @@
+{
+  "collection": "content_hashtags",
+  "description": "One hashtag/keyword pack per recipe for blog + Instagram + YouTube + Pinterest. Built from DB tags in code (no LLM).",
+  "document_id_pattern": "htag_{recipe_id}",
+  "fields": {
+    "recipe_id": "string",
+    "slug": "string",
+    "keywords": ["aloo paratha", "stuffed paratha"],
+    "brand_hashtags": ["#SattvaSrsti", "#SattvaSrstiRecipes", "#CookWithSattva"],
+    "recipe_hashtags": ["#AlooParatha", "#StuffedParatha"],
+    "ingredient_hashtags": ["#Aloo", "#Atta", "#Ghee"],
+    "category_hashtags": ["#IndianFlatbread", "#VegetarianBreakfast"],
+    "instagram_hashtags": ["max 5 mixed"],
+    "youtube_keywords": ["without hash"],
+    "full_display_string": "#SattvaSrsti #AlooParatha ...",
+    "updated_at": "timestamp"
+  },
+  "sample_aloo_paratha": {
+    "recipe_id": "rec_aloo_paratha",
+    "keywords": [
+      "aloo paratha",
+      "stuffed paratha",
+      "Indian flatbread",
+      "potato",
+      "breakfast",
+      "Stuffed Potato Paratha"
+    ],
+    "brand_hashtags": ["#SattvaSrsti", "#SattvaSrstiRecipes", "#CookWithSattva"],
+    "recipe_hashtags": ["#AlooParatha", "#StuffedParatha", "#IndianFlatbread"],
+    "ingredient_hashtags": ["#Aloo", "#Atta", "#Ghee"],
+    "category_hashtags": ["#VegetarianBreakfast", "#HomeCooking"],
+    "instagram_hashtags": [
+      "#SattvaSrsti",
+      "#AlooParatha",
+      "#StuffedParatha",
+      "#IndianFlatbread",
+      "#CookWithSattva"
+    ],
+    "youtube_keywords": [
+      "SattvaSrsti",
+      "Aloo Paratha",
+      "stuffed paratha",
+      "Indian flatbread",
+      "vegetarian breakfast"
+    ],
+    "full_display_string": "#SattvaSrsti #SattvaSrstiRecipes #CookWithSattva #AlooParatha #StuffedParatha #IndianFlatbread #Aloo #Atta #VegetarianBreakfast"
+  }
+}

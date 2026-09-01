@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-upma-not-turn-out-right",
+  "recipe_id": "rec_upma",
+  "slug": "why-does-my-upma-not-turn-out-right",
+  "status": "ready",
+  "primary_question": "Why does my Upma not turn out right?",
+  "seo_title": "Why does my Upma not turn out right? | SattvaSrsti",
+  "meta_description": "Discover why your Upma may not turn out right and learn how to perfect this South Indian dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-upma-not-turn-out-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Getting Upma just right can be tricky.",
+    "story": "Picture this: you’re in the kitchen, eager to whip up a comforting South Indian breakfast. But when you taste your Upma, it’s not quite what you expected.",
+    "useful_answer": "To make your Upma turn out right, ensure that you have everything ready before heating the oil. Tempering spices moves quickly, so don’t leave the rava unstirred as it can scorch in patches. Also, be cautious not to roast the semolina until it’s dark brown, or your Upma may end up tasting bitter.",
+    "related_problems": [
+      {
+        "q": "How do I get better texture for Upma?",
+        "a": "Focus on stirring the rava continuously to avoid scorching."
+      },
+      {
+        "q": "What are the key things to watch while making Upma?",
+        "a": "Ensure all ingredients are prepped before you start cooking."
+      },
+      {
+        "q": "How do I know when Upma is ready?",
+        "a": "Look for a fluffy texture and a pleasant aroma."
+      },
+      {
+        "q": "How can I improve the taste of my Upma?",
+        "a": "Properly temper spices and avoid over-roasting the rava."
+      }
+    ],
+    "emotional_ending": "With these tips, your Upma can become the comforting dish it’s meant to be. Dive into the full recipe in the SattvaSrsti app and enjoy your cooking journey!"
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Upma not turn out right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I get better texture for Upma?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "What are the key things to watch while making Upma?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I know when Upma is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How can I improve the taste of my Upma?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    }
+  ]
+}

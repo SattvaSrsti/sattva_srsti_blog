@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-the-oil-or-fat-stage-matter-for-hyderabadi-biryani",
+  "recipe_id": "rec_hyderabadi_biryani",
+  "slug": "why-does-the-oil-or-fat-stage-matter-for-hyderabadi-biryani",
+  "status": "ready",
+  "primary_question": "Why does the oil or fat stage matter for Hyderabadi Biryani?",
+  "seo_title": "Why does the oil or fat stage matter for Hyderabadi Biryani? | SattvaSrsti",
+  "meta_description": "Discover why the oil or fat stage matters for Hyderabadi Biryani and how to enhance its flavor.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-the-oil-or-fat-stage-matter-for-hyderabadi-biryani",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "The oil stage is crucial for flavor.",
+    "story": "Imagine preparing a fragrant pot of Hyderabadi Biryani. You’ve layered the spices and marinated the meat, but something feels off. The aroma isn’t as vibrant as you expected.",
+    "useful_answer": "The oil or fat stage is important because it helps to infuse flavors into the biryani. If you boil the milk too hard, the saffron aroma can fade, affecting the dish's overall fragrance and taste. Pay attention to the heat to maintain that rich aroma.",
+    "related_problems": [
+      {
+        "q": "Why is my Hyderabadi Biryani too spicy or bland?",
+        "a": "If your biryani is too spicy or bland, it might be due to uneven spice distribution. Ensure you don’t leave dry spice patches on the chicken to achieve a balanced flavor."
+      },
+      {
+        "q": "Why does my Hyderabadi Biryani taste bitter or burnt?",
+        "a": "A bitter or burnt taste can occur if you use high heat throughout the cooking process. Avoid scorching the bottom by controlling the heat, especially during the final cooking stage."
+      },
+      {
+        "q": "Why is my Hyderabadi Biryani turning out soggy?",
+        "a": "Sogginess in biryani often results from aggressive mixing. Be gentle when combining the layers to prevent the rice from becoming mushy."
+      },
+      {
+        "q": "How can I improve my Hyderabadi Biryani?",
+        "a": "Improving your biryani involves careful handling of the rice. Avoid rubbing the grains too hard, skip soaking for too long, and ensure you don’t boil the milk hard, as it can diminish the saffron aroma."
+      }
+    ],
+    "emotional_ending": "Cooking biryani is an art. With attention to detail, you can elevate your dish to perfection."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does the oil or fat stage matter for Hyderabadi Biryani?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Hyderabadi Biryani too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Hyderabadi Biryani taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Hyderabadi Biryani turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Hyderabadi Biryani?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

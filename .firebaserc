@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "sattva-srsti"
+  },
+  "targets": {
+    "sattva-srsti": {
+      "hosting": {
+        "blog": [
+          "sattvasrsti-blog"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

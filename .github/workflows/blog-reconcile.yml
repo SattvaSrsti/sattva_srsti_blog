@@ -1,0 +1,46 @@
+# Daily: fill missing blog_posts for recipes_v2 (12:00 AM IST = 18:30 UTC)
+# Requires repo secrets: OPENAI_API_KEY, FIREBASE_SERVICE_ACCOUNT (JSON body)
+name: Blog reconcile
+
+on:
+  schedule:
+    - cron: "30 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+      - name: Write Firebase service account
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-sa.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$RUNNER_TEMP/firebase-sa.json" >> "$GITHUB_ENV"
+
+      - name: Reconcile recipes vs blog_posts
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FIREBASE_PROJECT_ID: sattva-srsti
+          BLOG_PUBLIC_BASE: https://sattvasrsti.blog
+          APP_RECIPE_BASE: https://sattvasrsti.com/recipe
+        run: |
+          python scripts/reconcile_blog_posts.py \
+            --cleanup-duplicates \
+            --sync-firestore \
+            --max-create 5
+
+      - name: Upload reconcile report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reconcile-report
+          path: preview/data/reconcile-report.json

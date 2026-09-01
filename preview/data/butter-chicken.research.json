@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Butter Chicken",
+    "cuisine": "North Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Butter Chicken too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not leave dry spice pockets in the yogurt."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Butter Chicken too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not cook it fully dry at this stage."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Butter Chicken taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the onion burn dark brown, or the sauce may taste bitter."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Butter Chicken stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the pan dry out; add a splash of water if it sticks."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Butter Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not blend boiling-hot sauce in a sealed blender jar."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_butter_chicken",
+  "slug": "butter-chicken"
+}

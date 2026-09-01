@@ -1,0 +1,46 @@
+{
+  "blog_id": "blog_avial-common-mistakes",
+  "recipe_id": "rec_avial",
+  "slug": "avial-common-mistakes",
+  "status": "ready",
+  "primary_question": "How do I fix common mistakes when making Avial?",
+  "seo_title": "How do I fix common mistakes when making Avial? | SattvaSrsti",
+  "meta_description": "Fix common Avial mistakes and cook the full customizable recipe on SattvaSrsti.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=avial-common-mistakes",
+  "humanized": {
+    "hook": "If avial keeps going wrong in your kitchen, you are not alone.",
+    "story": [
+      "Home cooks often struggle with Avial for small, fixable reasons.",
+      "The warnings in this recipe usually point straight at the real problem."
+    ],
+    "useful_answer": "Do not leave peeled raw banana exposed for long, as it can darken Also watch for Vegetables look clean with no visible dirt. Fix that first, then finish the full cook where you can customize.",
+    "common_questions": [
+      {
+        "q": "How do I fix common mistakes when making Avial?",
+        "a": "Do not leave peeled raw banana exposed for long, as it can darken Keep that in mind while you cook, and watch for Vegetables look clean with no visible dirt. Once you catch that cue once, the dish usually cooperates."
+      },
+      {
+        "q": "What else goes wrong with Avial?",
+        "a": "Do not cut the pieces too small, or they may break while cooking Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How can I improve my Avial?",
+        "a": "Avoid very thin pieces because avial vegetables should hold their shape Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How do I know Avial is ready?",
+        "a": "Look for Vegetables look clean with no visible dirt. Trust that signal more than the clock. When it looks and smells right, pull it."
+      },
+      {
+        "q": "Is Avial beginner friendly?",
+        "a": "Yes — start with the warnings above, then finish and customize on SattvaSrsti. Beginners do fine when the first mistakes are named out loud."
+      }
+    ],
+    "emotional_ending": "Once those details click, Avial becomes a reliable dish you can make your own."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  }
+}

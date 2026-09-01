@@ -1,0 +1,64 @@
+{
+  "recipe": {
+    "title": "Hyderabadi Biryani",
+    "cuisine": "Hyderabadi Indian"
+  },
+  "primary_question": {
+    "question": "Why does the oil or fat stage matter for Hyderabadi Biryani?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not boil the milk hard, or the saffron aroma can fade."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Hyderabadi Biryani too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave dry spice patches on the chicken."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Hyderabadi Biryani taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not use high heat for the whole time, or the bottom can scorch."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Hyderabadi Biryani turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not mix aggressively, or the rice can turn mushy."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Hyderabadi Biryani?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not rub the rice too hard, or the grains may break.",
+        "Do not skip soaking, or the rice may cook unevenly.",
+        "Do not soak for many hours, or the grains can turn fragile.",
+        "Do not boil the milk hard, or the saffron aroma can fade.",
+        "Do not leave dry spice patches on the chicken."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_hyderabadi_biryani",
+  "slug": "hyderabadi-biryani"
+}

@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-lemon-rice-not-turn-out-right",
+  "recipe_id": "rec_lemon_rice",
+  "slug": "why-does-my-lemon-rice-not-turn-out-right",
+  "status": "ready",
+  "primary_question": "Why does my Lemon Rice not turn out right?",
+  "seo_title": "Why does my Lemon Rice not turn out right? | SattvaSrsti",
+  "meta_description": "Discover why your Lemon Rice may not turn out right and how to perfect this South Indian classic.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-lemon-rice-not-turn-out-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Lemon Rice should be bright and flavorful.",
+    "story": "Imagine preparing Lemon Rice for a family meal. The aroma fills the kitchen, but when you taste it, something feels off. It’s not the vibrant dish you expected.",
+    "useful_answer": "To get your Lemon Rice just right, ensure you’re not using very hot rice, as it can become sticky. Fluff the rice gently without mashing it, so the grains stay separate. This will help maintain the dish's character and texture.",
+    "related_problems": [
+      {
+        "q": "How do I get better texture for Lemon Rice?",
+        "a": "Use rice that is not too hot and fluff gently to keep grains separate."
+      },
+      {
+        "q": "What are the key things to watch while making Lemon Rice?",
+        "a": "Avoid mashing the rice and ensure it’s cooled properly before mixing."
+      },
+      {
+        "q": "How do I know when Lemon Rice is ready?",
+        "a": "The rice should look separate and not sticky when mixed with the other ingredients."
+      },
+      {
+        "q": "How can I improve the taste of my Lemon Rice?",
+        "a": "Focus on using fresh lemon juice and the right balance of spices."
+      }
+    ],
+    "emotional_ending": "With these tips, your Lemon Rice can shine at the table. Enjoy the vibrant flavors and textures of this beloved dish."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Lemon Rice not turn out right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I get better texture for Lemon Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "What are the key things to watch while making Lemon Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I know when Lemon Rice is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How can I improve the taste of my Lemon Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    }
+  ]
+}

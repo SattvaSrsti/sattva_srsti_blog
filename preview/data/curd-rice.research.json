@@ -1,0 +1,61 @@
+{
+  "recipe": {
+    "title": "Curd Rice",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Curd Rice too dense or dry?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not leave dry pockets of rice unmixed."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does the oil or fat stage matter for Curd Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add wet curry leaves directly to hot oil; they can splutter strongly."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Curd Rice taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the oil smoke, or the tempering can taste bitter."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Curd Rice turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not stir roughly, or the rice can become mushy."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Curd Rice too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Curd Rice is a cooling South Indian comfort dish of soft rice mixed with yogurt and finished with mustard, curry leaves, ginger, and chilies.",
+        "Served at daily meals, lunch boxes, temple offerings, and festive spreads."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_curd_rice",
+  "slug": "curd-rice"
+}

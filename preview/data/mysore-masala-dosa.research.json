@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Mysore Masala Dosa",
+    "cuisine": "South Indian, Karnataka"
+  },
+  "primary_question": {
+    "question": "Why is my Mysore Masala Dosa turning out soggy?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not soak poha for hours; it can turn mushy"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Mysore Masala Dosa batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave hard rice bits in the batter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Mysore Masala Dosa?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the pot boil dry"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Mysore Masala Dosa too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave dry potato clumps"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Mysore Masala Dosa taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not burn the chillies; they become bitter quickly"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_mysore_masala_dosa",
+  "slug": "mysore-masala-dosa"
+}

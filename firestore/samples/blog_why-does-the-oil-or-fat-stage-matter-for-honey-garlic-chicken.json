@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-the-oil-or-fat-stage-matter-for-honey-garlic-chicken",
+  "recipe_id": "rec_honey_garlic_chicken",
+  "slug": "why-does-the-oil-or-fat-stage-matter-for-honey-garlic-chicken",
+  "status": "ready",
+  "primary_question": "Why does the oil or fat stage matter for Honey Garlic Chicken?",
+  "seo_title": "Why does the oil or fat stage matter for Honey Garlic Chicken? | SattvaSrsti",
+  "meta_description": "Discover why the oil stage is important for Honey Garlic Chicken and how to perfect your dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-the-oil-or-fat-stage-matter-for-honey-garlic-chicken",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "The oil stage is crucial for perfecting your dish.",
+    "story": "Imagine heating oil for your Honey Garlic Chicken. You want it just right, not too hot. Overheating can change everything.",
+    "useful_answer": "The oil stage matters because overheating can ruin the dish. If the oil gets too hot, it can affect the chicken's texture and flavor. Always aim for the right temperature to ensure a delicious outcome.",
+    "related_problems": [
+      {
+        "q": "How can I improve my Honey Garlic Chicken?",
+        "a": "To enhance your dish, avoid leaving lumps of honey and ensure all chicken pieces are well-coated. Properly managing the oil temperature is also essential."
+      },
+      {
+        "q": "How do I get better texture for Honey Garlic Chicken?",
+        "a": "For better texture, make sure there are no lumps of honey and that every chicken piece is coated. Overheating the oil can also lead to undesirable results."
+      },
+      {
+        "q": "How can I improve the taste of my Honey Garlic Chicken?",
+        "a": "Improving taste involves avoiding lumps of honey and ensuring full coverage of chicken pieces. Proper oil temperature plays a significant role in flavor as well."
+      },
+      {
+        "q": "How do I know Honey Garlic Chicken is ready?",
+        "a": "Your dish is ready when it has a smooth consistency, an aromatic garlic smell, and the chicken is fully covered in marinade. Look for shimmering oil and a golden brown color."
+      }
+    ],
+    "emotional_ending": "Getting the oil stage right can elevate your Honey Garlic Chicken. Enjoy the process and savor the flavors."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does the oil or fat stage matter for Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Honey Garlic Chicken?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I know Honey Garlic Chicken is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue"
+    }
+  ]
+}

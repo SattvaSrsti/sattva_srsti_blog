@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Bisi Bele Bath",
+    "cuisine": "Karnataka, South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Bisi Bele Bath too dense or dry?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not skip rinsing, or the bath can taste starchy and heavy."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does rinsing or soaking affect my Bisi Bele Bath?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not soak in dirty rinse water."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Bisi Bele Bath stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Cut drumstick into pieces that fit comfortably in the cooker."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Bisi Bele Bath taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Make sure enough water is present so the dal does not scorch."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Bisi Bele Bath?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Add curry leaves carefully because they splutter in hot ghee."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_bisi_bele_bath",
+  "slug": "bisi-bele-bath"
+}

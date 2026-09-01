@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-mysore-masala-dosa-turning-out-soggy",
+  "recipe_id": "rec_mysore_masala_dosa",
+  "slug": "why-is-my-mysore-masala-dosa-turning-out-soggy",
+  "status": "ready",
+  "primary_question": "Why is my Mysore Masala Dosa turning out soggy?",
+  "seo_title": "Why is my Mysore Masala Dosa turning out soggy? | SattvaSrsti",
+  "meta_description": "Discover why your Mysore Masala Dosa is soggy and how to fix it for the perfect crispy texture.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-mysore-masala-dosa-turning-out-soggy",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Soggy dosa can be a real letdown.",
+    "story": "Imagine the excitement of making Mysore Masala Dosa, only to find it soggy on the plate. This can be frustrating, especially when you aim for that perfect crispiness. Understanding the reasons behind this issue can help you achieve the ideal texture.",
+    "useful_answer": "The likely issue causing your Mysore Masala Dosa to turn soggy is the soaking of poha. If poha is soaked for too long, it can become mushy, affecting the batter's consistency and the dosa's final texture. Keep an eye on the soaking time to ensure your dosa turns out crisp.",
+    "related_problems": [
+      {
+        "q": "Why is my Mysore Masala Dosa batter not right?",
+        "a": "If your batter has hard rice bits, it won't blend well, leading to uneven cooking. Make sure to grind the rice and urad dal thoroughly to achieve a smooth consistency."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Mysore Masala Dosa?",
+        "a": "Letting the pot boil dry can ruin your dosa. Ensure there's enough oil or ghee in the pan to create a non-stick surface and allow for even cooking."
+      },
+      {
+        "q": "Why is my Mysore Masala Dosa too dense or dry?",
+        "a": "Leaving dry potato clumps in your filling can make the dosa dense. Ensure the potato is mashed smoothly and evenly mixed with spices for the best texture."
+      },
+      {
+        "q": "Why does my Mysore Masala Dosa taste bitter or burnt?",
+        "a": "Burning the chillies can lead to a bitter taste in your dosa. Be careful not to overcook them, as they can quickly turn from flavorful to burnt."
+      }
+    ],
+    "emotional_ending": "With a few adjustments, you can elevate your Mysore Masala Dosa to perfection. Enjoy the process and savor the delicious results."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Mysore Masala Dosa turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Mysore Masala Dosa batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Mysore Masala Dosa?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Mysore Masala Dosa too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Mysore Masala Dosa taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

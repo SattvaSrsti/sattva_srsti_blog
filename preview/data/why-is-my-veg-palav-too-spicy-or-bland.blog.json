@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-veg-palav-too-spicy-or-bland",
+  "recipe_id": "rec_veg_palav",
+  "slug": "why-is-my-veg-palav-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Veg Palav too spicy or bland?",
+  "seo_title": "Why is my Veg Palav too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Veg Palav might be too spicy or bland and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-veg-palav-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Spice balance is key in Veg Palav.",
+    "story": "Imagine stirring your pot of Veg Palav, only to find it either too fiery or lacking flavor. It can be frustrating when the spices don't play nicely together.",
+    "useful_answer": "The spice level in your Veg Palav could be off due to burning the spices. When spices burn, they can release a bitter taste, overshadowing the intended flavors. Pay close attention while cooking to avoid this mistake.",
+    "related_problems": [
+      {
+        "q": "How can I improve my Veg Palav?",
+        "a": "To enhance your Veg Palav, don't skip soaking the rice. This helps achieve a better texture. Also, ensure all vegetables are evenly chopped to cook uniformly."
+      },
+      {
+        "q": "How do I get better texture for Veg Palav?",
+        "a": "Soaking the rice is crucial for texture, as it allows grains to expand properly. Additionally, avoid burning the onion and overcooking the vegetables to maintain a pleasant bite."
+      },
+      {
+        "q": "How can I improve the taste of my Veg Palav?",
+        "a": "Improving taste starts with soaking the rice and ensuring vegetables are chopped evenly. Burning the spices or onion can ruin the flavor, so keep an eye on them while cooking."
+      },
+      {
+        "q": "How do I know Veg Palav is ready?",
+        "a": "Your Veg Palav is ready when the water runs clear, and you can smell a fragrant aroma. The onion should turn golden brown, and vegetables should start to soften."
+      }
+    ],
+    "emotional_ending": "Cooking is all about balance and attention. With a little care, your Veg Palav can be a delightful dish."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Veg Palav too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I know Veg Palav is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue"
+    }
+  ]
+}

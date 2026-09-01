@@ -1,0 +1,61 @@
+{
+  "recipe": {
+    "title": "Medu Vada",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does rinsing or soaking affect my Medu Vada?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "do not soak in very little water, or the dal may stay hard"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Medu Vada batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "too much leftover water can make the batter loose"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Medu Vada?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "do not let the oil smoke"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Medu Vada stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "do not use a dry hand, or the batter may stick"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Medu Vada not crispy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Medu Vada is a crisp, doughnut-shaped South Indian fritter made from urad dal batter with curry leaves, pepper, and green chilies.",
+        "It is a tiffin favorite served for breakfast, festivals, and temple-style meals."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_medu_vada",
+  "slug": "medu-vada"
+}

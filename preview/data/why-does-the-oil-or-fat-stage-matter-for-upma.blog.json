@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-the-oil-or-fat-stage-matter-for-upma",
+  "recipe_id": "rec_upma",
+  "slug": "why-does-the-oil-or-fat-stage-matter-for-upma",
+  "status": "ready",
+  "primary_question": "Why does the oil or fat stage matter for Upma?",
+  "seo_title": "Why does the oil or fat stage matter for Upma? | SattvaSrsti",
+  "meta_description": "Learn why the oil or fat stage matters for Upma and how to avoid common cooking pitfalls.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-the-oil-or-fat-stage-matter-for-upma",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Timing is everything in cooking Upma.",
+    "story": "Imagine preparing for a quick breakfast. You gather your ingredients but forget to have everything ready before heating the oil. This can lead to a rushed tempering process.",
+    "useful_answer": "The oil or fat stage is crucial because tempering needs to happen quickly. If you start heating the oil before all your ingredients are ready, you risk burning the spices and affecting the dish's flavor. Always have everything prepped to ensure a smooth cooking process.",
+    "related_problems": [
+      {
+        "q": "Why does my Upma taste bitter or burnt?",
+        "a": "If your Upma tastes bitter or burnt, it could be due to leaving the rava unstirred. Stirring is essential to prevent scorching in patches, which can ruin the dish."
+      },
+      {
+        "q": "Why is my Upma too spicy or bland?",
+        "a": "For a balanced flavor, be careful when handling green chillies. If you touch your eyes after handling them, it can lead to discomfort, making you feel the dish is too spicy."
+      },
+      {
+        "q": "Why is my Upma too dense or dry?",
+        "a": "If your Upma turns out too dense or dry, it might be because you cooked it uncovered for too long. Keeping it covered helps retain moisture and ensures a fluffy texture."
+      },
+      {
+        "q": "Why does my Upma stick or tear?",
+        "a": "Sticking or tearing can occur if you use high heat. Cooking on lower heat is essential to prevent the bottom from sticking and burning, ensuring a smooth finish."
+      }
+    ],
+    "emotional_ending": "Cooking Upma can be a delightful experience. With the right timing and attention, you can create a perfect dish that warms the heart."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does the oil or fat stage matter for Upma?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Upma taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Upma too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Upma too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Upma stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

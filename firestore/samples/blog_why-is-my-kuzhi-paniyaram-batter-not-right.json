@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-kuzhi-paniyaram-batter-not-right",
+  "recipe_id": "rec_kuzhi_paniyaram",
+  "slug": "why-is-my-kuzhi-paniyaram-batter-not-right",
+  "status": "ready",
+  "primary_question": "Why is my Kuzhi Paniyaram batter not right?",
+  "seo_title": "Why is my Kuzhi Paniyaram batter not right? | SattvaSrsti",
+  "meta_description": "Discover why your Kuzhi Paniyaram batter might not be right and how to fix it for the perfect dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-kuzhi-paniyaram-batter-not-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Getting the batter right is crucial for perfect Kuzhi Paniyaram.",
+    "story": "Imagine preparing for a family gathering, excited to serve Kuzhi Paniyaram. But when you check the batter, it feels off, and you're unsure what went wrong.",
+    "useful_answer": "The issue might be that your batter is too cold. Cooking with very cold batter can lead to heavy centers, so it's best to let it come to room temperature before cooking.",
+    "related_problems": [
+      {
+        "q": "Why does the oil or fat stage matter for Kuzhi Paniyaram?",
+        "a": "The oil stage is important to prevent splattering. If you add curry leaves from a wet hand, the moisture can cause the oil to splutter."
+      },
+      {
+        "q": "Why does my Kuzhi Paniyaram taste bitter or burnt?",
+        "a": "Bitter flavors can come from overcooking onions. If you brown the onion deeply, it can impart a bitter taste to the batter."
+      },
+      {
+        "q": "Why does my Kuzhi Paniyaram stick or tear?",
+        "a": "Overfilling the cavities in the pan can lead to sticking. If the batter spills over, it may stick to the pan and tear when you try to remove it."
+      },
+      {
+        "q": "Why is my Kuzhi Paniyaram too spicy or bland?",
+        "a": "Heat control is key. Keeping the heat too high can darken the outside while leaving the center soft, affecting the overall flavor."
+      }
+    ],
+    "emotional_ending": "Perfecting your Kuzhi Paniyaram takes practice. With the right adjustments, you can enjoy a delightful dish that everyone will love."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Kuzhi Paniyaram batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Kuzhi Paniyaram?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Kuzhi Paniyaram taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Kuzhi Paniyaram stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Kuzhi Paniyaram too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Instant Rava Dosa not turn out right?",
+  "hook": "Getting the perfect Instant Rava Dosa can be tricky.",
+  "story": "Imagine standing in the kitchen, ready to whip up a quick breakfast. You pour the batter onto the hot pan, but it just doesn’t spread like you expected.",
+  "useful_answer": "The issue might be with the consistency of your batter or the size of your ingredients. Make sure to chop onions into small, even pieces. Large chunks can prevent the dosa from spreading thinly. Also, avoid grinding pepper too finely if you want that classic speckled look.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Instant Rava Dosa?",
+      "a": "Ensure your batter is smooth and avoid large onion pieces."
+    },
+    {
+      "q": "What are the key things to watch while making Instant Rava Dosa?",
+      "a": "Focus on the size of your onions and the consistency of the batter."
+    },
+    {
+      "q": "How do I know when Instant Rava Dosa is ready?",
+      "a": "Look for a crisp, golden color and a lacy texture."
+    },
+    {
+      "q": "How can I improve the taste of my Instant Rava Dosa?",
+      "a": "Use fresh spices and ensure even ingredient sizes."
+    }
+  ],
+  "emotional_ending": "With a few adjustments, your Instant Rava Dosa can be just right. Enjoy it hot with chutney and sambar for a delightful meal.",
+  "meta_description": "Discover why your Instant Rava Dosa might not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

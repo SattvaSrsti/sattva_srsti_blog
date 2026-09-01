@@ -1,0 +1,46 @@
+{
+  "blog_id": "blog_arachuvitta-sambar-common-mistakes",
+  "recipe_id": "rec_arachuvitta_sambar",
+  "slug": "arachuvitta-sambar-common-mistakes",
+  "status": "ready",
+  "primary_question": "How do I fix common mistakes when making Arachuvitta Sambar?",
+  "seo_title": "How do I fix common mistakes when making Arachuvitta Sambar? | SattvaSrsti",
+  "meta_description": "Fix common Arachuvitta Sambar mistakes and cook the full customizable recipe on SattvaSrsti.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=arachuvitta-sambar-common-mistakes",
+  "humanized": {
+    "hook": "If arachuvitta sambar keeps going wrong in your kitchen, you are not alone.",
+    "story": [
+      "Home cooks often struggle with Arachuvitta Sambar for small, fixable reasons.",
+      "The warnings in this recipe usually point straight at the real problem."
+    ],
+    "useful_answer": "Do not fill the cooker too high, because dal can foam while cooking Also watch for Rinsing water changes from cloudy to mostly clear. Fix that first, then finish the full cook where you can customize.",
+    "common_questions": [
+      {
+        "q": "How do I fix common mistakes when making Arachuvitta Sambar?",
+        "a": "Do not fill the cooker too high, because dal can foam while cooking Keep that in mind while you cook, and watch for Rinsing water changes from cloudy to mostly clear. Once you catch that cue once, the dish usually cooperates."
+      },
+      {
+        "q": "What else goes wrong with Arachuvitta Sambar?",
+        "a": "Do not undercook the dal, or the sambar will taste thin and grainy Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How can I improve my Arachuvitta Sambar?",
+        "a": "Do not open the cooker while it is still pressurized Fix that early and the rest of the cook gets easier. Small corrections beat starting over."
+      },
+      {
+        "q": "How do I know Arachuvitta Sambar is ready?",
+        "a": "Look for Rinsing water changes from cloudy to mostly clear. Trust that signal more than the clock. When it looks and smells right, pull it."
+      },
+      {
+        "q": "Is Arachuvitta Sambar beginner friendly?",
+        "a": "Yes — start with the warnings above, then finish and customize on SattvaSrsti. Beginners do fine when the first mistakes are named out loud."
+      }
+    ],
+    "emotional_ending": "Once those details click, Arachuvitta Sambar becomes a reliable dish you can make your own."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  }
+}

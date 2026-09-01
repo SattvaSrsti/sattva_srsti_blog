@@ -1,0 +1,72 @@
+{
+  "recipe": {
+    "title": "Chole Bhature",
+    "cuisine": "North Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Chole Bhature too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Ensure spices do not burn."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Chole Bhature too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the gravy dry out."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Chole Bhature?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Ensure chickpeas are fully submerged in water.",
+        "Do not undercook chickpeas.",
+        "Do not burn the cumin seeds.",
+        "Avoid burning the onions.",
+        "Ensure spices do not burn."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Chole Bhature?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Ensure chickpeas are fully submerged in water.",
+        "Do not undercook chickpeas.",
+        "Do not burn the cumin seeds.",
+        "Avoid burning the onions.",
+        "Ensure spices do not burn."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Chole Bhature?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Ensure chickpeas are fully submerged in water.",
+        "Do not undercook chickpeas.",
+        "Do not burn the cumin seeds.",
+        "Avoid burning the onions.",
+        "Ensure spices do not burn."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_chole_bhature",
+  "slug": "chole-bhature"
+}

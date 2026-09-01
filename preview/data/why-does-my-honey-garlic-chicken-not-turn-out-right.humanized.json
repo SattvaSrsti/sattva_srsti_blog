@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Honey Garlic Chicken not turn out right?",
+  "hook": "Getting Honey Garlic Chicken just right can be tricky.",
+  "story": "Imagine preparing a lovely dinner, but the dish doesn’t quite meet expectations. The chicken might be too sweet or not flavorful enough, leaving you puzzled.",
+  "useful_answer": "The key issue could be the consistency of the honey. Make sure to avoid lumps for a smooth blend with the garlic. This will enhance the overall flavor and create that aromatic garlic smell that defines Honey Garlic Chicken.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Honey Garlic Chicken?",
+      "a": "Focus on achieving a smooth consistency without lumps of honey."
+    },
+    {
+      "q": "What are the key things to watch while making Honey Garlic Chicken?",
+      "a": "Pay attention to the honey's texture and ensure it blends well with the garlic."
+    },
+    {
+      "q": "How do I know when Honey Garlic Chicken is ready?",
+      "a": "Look for a well-combined sauce and a fragrant aroma from the garlic."
+    },
+    {
+      "q": "How can I improve the taste of my Honey Garlic Chicken?",
+      "a": "Ensure a smooth honey consistency to enhance the dish's flavor."
+    }
+  ],
+  "emotional_ending": "With a few adjustments, your Honey Garlic Chicken can impress at dinner. Enjoy the process and the delightful flavors.",
+  "meta_description": "Discover why your Honey Garlic Chicken might not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

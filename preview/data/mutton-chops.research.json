@@ -1,0 +1,76 @@
+{
+  "recipe": {
+    "title": "Mutton Chops",
+    "cuisine": "Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Mutton Chops too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not overheat the grill."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "How can I improve my Mutton Chops?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid adding too much salt.",
+        "Ensure all chops are covered with marinade.",
+        "Do not overheat the grill.",
+        "Avoid undercooking the meat.",
+        "Do not skip resting the meat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Mutton Chops?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid adding too much salt.",
+        "Ensure all chops are covered with marinade.",
+        "Do not overheat the grill.",
+        "Avoid undercooking the meat.",
+        "Do not skip resting the meat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Mutton Chops?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid adding too much salt.",
+        "Ensure all chops are covered with marinade.",
+        "Do not overheat the grill.",
+        "Avoid undercooking the meat.",
+        "Do not skip resting the meat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I know Mutton Chops is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue",
+      "evidence": [
+        "fragrant aroma",
+        "evenly coated",
+        "slight smoke from oil",
+        "browned surface",
+        "juicy texture"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_mutton_chops",
+  "slug": "mutton-chops"
+}

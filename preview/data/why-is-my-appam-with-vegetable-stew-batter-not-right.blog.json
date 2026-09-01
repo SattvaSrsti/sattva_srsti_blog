@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-appam-with-vegetable-stew-batter-not-right",
+  "recipe_id": "rec_appam_with_vegetable_stew",
+  "slug": "why-is-my-appam-with-vegetable-stew-batter-not-right",
+  "status": "ready",
+  "primary_question": "Why is my Appam With Vegetable Stew batter not right?",
+  "seo_title": "Why is my Appam With Vegetable Stew batter not right? | SattvaSrsti",
+  "meta_description": "Discover why your Appam With Vegetable Stew batter isn't right and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-appam-with-vegetable-stew-batter-not-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Batter issues can be frustrating.",
+    "story": "Imagine preparing a delightful Appam with Vegetable Stew, only to find the batter off. It can be disheartening when your efforts don't yield the expected results. Understanding the basics can make all the difference.",
+    "useful_answer": "If your batter isn't right, make sure you rinsed the rice thoroughly. Skipping this step can leave a starchy taste that affects the overall flavor of your Appam.",
+    "related_problems": [
+      {
+        "q": "Why does rinsing or soaking affect my Appam With Vegetable Stew?",
+        "a": "Rinsing and soaking are crucial for the texture of your batter. If the rice isn't fully covered in water during soaking, it won't absorb enough moisture, leading to a poor consistency."
+      },
+      {
+        "q": "Why is my Appam With Vegetable Stew too spicy or bland?",
+        "a": "The balance of spices is key in any dish. If you handle green chillies, be careful not to touch your eyes, as this can affect your perception of spice levels."
+      },
+      {
+        "q": "Why does my Appam With Vegetable Stew taste bitter or burnt?",
+        "a": "Burnt spices can ruin the flavor of your stew. Always keep an eye on your spices while cooking; letting them turn black can lead to a bitter taste."
+      },
+      {
+        "q": "Why does my Appam With Vegetable Stew stick or tear?",
+        "a": "If your Appam batter sticks or tears, it might be due to the ginger sticking to the pan. Stirring often can help prevent this issue."
+      }
+    ],
+    "emotional_ending": "Cooking is a journey of learning. With a few adjustments, your Appam with Vegetable Stew can turn out beautifully."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Appam With Vegetable Stew batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does rinsing or soaking affect my Appam With Vegetable Stew?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Appam With Vegetable Stew too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Appam With Vegetable Stew taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Appam With Vegetable Stew stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

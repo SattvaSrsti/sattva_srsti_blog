@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-lemon-rice-stick-or-tear",
+  "recipe_id": "rec_lemon_rice",
+  "slug": "why-does-my-lemon-rice-stick-or-tear",
+  "status": "ready",
+  "primary_question": "Why does my Lemon Rice stick or tear?",
+  "seo_title": "Why does my Lemon Rice stick or tear? | SattvaSrsti",
+  "meta_description": "Discover why your Lemon Rice sticks or tears and how to achieve the perfect texture.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-lemon-rice-stick-or-tear",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Sticky rice can ruin your dish.",
+    "story": "Imagine preparing a vibrant Lemon Rice, only to find it clumping together. It’s frustrating when the texture doesn’t match the bright flavors you expect.",
+    "useful_answer": "The main reason your Lemon Rice might stick or tear is if you use very hot rice. Always let the rice cool slightly before mixing it with the other ingredients to maintain a fluffy texture.",
+    "related_problems": [
+      {
+        "q": "Why is my Lemon Rice too spicy or bland?",
+        "a": "If your Lemon Rice is too spicy or bland, it might be due to how you handle green chilies. Remember to wash your hands thoroughly and avoid touching your eyes after handling them."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Lemon Rice?",
+        "a": "The oil or fat stage is crucial because adding lemon juice to hot oil can alter the flavor. It’s best to let the oil cool slightly before mixing in the lemon juice."
+      },
+      {
+        "q": "Why does my Lemon Rice taste bitter or burnt?",
+        "a": "If your Lemon Rice tastes bitter or burnt, it could be because you cooked it too long after adding asafoetida. This spice can turn bitter if overcooked."
+      },
+      {
+        "q": "Why is my Lemon Rice too dense or dry?",
+        "a": "For dense or dry Lemon Rice, check if you added wet curry leaves without drying them first. Wet leaves can introduce excess moisture, affecting the rice's texture."
+      }
+    ],
+    "emotional_ending": "Getting the texture just right can elevate your Lemon Rice. With a few adjustments, you can enjoy a perfect dish every time."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Lemon Rice stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Lemon Rice too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Lemon Rice?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Lemon Rice taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Lemon Rice too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

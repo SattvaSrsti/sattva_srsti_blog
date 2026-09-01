@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Upma",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does the oil or fat stage matter for Upma?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not start heating oil before everything is ready; tempering moves quickly."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Upma taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave rava unstirred; it can scorch in patches."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Upma too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not touch your eyes after handling green chilli."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Upma too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not cook uncovered for too long, or the upma may dry out."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Upma stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not use high heat here; the bottom can stick and burn."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_upma",
+  "slug": "upma"
+}

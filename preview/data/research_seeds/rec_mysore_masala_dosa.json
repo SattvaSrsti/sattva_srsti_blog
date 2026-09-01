@@ -1,0 +1,60 @@
+{
+  "recipe_id": "rec_mysore_masala_dosa",
+  "recipe_title": "Mysore Masala Dosa",
+  "cuisine": "South Indian, Karnataka",
+  "meal_type": "Breakfast",
+  "research_questions": [
+    {
+      "q": "Why is my Mysore masala dosa not crispy?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-we-make-perfectly-crisp-dosas-that-are-not-roasted-but-are-golden-brown",
+      "source_answers": [
+        "Batter should be flowy, not watery and not thick — watery sticks, thick stays soft.",
+        "Use a well-heated iron tawa; sprinkle water to test sizzle before spreading.",
+        "Oil around the edges helps crispness; too much oil makes it greasy and less crisp.",
+        "Restaurant-style Mysore dosa is crisp outside and a little soft/spongy inside — not a paper roast."
+      ]
+    },
+    {
+      "q": "Why does my dosa stick to the pan?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/My-dosa-always-sticks-to-pan-whats-the-solution",
+      "source_answers": [
+        "Pan neither too hot nor too cold — water should sizzle, not explode into steam.",
+        "Batter should be creamy; too thick or poorly ground batter sticks.",
+        "Iron tawa needs seasoning with oil (onion-oil rub is a common home fix). Non-stick does not need onion rub.",
+        "If the tawa is too hot, batter lumps and will not spread thin."
+      ]
+    },
+    {
+      "q": "What makes Mysore masala dosa different from regular masala dosa?",
+      "source": "established_site",
+      "source_url": "https://zeezest.com/food/how-is-mysore-masala-different-from-other-dosas-zee-zest-44",
+      "source_answers": [
+        "The difference is the fiery red chilli-garlic chutney smeared inside before the potato filling.",
+        "Authentic Mysore style is crisp outside with a slightly spongy bite inside, often golden-brown.",
+        "Regular masala dosa is the crepe plus potato palya; Mysore adds that red chutney layer."
+      ]
+    },
+    {
+      "q": "Should dosa batter be thick or thin?",
+      "source": "established_site",
+      "source_url": "https://eat-fresh.in/should-dosa-batter-be-thick-or-thin-the-ultimate-texture-guide",
+      "source_answers": [
+        "For crisp dosa, batter should pour like thin cream / thin pancake batter — spreadable, not stiff.",
+        "Too thick traps moisture and cooks like a pancake. Too thin tears and will not crisp.",
+        "After fermentation, add water a little at a time until it spreads in one circular motion."
+      ]
+    },
+    {
+      "q": "Why does the potato filling make my dosa soggy?",
+      "source": "established_site",
+      "source_url": "https://www.timesnownews.com/lifestyle/food/chef-sanjeev-kapoor-shares-7-common-dosa-mistakes-and-how-to-fix-them-article-153244648",
+      "source_answers": [
+        "Add potato masala only at the end, once the dosa has set.",
+        "Filling should be moist, not watery — wet palya soaks the crepe.",
+        "Eat immediately; sitting after folding loses crispness."
+      ]
+    }
+  ]
+}

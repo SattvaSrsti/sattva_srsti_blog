@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-does-my-idiyappam-not-turn-out-right",
+  "recipe_id": "rec_idiyappam",
+  "slug": "why-does-my-idiyappam-not-turn-out-right",
+  "status": "ready",
+  "primary_question": "Why does my Idiyappam not turn out right?",
+  "seo_title": "Why does my Idiyappam not turn out right? | SattvaSrsti",
+  "meta_description": "Learn why your Idiyappam may not turn out right and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-does-my-idiyappam-not-turn-out-right",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Getting Idiyappam just right can be tricky.",
+    "story": "Picture this: you’re excited to serve Idiyappam for breakfast. But when you lift the steamer lid, it’s not what you expected. The strands look off, and you wonder what went wrong.",
+    "useful_answer": "The key to perfect Idiyappam is in the water and greasing. Make sure not to add too much water that it touches the Idiyappam while steaming. Also, avoid over-greasing the plates; they should look lightly shiny, not oily. These small adjustments can make a big difference in texture and taste.",
+    "related_problems": [
+      {
+        "q": "How do I get better texture for Idiyappam?",
+        "a": "Focus on the water level and greasing of the plates."
+      },
+      {
+        "q": "What are the key things to watch while making Idiyappam?",
+        "a": "Monitor the water and how much you grease the steaming plates."
+      },
+      {
+        "q": "How do I know when Idiyappam is ready?",
+        "a": "Check that the water does not touch the Idiyappam during steaming."
+      },
+      {
+        "q": "How can I improve the taste of my Idiyappam?",
+        "a": "Ensure the right water level and greasing for better flavor."
+      }
+    ],
+    "emotional_ending": "With these tips, you can enjoy soft and delicious Idiyappam. Dive into the full recipe in the SattvaSrsti app and perfect your dish."
+  },
+  "customize_fixed": {
+    "title": "Customize your recipe on SattvaSrsti",
+    "body": "SattvaSrsti is a complete recipe customization engine — ingredients, steps, spice, and taste, shaped around what you need. This blog helps you fix the problem; the app is where you cook the full recipe and make it yours.",
+    "cta_label": "Customize & cook on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why does my Idiyappam not turn out right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I get better texture for Idiyappam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "What are the key things to watch while making Idiyappam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How do I know when Idiyappam is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    },
+    {
+      "q": "How can I improve the taste of my Idiyappam?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "generated"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Instant Rava Dosa",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Instant Rava Dosa too dense or dry?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not add water before mixing the dry ingredients, or lumps form more easily"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Instant Rava Dosa batter not right?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not make a thick dosa batter; rava dosa needs a thin batter to become lacy"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Instant Rava Dosa?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the oil smoke heavily"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Instant Rava Dosa stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not flip or move too early, or the dosa will tear"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Instant Rava Dosa not crispy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not lower the heat too much, or it will turn chewy instead of crisp"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_instant_rava_dosa",
+  "slug": "instant-rava-dosa"
+}

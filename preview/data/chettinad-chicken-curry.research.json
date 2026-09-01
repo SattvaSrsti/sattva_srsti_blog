@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Chettinad Chicken Curry",
+    "cuisine": "Chettinad South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Chettinad Chicken Curry too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not use high heat because the chillies and small seeds can burn fast"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Chettinad Chicken Curry taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not brown the coconut too much or the curry may taste bitter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Chettinad Chicken Curry too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Stop and scrape the grinder so dry bits do not remain"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Chettinad Chicken Curry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add wet curry leaves to hot oil without care because they may splutter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Chettinad Chicken Curry stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Stir often so the onion does not stick"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_chettinad_chicken_curry",
+  "slug": "chettinad-chicken-curry"
+}

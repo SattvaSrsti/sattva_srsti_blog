@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Arachuvitta Sambar",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Arachuvitta Sambar too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not use high heat, because the dals and chilli can burn quickly"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Arachuvitta Sambar taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not roast fenugreek for long, or the sambar may taste bitter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Arachuvitta Sambar stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not make drumstick pieces too large, or they will cook slowly"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Arachuvitta Sambar?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not boil so hard that the liquid reduces too much"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Arachuvitta Sambar turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not cook on very high heat after adding brinjal, because it can turn mushy"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_arachuvitta_sambar",
+  "slug": "arachuvitta-sambar"
+}

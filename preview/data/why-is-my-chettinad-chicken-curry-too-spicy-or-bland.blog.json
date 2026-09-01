@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-chettinad-chicken-curry-too-spicy-or-bland",
+  "recipe_id": "rec_chettinad_chicken_curry",
+  "slug": "why-is-my-chettinad-chicken-curry-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Chettinad Chicken Curry too spicy or bland?",
+  "seo_title": "Why is my Chettinad Chicken Curry too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Chettinad Chicken Curry might be too spicy or bland and how to fix it.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-chettinad-chicken-curry-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Spice levels can make or break your curry.",
+    "story": "Imagine preparing a fragrant Chettinad Chicken Curry, only to find it either too fiery or lacking in flavor. It can be frustrating when the balance isn't right.",
+    "useful_answer": "The spice level in your Chettinad Chicken Curry may be affected by cooking temperature. If you're using high heat, the chillies and small seeds can burn quickly, leading to an overpowering spiciness. To avoid this, cook on medium heat and taste as you go to adjust the seasoning.",
+    "related_problems": [
+      {
+        "q": "Why does my Chettinad Chicken Curry taste bitter or burnt?",
+        "a": "Bitterness in your curry often comes from over-browning the coconut. Be careful not to let it brown too much, as this can lead to an unpleasant taste."
+      },
+      {
+        "q": "Why is my Chettinad Chicken Curry too dense or dry?",
+        "a": "If your curry is dense or dry, it may be due to not scraping the grinder properly. Make sure to stop and scrape down the sides to incorporate all ingredients evenly."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Chettinad Chicken Curry?",
+        "a": "The oil stage is crucial; adding wet curry leaves to hot oil can cause spluttering. This can disrupt the cooking process and lead to uneven flavor."
+      },
+      {
+        "q": "Why does my Chettinad Chicken Curry stick or tear?",
+        "a": "Sticking or tearing can happen if you don't stir often. Regular stirring helps prevent the onion from sticking to the bottom of the pan."
+      }
+    ],
+    "emotional_ending": "Finding the right balance in your curry takes practice. With attention to detail, your Chettinad Chicken Curry can become a delightful dish."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Chettinad Chicken Curry too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Chettinad Chicken Curry taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Chettinad Chicken Curry too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Chettinad Chicken Curry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Chettinad Chicken Curry stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

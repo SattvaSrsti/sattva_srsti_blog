@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-avial-turning-out-soggy",
+  "recipe_id": "rec_avial",
+  "slug": "why-is-my-avial-turning-out-soggy",
+  "status": "ready",
+  "primary_question": "Why is my Avial turning out soggy?",
+  "seo_title": "Why is my Avial turning out soggy? | SattvaSrsti",
+  "meta_description": "Discover why your Avial is turning out soggy and how to fix it for a perfect South Indian dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-avial-turning-out-soggy",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Soggy Avial can be frustrating.",
+    "story": "Imagine preparing a festive meal, only to find your Avial isn't holding its shape. The vibrant vegetables you chose are now a mushy mix, losing their appeal.",
+    "useful_answer": "The likely issue is overcooking. Make sure not to cook the vegetables until mushy, as this will lead to a soggy texture. Keep an eye on the cooking time to maintain that perfect consistency.",
+    "related_problems": [
+      {
+        "q": "Why does the oil or fat stage matter for Avial?",
+        "a": "The oil stage is crucial because you should not boil hard after adding the coconut paste. This prevents the Avial from becoming too watery and helps maintain the right texture."
+      },
+      {
+        "q": "How can I improve my Avial?",
+        "a": "To enhance your Avial, avoid leaving peeled raw banana exposed for long, as it can darken. Also, ensure that the vegetable pieces are not too small, or they may break while cooking."
+      },
+      {
+        "q": "How do I get better texture for Avial?",
+        "a": "For better texture, avoid cutting the vegetables into very thin pieces, as they need to hold their shape. Additionally, do not grind with too much water, or the Avial will turn runny."
+      },
+      {
+        "q": "How can I improve the taste of my Avial?",
+        "a": "To improve the taste, ensure you do not add too much water. The Avial should be thick, not soupy, which helps concentrate the flavors and enhances the overall taste."
+      }
+    ],
+    "emotional_ending": "Getting the right texture can elevate your dish. With a little attention, your Avial can be a delightful addition to any meal."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Avial turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve my Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How do I get better texture for Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "How can I improve the taste of my Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

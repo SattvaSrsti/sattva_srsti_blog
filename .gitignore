@@ -1,0 +1,12 @@
+.env
+**/__pycache__/
+*.pyc
+.DS_Store
+.firebase/
+deploy/public/
+preview/data/*.llm-context.json
+preview/data/*.api-report.json
+preview/data/*.live.json
+preview/data/*-report.json
+preview/data/batch-*.json
+preview/data/last-pipeline-run.json

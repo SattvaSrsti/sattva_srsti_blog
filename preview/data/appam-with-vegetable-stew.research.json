@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Appam With Vegetable Stew",
+    "cuisine": "Kerala"
+  },
+  "primary_question": {
+    "question": "Why is my Appam With Vegetable Stew batter not right?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not skip rinsing, or the batter may taste starchy"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does rinsing or soaking affect my Appam With Vegetable Stew?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not soak in too little water; the rice must stay fully covered"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Appam With Vegetable Stew too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid touching your eyes after handling green chilli"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Appam With Vegetable Stew taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the spices turn black or bitter"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Appam With Vegetable Stew stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Stir often so the ginger does not stick"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_appam_with_vegetable_stew",
+  "slug": "appam-with-vegetable-stew"
+}

@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why is my Chole Bhature too spicy or bland?",
+  "hook": "Finding the right spice balance can be tricky.",
+  "story": "Imagine serving Chole Bhature to friends, only to find the flavors off. Too spicy or too bland can ruin the experience.",
+  "useful_answer": "The spice level in your Chole Bhature might be affected by how you handle the spices during cooking. Ensure that the spices do not burn, as this can lead to an unpleasant bitterness or overpowering heat.",
+  "related_problems": [
+    {
+      "q": "Why is my Chole Bhature too dense or dry?",
+      "a": "If your Chole Bhature is dense or dry, it could be because the gravy has dried out. Make sure to keep an eye on the consistency and add water as needed."
+    },
+    {
+      "q": "How can I improve my Chole Bhature?",
+      "a": "To enhance your Chole Bhature, ensure that the chickpeas are fully submerged in water and do not undercook them. Also, avoid burning the cumin seeds and onions, as this can affect the overall flavor."
+    },
+    {
+      "q": "How do I get better texture for Chole Bhature?",
+      "a": "For better texture, ensure the chickpeas are fully submerged in water and not undercooked. Also, be careful not to burn the cumin seeds and onions during the cooking process."
+    },
+    {
+      "q": "How can I improve the taste of my Chole Bhature?",
+      "a": "Improving the taste involves ensuring the chickpeas are fully submerged in water and properly cooked. Avoid burning the cumin seeds and onions, and make sure the spices do not burn to maintain a balanced flavor."
+    }
+  ],
+  "emotional_ending": "Getting the flavors just right can make your Chole Bhature shine. With a little attention, you can create a dish that delights everyone.",
+  "meta_description": "Discover why your Chole Bhature might be too spicy or bland and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

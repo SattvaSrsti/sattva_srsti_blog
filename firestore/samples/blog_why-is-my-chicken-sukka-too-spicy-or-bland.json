@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-chicken-sukka-too-spicy-or-bland",
+  "recipe_id": "rec_chicken_sukka",
+  "slug": "why-is-my-chicken-sukka-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Chicken Sukka too spicy or bland?",
+  "seo_title": "Why is my Chicken Sukka too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Chicken Sukka might be too spicy or bland and how to perfect this Mangalorean dish.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-chicken-sukka-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Balancing spices in Chicken Sukka is crucial.",
+    "story": "Imagine preparing a flavorful Chicken Sukka, only to find it either too spicy or lacking in taste. This can be frustrating, especially when you want to impress with authentic flavors.",
+    "useful_answer": "The key to avoiding an overly spicy or bland Chicken Sukka lies in careful attention to the spices. If you walk away while cooking, dry spices can burn quickly, leading to an unbalanced flavor. Stay close and adjust the spice levels as needed during cooking.",
+    "related_problems": [
+      {
+        "q": "Why does my Chicken Sukka stick or tear?",
+        "a": "If your Chicken Sukka sticks or tears, it might be because you ground the paste while it was too hot. This can cause the mixture to become sticky, making it difficult to handle."
+      },
+      {
+        "q": "Why is my Chicken Sukka too dense or dry?",
+        "a": "A dense or dry Chicken Sukka can result from adding too much water. This will extend the cooking time, preventing the dish from achieving the desired dry consistency."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Chicken Sukka?",
+        "a": "The oil or fat stage is crucial for Chicken Sukka. If the oil smokes, it can affect the flavor and texture of the dish, leading to undesirable results."
+      },
+      {
+        "q": "Why does my Chicken Sukka taste bitter or burnt?",
+        "a": "A bitter or burnt taste in Chicken Sukka often comes from browning the onion too dark. Keeping an eye on the cooking process can help maintain the right flavor profile."
+      }
+    ],
+    "emotional_ending": "Cooking should be a joyful experience. With a little attention, you can create a Chicken Sukka that's just right."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Chicken Sukka too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Chicken Sukka stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Chicken Sukka too dense or dry?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Chicken Sukka?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Chicken Sukka taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}

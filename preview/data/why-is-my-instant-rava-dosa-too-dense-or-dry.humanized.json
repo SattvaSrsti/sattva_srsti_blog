@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why is my Instant Rava Dosa too dense or dry?",
+  "hook": "A light and crispy dosa is the goal.",
+  "story": "Imagine getting ready for a weekend breakfast. You pour the batter, but instead of a lacy dosa, you see something dense and dry. It’s frustrating when expectations don’t meet reality.",
+  "useful_answer": "The likely issue is related to how you mixed your ingredients. If you added water before mixing the dry rava, lumps could form, leading to a dense texture. Always mix the dry ingredients first to ensure a smooth batter.",
+  "related_problems": [
+    {
+      "q": "Why is my Instant Rava Dosa batter not right?",
+      "a": "A thin batter is essential for a good rava dosa. If your batter is too thick, it won't create the desired lacy texture. Aim for a consistency that flows easily from the ladle."
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Instant Rava Dosa?",
+      "a": "The temperature of the oil is crucial. If it smokes heavily, it can affect the dosa's cooking process, leading to undesirable textures. Always heat the oil just enough to sizzle without smoking."
+    },
+    {
+      "q": "Why does my Instant Rava Dosa stick or tear?",
+      "a": "Timing is everything when flipping the dosa. If you try to move it too early, it will stick and tear. Wait until the edges lift easily before flipping."
+    },
+    {
+      "q": "Why is my Instant Rava Dosa not crispy?",
+      "a": "Crispiness is often lost if the heat is too low. Keeping the heat at the right level is vital; too low, and the dosa turns chewy instead of crisp."
+    }
+  ],
+  "emotional_ending": "Cooking should be enjoyable, not stressful. With a few adjustments, you can master the art of making perfect Instant Rava Dosa.",
+  "meta_description": "Discover why your Instant Rava Dosa is too dense or dry and how to achieve the perfect texture.",
+  "capability_id": "guided_recipe_customization"
+}

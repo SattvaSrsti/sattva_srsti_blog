@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Medu Vada not turn out right?",
+  "hook": "Getting Medu Vada just right can be tricky.",
+  "story": "Imagine preparing for a festive breakfast. You want those perfect, crispy Medu Vadas. But when they don’t turn out as expected, it can be frustrating.",
+  "useful_answer": "The key to great Medu Vada lies in the urad dal. Make sure to check for small stones or grit before soaking. When you rinse, the water should change from cloudy to mostly clear, and the dal should feel clean when rubbed between your fingers. This ensures a smooth batter, which is essential for that perfect texture.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Medu Vada?",
+      "a": "Ensure the urad dal is clean and soaked properly."
+    },
+    {
+      "q": "What are the key things to watch while making Medu Vada?",
+      "a": "Focus on the cleanliness of the dal and the consistency of the batter."
+    },
+    {
+      "q": "How do I know when Medu Vada is ready?",
+      "a": "Look for a golden-brown color and a crispy texture."
+    },
+    {
+      "q": "How can I improve the taste of my Medu Vada?",
+      "a": "Incorporate fresh curry leaves, pepper, and green chilies for flavor."
+    }
+  ],
+  "emotional_ending": "With these tips, you’ll be on your way to making delicious Medu Vadas. Enjoy the process and the delightful results!",
+  "meta_description": "Discover why your Medu Vada may not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

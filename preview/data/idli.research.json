@@ -1,0 +1,76 @@
+{
+  "recipe": {
+    "title": "Idli",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Idli batter not right?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Don't disturb the batter during fermentation."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "How can I improve my Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip rinsing to remove excess starch.",
+        "Ensure rice is fully submerged.",
+        "Ensure dal and seeds are fully submerged.",
+        "Don't add too much water.",
+        "Avoid over-grinding to a smooth paste."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip rinsing to remove excess starch.",
+        "Ensure rice is fully submerged.",
+        "Ensure dal and seeds are fully submerged.",
+        "Don't add too much water.",
+        "Avoid over-grinding to a smooth paste."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Idli?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip rinsing to remove excess starch.",
+        "Ensure rice is fully submerged.",
+        "Ensure dal and seeds are fully submerged.",
+        "Don't add too much water.",
+        "Avoid over-grinding to a smooth paste."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I know Idli is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue",
+      "evidence": [
+        "water runs clear",
+        "smooth and fluffy texture",
+        "slightly coarse texture",
+        "well-mixed batter",
+        "batter doubles in volume"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_idli",
+  "slug": "idli"
+}

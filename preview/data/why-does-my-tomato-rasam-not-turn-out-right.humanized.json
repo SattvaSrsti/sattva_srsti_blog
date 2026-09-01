@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Tomato Rasam not turn out right?",
+  "hook": "Getting Tomato Rasam just right can be tricky.",
+  "story": "Imagine stirring a pot of Tomato Rasam, hoping for that perfect balance of tangy and spicy. But when you taste it, something feels off. It’s frustrating when a beloved dish doesn’t meet expectations.",
+  "useful_answer": "To improve your Tomato Rasam, ensure you're using ripe tomatoes and the right amount of water. If you use too little water, the dal can scorch, affecting the overall flavor and texture. Also, remember not to open the cooker while it's under pressure, as this can disrupt the cooking process.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Tomato Rasam?",
+      "a": "Focus on using the right amount of water and ensure the dal is cooked properly."
+    },
+    {
+      "q": "What are the key things to watch while making Tomato Rasam?",
+      "a": "Pay attention to the water level and avoid opening the cooker prematurely."
+    },
+    {
+      "q": "How do I know when Tomato Rasam is ready?",
+      "a": "Look for split and swollen dal grains as an indicator of doneness."
+    },
+    {
+      "q": "How can I improve the taste of my Tomato Rasam?",
+      "a": "Ensure you’re using ripe tomatoes and the correct seasoning."
+    }
+  ],
+  "emotional_ending": "With a few adjustments, you can create a comforting bowl of Tomato Rasam. Enjoy the delightful flavors that make this dish a staple in South Indian cuisine.",
+  "meta_description": "Discover why your Tomato Rasam may not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

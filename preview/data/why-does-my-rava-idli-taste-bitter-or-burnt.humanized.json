@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Rava Idli taste bitter or burnt?",
+  "hook": "A simple stirring mistake can ruin your Rava Idli.",
+  "story": "Imagine preparing Rava Idli for breakfast, excited for the fluffy texture. But when you take a bite, it's bitter and burnt. What went wrong?",
+  "useful_answer": "The bitterness or burnt taste often comes from not stirring the rava continuously while roasting. If you stop stirring, the rava can scorch, leading to that unpleasant flavor. Keep the rava moving in the pan to ensure even cooking.",
+  "related_problems": [
+    {
+      "q": "Why does the oil or fat stage matter for Rava Idli?",
+      "a": "The oil stage is crucial because when adding curry leaves to hot ghee, they can splutter. Standing back during this step helps avoid burns and ensures a safe cooking environment."
+    },
+    {
+      "q": "Why does my Rava Idli curdle or split?",
+      "a": "Adding curd to the mixture while it's still hot can cause it to split. It's important to let the mixture cool down before incorporating curd to maintain a smooth batter."
+    },
+    {
+      "q": "Why is my Rava Idli batter not right?",
+      "a": "If the batter is too runny, it won't hold together well. Rava Idli batter should be thick, so be careful not to add too much liquid."
+    },
+    {
+      "q": "Why is my Rava Idli too dense or dry?",
+      "a": "Leaving lumps of dry rava at the bottom of the batter can make the idlis dense. Ensure the rava is well mixed and free of lumps for a light texture."
+    }
+  ],
+  "emotional_ending": "Cooking should be a joyful experience, not a frustrating one. With a little attention, your Rava Idli can be perfect every time.",
+  "meta_description": "Learn why your Rava Idli may taste bitter or burnt and how to fix it for a delightful South Indian breakfast.",
+  "capability_id": "guided_recipe_customization"
+}

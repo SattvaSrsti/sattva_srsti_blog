@@ -1,0 +1,76 @@
+{
+  "recipe": {
+    "title": "Veg Palav",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Veg Palav too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Don't burn the spices."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "How can I improve my Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip soaking the rice.",
+        "Ensure all vegetables are evenly chopped.",
+        "Don't burn the spices.",
+        "Avoid burning the onion.",
+        "Don't overcook the vegetables."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip soaking the rice.",
+        "Ensure all vegetables are evenly chopped.",
+        "Don't burn the spices.",
+        "Avoid burning the onion.",
+        "Don't overcook the vegetables."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Veg Palav?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Don't skip soaking the rice.",
+        "Ensure all vegetables are evenly chopped.",
+        "Don't burn the spices.",
+        "Avoid burning the onion.",
+        "Don't overcook the vegetables."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I know Veg Palav is ready?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_cue",
+      "evidence": [
+        "water runs clear",
+        "fragrant aroma",
+        "onion turns golden brown",
+        "vegetables start to soften",
+        "tomato softens"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_veg_palav",
+  "slug": "veg-palav"
+}

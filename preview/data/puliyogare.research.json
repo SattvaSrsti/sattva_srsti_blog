@@ -1,0 +1,60 @@
+{
+  "recipe": {
+    "title": "Puliyogare",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why does my Puliyogare stick or tear?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not skip rinsing, or the rice may turn sticky."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does rinsing or soaking affect my Puliyogare?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not discard the dark soaking water."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Puliyogare too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not roast on very high heat."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does my Puliyogare taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not over-roast fenugreek, or it will taste bitter."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Puliyogare?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not over-grind until the sesame and coconut release oil."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_puliyogare",
+  "slug": "puliyogare"
+}

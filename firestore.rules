@@ -1,0 +1,97 @@
+rules_version = '2';
+
+// Deployed for SattvaSrsti blog pipeline.
+// recipes_v2 / all_ingredients: public read, no client writes.
+// blog_posts: public read (site renderer); write allowed for pipeline (tighten later with Admin SDK).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+
+      allow create: if isOwner(uid)
+        && !request.resource.data.keys().hasAny(['creditBalance', 'aiCreditLimit', 'creditsSeededAt']);
+
+      allow update: if isOwner(uid)
+        && clientMayUpdateCreditFields();
+
+      match /subscriptions/{document=**} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      match /subscription_history/{paymentId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      match /ai_usage/{monthId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+    }
+
+    function clientMayUpdateCreditFields() {
+      let newCredit = request.resource.data.get('creditBalance', null);
+      let oldCredit = resource.data.get('creditBalance', null);
+      let creditOk = newCredit == null || newCredit == oldCredit;
+
+      let newLimit = request.resource.data.get('aiCreditLimit', null);
+      let oldLimit = resource.data.get('aiCreditLimit', null);
+      let limitOk = newLimit == null || newLimit == oldLimit;
+
+      let newSeeded = request.resource.data.get('creditsSeededAt', null);
+      let oldSeeded = resource.data.get('creditsSeededAt', null);
+      let seededOk = newSeeded == null || newSeeded == oldSeeded;
+
+      return creditOk && limitOk && seededOk;
+    }
+
+    match /bakra/{document=**} {
+      allow read, write: if false;
+    }
+
+    match /subscription_plans/{planId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /admin/{doc} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /ai_models/{modelId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /recipes_v2/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /all_ingredients/{document=**} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Blog marketing layer — public read; writes via Admin SDK only (sync script / pipeline)
+    match /blog_posts/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}

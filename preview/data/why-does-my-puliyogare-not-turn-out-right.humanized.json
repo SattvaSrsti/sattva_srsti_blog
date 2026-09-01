@@ -1,0 +1,27 @@
+{
+  "primary_question": "Why does my Puliyogare not turn out right?",
+  "hook": "Getting Puliyogare just right can be tricky.",
+  "story": "Imagine preparing a comforting meal for yourself. You’ve followed the steps, but something feels off. The rice just doesn’t have that perfect texture.",
+  "useful_answer": "The key issue might be how you rinse the rice. Make sure to rinse it thoroughly; the water should change from very cloudy to lightly cloudy. If you skip this step, the rice can turn sticky. Also, be gentle while rinsing to avoid breaking the grains.",
+  "related_problems": [
+    {
+      "q": "How do I get better texture for Puliyogare?",
+      "a": "Ensure you rinse the rice properly; it should go from very cloudy to lightly cloudy."
+    },
+    {
+      "q": "What are the key things to watch while making Puliyogare?",
+      "a": "Focus on rinsing the rice well to prevent stickiness and handle it gently."
+    },
+    {
+      "q": "How do I know when Puliyogare is ready?",
+      "a": "Check the texture of the rice; it should be separate and not sticky."
+    },
+    {
+      "q": "How can I improve the taste of my Puliyogare?",
+      "a": "Properly rinsed rice enhances the overall texture and taste."
+    }
+  ],
+  "emotional_ending": "With a few adjustments, you can achieve that authentic Puliyogare experience. Enjoy the flavors and the memories they bring.",
+  "meta_description": "Discover why your Puliyogare may not turn out right and how to fix it.",
+  "capability_id": "guided_recipe_customization"
+}

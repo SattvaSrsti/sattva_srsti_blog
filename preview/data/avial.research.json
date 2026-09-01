@@ -1,0 +1,72 @@
+{
+  "recipe": {
+    "title": "Avial",
+    "cuisine": "South Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Avial turning out soggy?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not overcook until mushy"
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does the oil or fat stage matter for Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not boil hard after adding coconut paste"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave peeled raw banana exposed for long, as it can darken",
+        "Do not cut the pieces too small, or they may break while cooking",
+        "Avoid very thin pieces because avial vegetables should hold their shape",
+        "Do not grind with too much water, or the avial will turn runny",
+        "Do not add too much water; avial should be thick, not soupy"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave peeled raw banana exposed for long, as it can darken",
+        "Do not cut the pieces too small, or they may break while cooking",
+        "Avoid very thin pieces because avial vegetables should hold their shape",
+        "Do not grind with too much water, or the avial will turn runny",
+        "Do not add too much water; avial should be thick, not soupy"
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Avial?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not leave peeled raw banana exposed for long, as it can darken",
+        "Do not cut the pieces too small, or they may break while cooking",
+        "Avoid very thin pieces because avial vegetables should hold their shape",
+        "Do not grind with too much water, or the avial will turn runny",
+        "Do not add too much water; avial should be thick, not soupy"
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_avial",
+  "slug": "avial"
+}

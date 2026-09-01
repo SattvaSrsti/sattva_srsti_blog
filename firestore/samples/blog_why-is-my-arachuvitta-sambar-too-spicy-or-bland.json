@@ -1,0 +1,72 @@
+{
+  "blog_id": "blog_why-is-my-arachuvitta-sambar-too-spicy-or-bland",
+  "recipe_id": "rec_arachuvitta_sambar",
+  "slug": "why-is-my-arachuvitta-sambar-too-spicy-or-bland",
+  "status": "ready",
+  "primary_question": "Why is my Arachuvitta Sambar too spicy or bland?",
+  "seo_title": "Why is my Arachuvitta Sambar too spicy or bland? | SattvaSrsti",
+  "meta_description": "Discover why your Arachuvitta Sambar might be too spicy or bland and how to achieve the perfect balance.",
+  "blog_public_url": "https://sattvasrsti.blog/post.html?slug=why-is-my-arachuvitta-sambar-too-spicy-or-bland",
+  "capability_id": "guided_recipe_customization",
+  "humanized": {
+    "hook": "Finding the right balance in Arachuvitta Sambar can be tricky.",
+    "story": "Imagine preparing a comforting bowl of Arachuvitta Sambar, only to find it either too spicy or lacking flavor. It’s frustrating when the dish doesn’t match the rich, balanced taste you expected.",
+    "useful_answer": "The issue of spiciness or blandness often comes from cooking at high heat. When using high heat, the dals and chillies can burn quickly, leading to an overpowering spice or a flat taste. Keeping the heat moderate allows the flavors to develop properly.",
+    "related_problems": [
+      {
+        "q": "Why does my Arachuvitta Sambar taste bitter or burnt?",
+        "a": "Bitter or burnt flavors can arise if fenugreek is roasted for too long. It's crucial to monitor the roasting time closely to avoid this issue."
+      },
+      {
+        "q": "Why does my Arachuvitta Sambar stick or tear?",
+        "a": "If the drumstick pieces are too large, they will cook slowly and may stick or tear. Cutting them into smaller, uniform pieces helps ensure even cooking."
+      },
+      {
+        "q": "Why does the oil or fat stage matter for Arachuvitta Sambar?",
+        "a": "Boiling too hard can cause the liquid to reduce excessively. This can affect the overall texture and flavor balance of the sambar."
+      },
+      {
+        "q": "Why is my Arachuvitta Sambar turning out soggy?",
+        "a": "Cooking on very high heat after adding brinjal can make it turn mushy. A gentler heat allows for better control over the vegetable's texture."
+      }
+    ],
+    "emotional_ending": "Cooking is all about balance and attention. With a little care, your Arachuvitta Sambar can be as delightful as you envision."
+  },
+  "customize_fixed": {
+    "title": "Cook the full recipe on SattvaSrsti",
+    "body": "When you are ready for every step, open the full recipe on SattvaSrsti — adjust ingredients, spice, and servings to match your kitchen.",
+    "cta_label": "Open full recipe on SattvaSrsti"
+  },
+  "research": [
+    {
+      "q": "Why is my Arachuvitta Sambar too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Arachuvitta Sambar taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does my Arachuvitta Sambar stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why does the oil or fat stage matter for Arachuvitta Sambar?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    },
+    {
+      "q": "Why is my Arachuvitta Sambar turning out soggy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning"
+    }
+  ]
+}
