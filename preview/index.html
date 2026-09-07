@@ -7,10 +7,10 @@
   <meta name="description" content="Clear answers to real cooking problems, tied to live SattvaSrsti recipes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=20260907h" />
 </head>
-<body>
+<body class="page-landing">
   <div class="bg-wash" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -36,49 +36,35 @@
   </header>
 
   <main id="top">
-    <section class="landing-hero">
+    <section class="landing-hero landing-hero-bleed" aria-label="SattvaSrsti Blog">
+      <div class="landing-hero-media" id="hero-visual" aria-hidden="true"></div>
+      <div class="landing-hero-scrim" aria-hidden="true"></div>
       <div class="landing-hero-copy">
-        <p class="eyebrow">SattvaSrsti Blog</p>
+        <p class="brand-mark-text">SattvaSrsti Blog</p>
         <h1>Cook smarter. Fix what went wrong.</h1>
         <p class="lede">
-          Each article starts with a real kitchen problem — why the dosa won't crisp,
-          why the batter feels off — and walks you through what to notice and adjust.
+          Real kitchen problems — soggy dosa, off batter, uneven spice — with cues that help you adjust.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#posts">Browse cooking answers</a>
         </div>
       </div>
-      <div class="landing-hero-visual" id="hero-visual" aria-hidden="true"></div>
     </section>
 
-    <section class="block landing-purpose">
-      <h2>Why this blog exists</h2>
-      <p>
-        Recipes fail for small, fixable reasons. We write about those first —
-        texture, timing, cues — so you can cook with more confidence.
-        When you want every step, the full recipe is on SattvaSrsti.
-      </p>
+    <section class="block featured-block" id="featured" hidden>
+      <p class="section-kicker">Featured</p>
+      <div id="featured-slot"></div>
     </section>
 
     <section class="block" id="posts">
       <div class="block-head posts-head">
         <div>
-          <h2>Latest posts</h2>
+          <h2>All cooking answers</h2>
           <p>Problem-led articles powered by live SattvaSrsti recipes</p>
         </div>
-        <div class="post-search-wrap">
-          <label class="visually-hidden" for="post-search">Search posts</label>
-          <input
-            type="search"
-            id="post-search"
-            class="post-search"
-            placeholder="Search recipe name, problem, or question…"
-            autocomplete="off"
-            spellcheck="false"
-          />
-          <span class="search-meta fine" id="search-meta" aria-live="polite"></span>
-        </div>
+        <span class="search-meta fine" id="search-meta" aria-live="polite"></span>
       </div>
+      <div class="filter-chips" id="filter-chips" role="toolbar" aria-label="Filter by cuisine or meal"></div>
       <div class="post-grid" id="post-grid"></div>
     </section>
   </main>
@@ -87,7 +73,7 @@
     <p><strong>SattvaSrsti Blog</strong> — useful cooking help, one problem at a time.</p>
   </footer>
 
-  <script src="./fs-client.js"></script>
-  <script src="./landing.js"></script>
+  <script src="./fs-client.js?v=20260907"></script>
+  <script src="./landing.js?v=20260907h"></script>
 </body>
 </html>

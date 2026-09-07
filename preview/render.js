@@ -244,7 +244,6 @@
   const relatedFaqs = faqs.length > 1 ? faqs.slice(1) : faqs;
   const hashtags = hashtagsFromRecipe(root, title);
   const shareUrl = canonical || (typeof location !== "undefined" ? location.href : "");
-  const shareText = encodeURIComponent(`${blog.primary_question} — ${shareUrl}`);
 
   document.title = seoTitle;
   setMeta('meta[name="description"]', "content", metaDesc);
@@ -289,23 +288,25 @@
   $("hero-image").alt = `${title} from SattvaSrsti`;
   $("meta-pills").innerHTML = metaPills.map((p) => `<span>${escapeHtml(p)}</span>`).join("");
 
-  ["cta-hero", "cta-preview", "cta-final", "nav-app", "cta-customize"].forEach((id) => {
+  ["cta-hero", "cta-preview", "cta-final", "nav-app", "cta-customize", "cta-sticky"].forEach((id) => {
     const el = $(id);
     if (el) el.href = appUrl(recipeSlug, slug, id);
   });
   $("cta-hero").textContent = "Cook & customize on SattvaSrsti";
   $("cta-preview").textContent = "Continue in SattvaSrsti";
+  const stickyCta = $("cta-sticky");
+  if (stickyCta) stickyCta.textContent = "Cook & customize on SattvaSrsti";
   $("cta-final").textContent = "Open full recipe & customize";
 
-  $("story").innerHTML = `<h2>What happened</h2>${storyParas.map((t) => `<p>${escapeHtml(t)}</p>`).join("")}`;
+  $("story").innerHTML = `<p class="type-kicker">Story</p><h2 class="type-display">The scene</h2>${storyParas.map((t) => `<p class="type-prose">${escapeHtml(t)}</p>`).join("")}`;
   {
     let usefulText = H.useful_answer || "";
     if (usefulText && typeof usefulText === "object") {
       usefulText = usefulText.text || usefulText.answer || usefulText.useful_answer || "";
     }
-    $("useful-answer").innerHTML = `<h2>The short answer</h2><p>${escapeHtml(usefulText)}</p>`;
+    $("useful-answer").innerHTML = `<p class="type-kicker type-kicker-gold">Fix</p><h2 class="type-display">The short answer</h2><p class="type-prose type-prose-emphasis">${escapeHtml(usefulText)}</p>`;
   }
-  $("about").innerHTML = `<h2>Why this dish is cooked this way</h2><p>${escapeHtml(root.about_recipe || "")}</p>`;
+  $("about").innerHTML = `<p class="type-kicker">Context</p><h2 class="type-display">Why this dish is cooked this way</h2><p class="type-prose">${escapeHtml(root.about_recipe || "")}</p>`;
 
   const groupedFull = groupIngredients(ingredients);
   const capped = Teaser.capIngredientGroups
@@ -370,8 +371,8 @@
   lockParts.push("the full customized recipe");
   $("lock-note").textContent = `Open SattvaSrsti for ${lockParts.join(" and ")} when you are ready to cook through.`;
 
-  $("related-problems").innerHTML = `<h2>Related problems</h2>
-    <p class="fine faq-intro">Real questions people ask — answered the SattvaSrsti way.</p>
+  $("related-problems").innerHTML = `<p class="type-kicker">FAQ</p><h2 class="type-display">Related problems</h2>
+    <p class="type-info-sub faq-intro">Real questions people ask — answered the SattvaSrsti way.</p>
     <div class="faq-list">${relatedFaqs
       .map(
         (qa) =>
@@ -391,7 +392,7 @@
 
   if (TEASER.showPairings !== false) {
     const pairings = root.pairing_recommendations || [];
-    $("pairings").innerHTML = `<h2>What goes well with it</h2><ul class="pairing-list">${pairings
+    $("pairings").innerHTML = `<p class="type-kicker">Serve with</p><h2 class="type-info-title">What goes well with it</h2><ul class="pairing-list">${pairings
       .map((i) => `<li>${escapeHtml(String(i).replace(/_/g, " "))}</li>`)
       .join("")}</ul>`;
   } else {
@@ -399,7 +400,7 @@
   }
 
   if (TEASER.showStorage !== false) {
-    $("storage").innerHTML = `<h2>Storage</h2><ul class="plain-list">
+    $("storage").innerHTML = `<p class="type-kicker">Keep</p><h2 class="type-info-title">Storage</h2><ul class="plain-list">
       <li>${escapeHtml(storage.refrigeration || storage.fridge || "Store in an airtight container in the fridge.")}</li>
       <li>${escapeHtml(storage.reheat || "Reheat on a pan or microwave until warm.")}</li>
       <li>${escapeHtml(storage.shelf_life || storage.duration || "Consume within 2 days.")}</li>
@@ -422,17 +423,47 @@
       .join("");
   }
 
-  const wa = `https://wa.me/?text=${shareText}`;
+  const sharePayload = `${blog.primary_question} — ${shareUrl}`;
+  const shareText = encodeURIComponent(sharePayload);
+  const waApi = `https://api.whatsapp.com/send?text=${shareText}`;
+  const waWeb = `https://web.whatsapp.com/send?text=${shareText}`;
   const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
   const tw = `https://twitter.com/intent/tweet?text=${shareText}`;
   $("share-row").innerHTML = `
-    <a class="share-btn" href="${wa}" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="share-btn" href="${waApi}" id="share-whatsapp" rel="noopener">WhatsApp</a>
     <a class="share-btn" href="${fb}" target="_blank" rel="noopener">Facebook</a>
     <a class="share-btn" href="${tw}" target="_blank" rel="noopener">X</a>
     <button type="button" class="share-btn share-copy" id="share-copy">Copy link</button>
   `;
   $("hashtags").textContent = hashtags.join(" ");
   $("social-note").textContent = "Share this post URL. Tags are only a caption helper.";
+
+  const waBtn = $("share-whatsapp");
+  if (waBtn) {
+    waBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      // Native share sheet (mobile) — avoids WhatsApp Web login dead-ends
+      if (typeof navigator.share === "function") {
+        try {
+          await navigator.share({
+            title: document.title || "SattvaSrsti Blog",
+            text: blog.primary_question || "SattvaSrsti Blog",
+            url: shareUrl,
+          });
+          return;
+        } catch (err) {
+          if (err && err.name === "AbortError") return;
+        }
+      }
+      const mobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || "");
+      // Desktop: open WhatsApp Web send URL in THIS tab so an existing web.whatsapp.com
+      // login is reused and the text= param is not lost after a new-tab QR login.
+      // Mobile: api.whatsapp.com hands off to the app (contact picker).
+      const href = mobile ? waApi : waWeb;
+      window.location.assign(href);
+    });
+  }
+
   const copyBtn = $("share-copy");
   if (copyBtn) {
     copyBtn.onclick = async () => {

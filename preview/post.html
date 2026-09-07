@@ -18,13 +18,13 @@
   <meta name="twitter:image" content="" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css?v=20260907e" />
   <script type="application/ld+json" id="jsonld-article"></script>
   <script type="application/ld+json" id="jsonld-breadcrumb"></script>
   <script type="application/ld+json" id="jsonld-faq"></script>
 </head>
-<body>
+<body class="page-post">
   <div class="bg-wash" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -41,14 +41,12 @@
   </header>
 
   <main id="top">
-    <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
-
-    <section class="hero">
+    <section class="hero hero-editorial">
       <div class="hero-media">
-        <img id="hero-image" src="" alt="" width="1200" height="800" />
-        <div class="hero-fade"></div>
+        <img id="hero-image" src="" alt="" width="1600" height="900" />
       </div>
       <div class="hero-copy">
+        <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
         <p class="eyebrow" id="hero-eyebrow"></p>
         <h1 id="hero-title"></h1>
         <p class="lede" id="hero-hook"></p>
@@ -60,15 +58,16 @@
     </section>
 
     <article class="article">
-      <section class="block" id="story"></section>
-      <section class="block answer" id="useful-answer"></section>
-      <section class="block" id="about"></section>
+      <section class="block block-story" id="story"></section>
+      <section class="block block-answer answer" id="useful-answer"></section>
+      <section class="block block-about" id="about"></section>
 
-      <section class="block ingredients" id="ingredients">
+      <section class="block block-info ingredients" id="ingredients">
         <div class="block-head ing-head">
           <div>
-            <h2>Ingredients</h2>
-            <p id="ing-servings">Amounts from the SattvaSrsti recipe</p>
+            <p class="type-kicker">Recipe card</p>
+            <h2 class="type-info-title">Ingredients</h2>
+            <p class="type-info-sub" id="ing-servings">Amounts from the SattvaSrsti recipe</p>
           </div>
           <div class="unit-toggle" role="group" aria-label="Ingredient units">
             <button type="button" class="unit-btn is-active" data-unit="recipe" aria-pressed="true">Recipe units</button>
@@ -78,10 +77,11 @@
         <div id="ingredient-groups"></div>
       </section>
 
-      <section class="block steps" id="preview-steps">
+      <section class="block block-info steps" id="preview-steps">
         <div class="block-head">
-          <h2>Cooking preview</h2>
-          <p>Start here · finish and customize the rest on SattvaSrsti</p>
+          <p class="type-kicker">Method teaser</p>
+          <h2 class="type-info-title">Cooking preview</h2>
+          <p class="type-info-sub">Start here · finish and customize the rest on SattvaSrsti</p>
         </div>
         <ol class="step-list" id="step-list"></ol>
         <div class="lock-banner">
@@ -90,11 +90,11 @@
         </div>
       </section>
 
-      <section class="block" id="related-problems"></section>
+      <section class="block block-faq" id="related-problems"></section>
 
       <section class="block customize-engine" id="customize">
-        <p class="eyebrow">SattvaSrsti</p>
-        <h2 id="customize-title">Customize your recipe on SattvaSrsti</h2>
+        <p class="type-kicker type-kicker-gold">SattvaSrsti</p>
+        <h2 id="customize-title" class="type-display">Customize your recipe on SattvaSrsti</h2>
         <p id="customize-body"></p>
         <a class="btn btn-primary" id="cta-customize" href="#">Customize & cook on SattvaSrsti</a>
       </section>
@@ -128,9 +128,13 @@
     <p><strong>SattvaSrsti Blog</strong> — real cooking answers that lead to a customizable recipe.</p>
   </footer>
 
-  <script src="./teaser-config.js"></script>
-  <script src="./fs-client.js"></script>
-  <script src="./teaser-display.js"></script>
-  <script src="./render.js"></script>
+  <script src="./teaser-config.js?v=20260907"></script>
+  <script src="./fs-client.js?v=20260907"></script>
+  <script src="./teaser-display.js?v=20260907"></script>
+  <script src="./render.js?v=20260907g"></script>
+
+  <div class="sticky-cta-bar" id="sticky-cta-bar">
+    <a class="btn btn-primary" id="cta-sticky" href="#">Cook &amp; customize on SattvaSrsti</a>
+  </div>
 </body>
 </html>
