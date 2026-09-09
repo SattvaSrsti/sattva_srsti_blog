@@ -78,7 +78,7 @@
   function renderFeatured(post) {
     if (!featuredBlock || !featuredSlot || !post) return;
     featuredSlug = post.slug;
-    featuredSlot.innerHTML = `<a class="featured-card reveal" href="./post.html?slug=${encodeURIComponent(post.slug)}">
+    featuredSlot.innerHTML = `<a class="featured-card reveal" href="${Fs.postHref ? Fs.postHref(post.slug) : "./post.html?slug=" + encodeURIComponent(post.slug)}">
       <div class="featured-media">
         <img src="${escapeHtml(post.image_url)}" alt="" width="960" height="640" />
       </div>
@@ -154,7 +154,7 @@
     grid.innerHTML = posts
       .map((p, i) => {
         const lead = i < 3 ? " post-card--lead" : "";
-        return `<a class="post-card${lead} reveal" style="--reveal-delay:${Math.min(i, 8) * 40}ms" href="./post.html?slug=${encodeURIComponent(p.slug)}">
+        return `<a class="post-card${lead} reveal" style="--reveal-delay:${Math.min(i, 8) * 40}ms" href="${Fs.postHref ? Fs.postHref(p.slug) : "./post.html?slug=" + encodeURIComponent(p.slug)}">
           <img src="${escapeHtml(p.image_url)}" alt="" loading="lazy" width="640" height="420" />
           <div class="post-card-body">
             <span class="post-meta">${[p.cuisine, p.meal].filter(Boolean).map(escapeHtml).join(" · ")}</span>

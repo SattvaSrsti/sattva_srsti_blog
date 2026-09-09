@@ -11,15 +11,19 @@
   <meta property="og:title" content="" />
   <meta property="og:description" content="" />
   <meta property="og:image" content="" />
+  <meta property="og:image:alt" content="" />
   <meta property="og:url" content="" />
+  <meta property="og:site_name" content="SattvaSrsti Blog" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="" />
+  <meta name="pinterest-rich-pin" content="true" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20260907e" />
+  <base href="/" />
+  <link rel="stylesheet" href="./styles.css?v=20260909d" />
   <script type="application/ld+json" id="jsonld-article"></script>
   <script type="application/ld+json" id="jsonld-breadcrumb"></script>
   <script type="application/ld+json" id="jsonld-faq"></script>
@@ -42,13 +46,14 @@
 
   <main id="top">
     <section class="hero hero-editorial">
-      <div class="hero-media">
+      <div class="hero-media" id="hero-media">
         <img id="hero-image" src="" alt="" width="1600" height="900" />
+        <span class="hero-photo-hint" id="hero-photo-hint" hidden>View photo</span>
       </div>
       <div class="hero-copy">
         <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
         <p class="eyebrow" id="hero-eyebrow"></p>
-        <h1 id="hero-title"></h1>
+        <h1 id="hero-title">Loading…</h1>
         <p class="lede" id="hero-hook"></p>
         <div class="meta-row" id="meta-pills"></div>
         <div class="cta-row">
@@ -128,13 +133,34 @@
     <p><strong>SattvaSrsti Blog</strong> — real cooking answers that lead to a customizable recipe.</p>
   </footer>
 
-  <script src="./teaser-config.js?v=20260907"></script>
-  <script src="./fs-client.js?v=20260907"></script>
-  <script src="./teaser-display.js?v=20260907"></script>
-  <script src="./render.js?v=20260907g"></script>
+  <script src="./teaser-config.js?v=20260909d"></script>
+  <script src="./fs-client.js?v=20260909d"></script>
+  <script src="./teaser-display.js?v=20260908e"></script>
+  <script src="./render.js?v=20260909d"></script>
 
   <div class="sticky-cta-bar" id="sticky-cta-bar">
     <a class="btn btn-primary" id="cta-sticky" href="#">Cook &amp; customize on SattvaSrsti</a>
   </div>
+
+  <dialog class="photo-viewer" id="photo-viewer" aria-labelledby="photo-viewer-title">
+    <div class="photo-viewer-shell">
+      <div class="photo-viewer-bg" id="photo-viewer-bg" aria-hidden="true"></div>
+      <div class="photo-viewer-scrim" aria-hidden="true"></div>
+      <button type="button" class="photo-viewer-close" id="photo-viewer-close" aria-label="Close photo">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <figure class="photo-viewer-figure">
+        <div class="photo-viewer-stage">
+          <img id="photo-viewer-img" alt="" />
+        </div>
+        <figcaption class="photo-viewer-caption">
+          <h2 class="photo-viewer-title" id="photo-viewer-title"></h2>
+          <p class="photo-viewer-meta" id="photo-viewer-meta"></p>
+          <div class="photo-viewer-share" id="photo-viewer-share"></div>
+          <p class="photo-viewer-hint">One post URL for every platform. Pinterest pins this photo; Instagram captions paste the same link.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
 </body>
 </html>

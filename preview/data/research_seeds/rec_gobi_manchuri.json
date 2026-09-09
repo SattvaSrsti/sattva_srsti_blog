@@ -1,0 +1,25 @@
+{
+  "recipe_id": "rec_gobi_manchuri",
+  "recipe_title": "Gobi Manchurian",
+  "research_questions": [
+    {
+      "q": "How do I prepare gobi manchurian?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-prepare-gobi-manchurian",
+      "source_answers": ["Quora cooking question about making Gobi Manchurian."]
+    },
+    {
+      "q": "How do I make Gobi Manchurian dry?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-Gobi-Manchurian-dry",
+      "source_answers": ["Quora cooking question about dry Gobi Manchurian."]
+    },
+    {
+      "q": "What's the difference between Gobi Manchurian and Chilli Gobi?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Whats-the-difference-between-Gobi-Manchurian-and-Chilli-Gobi",
+      "source_answers": ["Quora cooking question comparing Gobi Manchurian and Chilli Gobi."]
+    }
+  ]
+}
+

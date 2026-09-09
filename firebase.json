@@ -25,6 +25,12 @@
         "**/node_modules/**"
       ],
       "cleanUrls": false,
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/post.html"
+        }
+      ],
       "headers": [
         {
           "source": "**/*.@(js|css)",
@@ -32,6 +38,33 @@
             {
               "key": "Cache-Control",
               "value": "max-age=3600"
+            }
+          ]
+        },
+        {
+          "source": "robots.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            }
+          ]
+        },
+        {
+          "source": "sitemap.xml",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/xml; charset=utf-8"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Content-Signal",
+              "value": "ai-train=no, search=yes, ai-input=no"
             }
           ]
         }

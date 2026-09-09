@@ -1,0 +1,72 @@
+{
+  "recipe": {
+    "title": "Masala Tea",
+    "cuisine": "Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Masala Tea too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Avoid crushing spices too finely."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does the oil or fat stage matter for Masala Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not let the water boil over."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Masala Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid crushing spices too finely.",
+        "Do not let the water boil over.",
+        "Avoid over-steeping the tea.",
+        "Do not let the milk boil over.",
+        "Avoid adding too much sugar."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Masala Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid crushing spices too finely.",
+        "Do not let the water boil over.",
+        "Avoid over-steeping the tea.",
+        "Do not let the milk boil over.",
+        "Avoid adding too much sugar."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Masala Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid crushing spices too finely.",
+        "Do not let the water boil over.",
+        "Avoid over-steeping the tea.",
+        "Do not let the milk boil over.",
+        "Avoid adding too much sugar."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_masala_tea",
+  "slug": "masala-tea"
+}

@@ -1,0 +1,69 @@
+{
+  "recipe": {
+    "title": "Gobi Manchurian",
+    "cuisine": "Indo-Chinese"
+  },
+  "primary_question": {
+    "question": "Why is my Gobi Manchurian batter not right?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Avoid lumps in the batter."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why is my Gobi Manchurian too spicy or bland?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not add too much chili."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why is my Gobi Manchurian not crispy?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Gobi Manchurian is a popular Indo-Chinese appetizer featuring crispy fried cauliflower florets tossed in a tangy, spicy sauce.",
+        "It's a favorite at parties and gatherings, known for its bold flavors and crunchy texture."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Gobi Manchurian?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid leaving any dirt on the florets.",
+        "Avoid lumps in the batter.",
+        "Ensure all florets are fully coated.",
+        "Do not overcrowd the fryer.",
+        "Avoid burning the garlic."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Gobi Manchurian?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid leaving any dirt on the florets.",
+        "Avoid lumps in the batter.",
+        "Ensure all florets are fully coated.",
+        "Do not overcrowd the fryer.",
+        "Avoid burning the garlic."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_gobi_manchuri",
+  "slug": "gobi-manchurian"
+}

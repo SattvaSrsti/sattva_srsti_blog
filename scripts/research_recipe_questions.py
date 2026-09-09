@@ -3,9 +3,10 @@
 Research cooking intents for a recipe (Quora / Reddit / food sites).
 
 Connectors (v1):
-  - quora / food_site → web_search (DuckDuckGo HTML lite or curated seed pack)
-  - reddit → approved OAuth if REDDIT_* env set; else manual/seed only (never unauthenticated .json)
-  - generated_intent → fill remaining slots; source_url must be null
+  - OpenAI Responses API + web_search (high context), prefer Quora/Reddit by votes, then official food sites
+  - quora / food_site → DuckDuckGo HTML lite or curated seed pack
+  - reddit → approved OAuth if REDDIT_* env set; else search/seed only (never unauthenticated .json)
+  - generated_intent / recipe_db → fill remaining slots only; source_url must be null
 
 Normalizer = extract + compress only (no new cooking claims).
 
@@ -246,14 +247,71 @@ def connector_reddit_approved(query: str, *, limit: int = 8) -> list[dict]:
     return out
 
 
+def is_quora_question_url(url: str | None) -> bool:
+    if not url:
+        return False
+    try:
+        from urllib.parse import urlparse
+
+        u = urlparse(url)
+        host = (u.hostname or "").replace("www.", "").lower()
+        if host != "quora.com":
+            return False
+        parts = [p for p in (u.path or "").split("/") if p]
+        if not parts:
+            return False
+        first = parts[0].lower()
+        if first in {
+            "profile",
+            "topic",
+            "search",
+            "about",
+            "login",
+            "webnode",
+            "careers",
+            "q",
+            "spaces",
+            "answer",
+            "share",
+            "widgets",
+            "challenges",
+        }:
+            return False
+        slug = parts[1] if first == "unanswered" else parts[0]
+        if not slug or slug.isdigit():
+            return False
+        return "-" in slug and len(slug.replace("-", "").replace("_", "")) >= 10
+    except Exception:
+        return False
+
+
+def is_reddit_thread_url(url: str | None) -> bool:
+    if not url:
+        return False
+    try:
+        from urllib.parse import urlparse
+
+        u = urlparse(url)
+        host = (u.hostname or "").replace("www.", "").lower()
+        if not host.endswith("reddit.com"):
+            return False
+        return bool(re.search(r"/r/[^/]+/comments/[a-z0-9]+(/|$)", u.path or "", re.I))
+    except Exception:
+        return False
+
+
 def classify_url(url: str | None) -> tuple[str, str]:
     """Return (source, evidence_type). Never invent quora/reddit without matching URL."""
     if not url:
         return "generated_intent", "generated"
     u = url.lower()
     if "quora.com" in u:
+        if not is_quora_question_url(url):
+            return "generated_intent", "generated"
         return "quora", "community"
     if "reddit.com" in u:
+        if not is_reddit_thread_url(url):
+            return "generated_intent", "generated"
         return "reddit", "community"
     return "food_site", "food_site"
 
@@ -262,49 +320,52 @@ def candidate_from_hit(hit: dict, dish: str) -> dict | None:
     title = (hit.get("title") or "").strip()
     url = hit.get("url")
     snippet = hit.get("snippet") or ""
-    if not title:
+    source, evidence_type = classify_url(url)
+    if source == "generated_intent":
         return None
-    # Prefer titles that look like questions
+    if not title and source != "quora":
+        return None
     q = title
-    if "?" not in q and not re.match(r"(?i)^(why|how|what|should|can|does|is my)", q):
+    if source == "quora":
+        if not q or "?" not in q:
+            q = title or snippet or url or f"Cooking question about {dish}?"
+    elif "?" not in q and not re.match(r"(?i)^(why|how|what|should|can|does|is my)", q):
         # Keep as related intent only if dish mentioned
         if dish.lower().split()[0] not in q.lower() and "dosa" not in q.lower() and dish.lower() not in q.lower():
             return None
         q = f"Why does my {dish} have issues with: {q}?"
-    source, evidence_type = classify_url(url)
-    # food_site cannot be labeled quora/reddit
-    if source == "food_site":
-        # Question source for food-site-only hits becomes generated_intent unless title is from community
-        # Keep food_site as evidence_type; question source = generated_intent if not community
-        q_source = "generated_intent"
-        q_url = None
-        evidence_type = "food_site"
-    else:
-        q_source = source
-        q_url = url
-        if q_source in ("quora", "reddit") and not q_url:
-            return None
+    q_source = source
+    q_url = url
+    if q_source in ("quora", "reddit", "food_site") and not q_url:
+        return None
 
     evidence = compress_evidence([snippet, title])
     if not evidence:
-        evidence = compress_evidence([snippet]) or [snippet[:160]] if snippet else []
+        evidence = compress_evidence([snippet]) or ([snippet[:160]] if snippet else [])
     if not evidence:
         return None
 
+    votes = 0
+    vote_m = re.search(r"(\d+)\s*(?:upvote|upvotes|votes|answers)", f"{title} {snippet}", re.I)
+    if vote_m:
+        votes = int(vote_m.group(1))
+    community_bonus = 20.0 if evidence_type == "community" else (8.0 if evidence_type == "food_site" else 0.0)
     return {
         "question": truncate_question(q),
-        "source": q_source if q_source != "food_site" else "generated_intent",
+        "source": q_source,
         "source_url": q_url,
         "evidence_type": evidence_type,
         "evidence": evidence[:5],
         "connector": "web_search" if q_source != "reddit" else "approved_reddit",
-        "_score": score_candidate(q, dish, evidence_type),
+        "votes": votes,
+        "_score": score_candidate(q, dish, evidence_type) + min(votes, 250) / 10 + community_bonus,
     }
 
 
 GENERIC_PRIMARY_BANNED = (
     "common mistakes when making",
     "not turn out right",
+    "not turning out right",
     "fix common mistakes",
 )
 
@@ -312,6 +373,73 @@ GENERIC_PRIMARY_BANNED = (
 def is_generic_primary(question: str) -> bool:
     q = question.lower()
     return any(p in q for p in GENERIC_PRIMARY_BANNED)
+
+
+_WEAK_DISH = {
+    "roast",
+    "roasted",
+    "chicken",
+    "rice",
+    "curry",
+    "fried",
+    "sauce",
+    "gravy",
+    "dish",
+    "recipe",
+    "with",
+    "and",
+    "the",
+    "for",
+    "from",
+    "style",
+    "home",
+    "special",
+    "masala",
+    "ghee",
+    "oil",
+    "dry",
+    "wet",
+    "hot",
+    "sweet",
+}
+
+
+def dish_alias_tokens(dish: str) -> list[str]:
+    title = re.sub(r"[^a-z0-9\s]", " ", (dish or "").lower())
+    tokens = [t for t in title.split() if len(t) > 2]
+    aliases = set(tokens)
+    if re.search(r"gobi|cauliflower", title) and "manchur" in title.replace(" ", ""):
+        aliases.update(["gobi", "manchurian", "cauliflower"])
+    if "paneer" in title:
+        aliases.add("paneer")
+    if "dosa" in title:
+        aliases.add("dosa")
+    if "idli" in title:
+        aliases.add("idli")
+    if "biryani" in title:
+        aliases.add("biryani")
+    if "gulab" in title or "jamun" in title:
+        aliases.update(["gulab", "jamun"])
+    return list(aliases)
+
+
+def mentions_dish(text: str, dish: str) -> bool:
+    hay = (text or "").lower()
+    if not hay.strip():
+        return False
+    tokens = dish_alias_tokens(dish)
+    strong = [t for t in tokens if len(t) > 3 and t not in _WEAK_DISH]
+    weak = [t for t in tokens if t in _WEAK_DISH or len(t) <= 3]
+
+    def word_hit(t: str) -> bool:
+        return re.search(rf"(?:^|[^a-z0-9]){re.escape(t)}s?(?:[^a-z0-9]|$)", hay) is not None
+
+    if any(word_hit(t) for t in strong):
+        return True
+    phrase = re.sub(r"\s+", " ", re.sub(r"[^a-z0-9\s]", " ", (dish or "").lower())).strip()
+    if len(phrase) >= 8 and phrase in hay:
+        return True
+    return sum(1 for t in weak if word_hit(t)) >= 2 and not strong
 
 
 def score_candidate(question: str, dish: str, evidence_type: str) -> float:
@@ -325,13 +453,13 @@ def score_candidate(question: str, dish: str, evidence_type: str) -> float:
     if any(w in q for w in ("why", "how", "not", "crispy", "stick", "soft", "batter")):
         score += 1.5
     if evidence_type == "community":
-        score += 2.0
+        score += 12.0
     elif evidence_type == "food_site":
-        score += 0.8
+        score += 6.0
     elif evidence_type == "recipe_warning":
-        score += 4.0
+        score += 1.2
     elif evidence_type == "recipe_cue":
-        score += 3.0
+        score += 1.0
     if is_generic_primary(q):
         score -= 8.0
     return score
@@ -550,30 +678,214 @@ def _candidates_from_pack(pack: dict) -> list[dict]:
 
 def load_seed_pack(recipe_id: str) -> list[dict]:
     """Optional curated seed file for recipes (manual connector)."""
-    path = ROOT / "preview" / "data" / "research_seeds" / f"{recipe_id}.json"
-    if path.exists():
+    out: list[dict] = []
+    paths = [
+        ROOT / "preview" / "data" / "research_seeds" / f"{recipe_id}.json",
+        ROOT / "preview" / "data" / "research_seeds" / "quora_recipe_questions.json",
+        ROOT / "functions" / "research_seeds" / f"{recipe_id}.json",
+        ROOT / "functions" / "research_seeds" / "quora_recipe_questions.json",
+    ]
+    for path in paths:
+        if not path.exists():
+            continue
         raw = json.loads(path.read_text(encoding="utf-8"))
         if isinstance(raw, list):
-            return raw
-        if isinstance(raw, dict) and raw.get("research_questions"):
-            return _candidates_from_legacy_questions(raw)
-        if isinstance(raw, dict) and raw.get("primary_question"):
-            return _candidates_from_pack(raw)
-        return []
+            out.extend(raw)
+        elif isinstance(raw, dict) and raw.get("research_questions"):
+            out.extend(_candidates_from_legacy_questions(raw))
+        elif isinstance(raw, dict) and raw.get("primary_question"):
+            out.extend(_candidates_from_pack(raw))
 
     # Fallback: migrate legacy mysore research file (preview or deploy copy)
-    for legacy in (
-        ROOT / "preview" / "data" / "mysore-masala-dosa.research.json",
-        ROOT / "deploy" / "public" / "data" / "mysore-masala-dosa.research.json",
-    ):
-        if recipe_id != "rec_mysore_masala_dosa" or not legacy.exists():
+    if recipe_id == "rec_mysore_masala_dosa":
+        for legacy in (
+            ROOT / "preview" / "data" / "mysore-masala-dosa.research.json",
+            ROOT / "deploy" / "public" / "data" / "mysore-masala-dosa.research.json",
+        ):
+            if not legacy.exists():
+                continue
+            raw = json.loads(legacy.read_text(encoding="utf-8"))
+            if raw.get("research_questions"):
+                out.extend(_candidates_from_legacy_questions(raw))
+            elif raw.get("primary_question"):
+                out.extend(_candidates_from_pack(raw))
+    return out
+
+def _openai_research_key() -> str | None:
+    return os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY")
+
+
+def _parse_json_object(text: str) -> dict | None:
+    raw = (text or "").strip()
+    fence = re.search(r"```(?:json)?\s*([\s\S]*?)```", raw, re.I)
+    body = fence.group(1) if fence else raw
+    start = body.find("{")
+    end = body.rfind("}")
+    if start < 0 or end <= start:
+        return None
+    try:
+        return json.loads(body[start : end + 1])
+    except Exception:
+        return None
+
+
+def _extract_responses_text(data: dict) -> str:
+    if isinstance(data.get("output_text"), str) and data["output_text"].strip():
+        return data["output_text"]
+    parts: list[str] = []
+    for item in data.get("output") or []:
+        if item.get("type") != "message":
             continue
-        raw = json.loads(legacy.read_text(encoding="utf-8"))
-        if raw.get("research_questions"):
-            return _candidates_from_legacy_questions(raw)
-        if raw.get("primary_question"):
-            return _candidates_from_pack(raw)
-    return []
+        for c in item.get("content") or []:
+            if c.get("type") in ("output_text", "text") and c.get("text"):
+                parts.append(c["text"])
+    return "\n".join(parts)
+
+
+def openai_web_research(dish: str, cuisine: str, *, mode: str, domains: list[str]) -> list[dict]:
+    """OpenAI Responses API + web_search. Real URLs only."""
+    key = _openai_research_key()
+    if not key:
+        return []
+    where = (
+        'ONLY www.quora.com question pages (https://www.quora.com/How-... or /What-...). '
+        "Never help.quora.com, profile, or topic pages. Any cooking question is fine — no vote standards."
+        if mode == "community"
+        else "ONLY established food websites. Prefer real reader questions or specific problem headlines."
+    )
+    prompt = (
+        f'Find REAL cooking questions people ask about "{dish}" ({cuisine or "Indian"} food).\n'
+        f"Search {where}\n"
+        f'Need specific kitchen failures — NOT the generic "Why is my {dish} not turning out right?"\n'
+        'Return JSON only: {"questions":[{"question":"...","source_url":"https://...",'
+        '"votes_or_engagement":"128 upvotes or unknown","evidence":["short snippet"]}]}\n'
+        "Rules: natural human questions; copy real URLs from search results; 6–10 distinct questions; do not invent URLs."
+    )
+    body = {
+        "model": os.environ.get("OPENAI_RESEARCH_MODEL", os.environ.get("OPENAI_MODEL", "gpt-4o-mini")),
+        "tools": [
+            {
+                "type": "web_search",
+                "search_context_size": "high",
+                "user_location": {"type": "approximate", "country": "IN"},
+            }
+        ],
+        "tool_choice": {"type": "web_search"},
+        "include": ["web_search_call.action.sources"],
+        "input": prompt,
+    }
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/responses",
+        data=json.dumps(body).encode("utf-8"),
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"  WARN openai web_search ({mode}): {e}")
+        return []
+    parsed = _parse_json_object(_extract_responses_text(data)) or {}
+    source_urls: list[str] = []
+    for item in data.get("output") or []:
+        if item.get("type") != "web_search_call":
+            continue
+        action = item.get("action") or {}
+        for s in action.get("sources") or item.get("sources") or []:
+            u = s if isinstance(s, str) else (s or {}).get("url")
+            if u:
+                source_urls.append(str(u))
+    hits = []
+    seen = set()
+    for url in source_urls:
+        if url in seen:
+            continue
+        seen.add(url)
+        source, evidence_type = classify_url(url)
+        if source == "generated_intent":
+            continue
+        q = url
+        try:
+            from urllib.parse import unquote, urlparse
+
+            slug = [p for p in urlparse(url).path.split("/") if p]
+            raw = slug[-1] if slug else ""
+            words = unquote(raw).replace("-", " ").replace("_", " ").strip()
+            if words:
+                q = words[0].upper() + words[1:]
+                if not q.endswith("?"):
+                    q += "?"
+        except Exception:
+            pass
+        hits.append(
+            {
+                "question": truncate_question(q),
+                "source": source,
+                "source_url": url,
+                "evidence_type": evidence_type,
+                "evidence": [f"{source} link: {url}"],
+                "connector": "openai_web_search",
+                "votes": 0,
+                "_score": score_candidate(q, dish, evidence_type) + (40.0 if source == "quora" else 0),
+            }
+        )
+    for item in parsed.get("questions") or []:
+        url = item.get("source_url")
+        q = (item.get("question") or "").strip()
+        if not q or not url or is_generic_primary(q):
+            continue
+        if source_urls and url.rstrip("/") not in {s.rstrip("/") for s in source_urls}:
+            continue
+        source, evidence_type = classify_url(url)
+        if source == "generated_intent":
+            continue
+        evidence = compress_evidence(item.get("evidence") or [])
+        if not evidence:
+            continue
+        vote_raw = item.get("votes_or_engagement") or ""
+        vote_m = re.search(r"(\d+)", str(vote_raw).replace(",", ""))
+        votes = int(vote_m.group(1)) if vote_m else 0
+        bonus = 20.0 if evidence_type == "community" else 8.0
+        hits.append(
+            {
+                "question": truncate_question(q),
+                "source": source,
+                "source_url": url,
+                "evidence_type": evidence_type,
+                "evidence": evidence[:5],
+                "connector": "openai_web_search",
+                "votes": votes,
+                "_score": score_candidate(q, dish, evidence_type) + min(votes, 250) / 10 + bonus,
+            }
+        )
+    return hits
+
+
+def collect_openai_web_candidates(dish: str, cuisine: str) -> list[dict]:
+    community = openai_web_research(
+        dish, cuisine, mode="community", domains=["quora.com", "reddit.com"]
+    )
+    sites = openai_web_research(
+        dish,
+        cuisine,
+        mode="food_site",
+        domains=[
+            "seriouseats.com",
+            "thekitchn.com",
+            "indianhealthyrecipes.com",
+            "vegrecipesofindia.com",
+            "hebbarskitchen.com",
+            "archanaskitchen.com",
+            "food52.com",
+            "ndtv.com",
+            "timesofindia.indiatimes.com",
+            "bonappetit.com",
+        ],
+    )
+    print(f"    openai web_search community={len(community)} food_sites={len(sites)}")
+    return community + sites
+
 
 def validate_provenance(item: dict) -> bool:
     src = item.get("source")
@@ -618,35 +930,27 @@ def select_five(candidates: list[dict], dish: str, cuisine: str) -> dict:
         raise RuntimeError("No research candidates with grounded evidence")
 
     primary = None
+    community = []
     for c in uniq:
-        if not is_generic_primary(c["question"]):
-            primary = c
-            break
-    if not primary:
-        primary = uniq[0]
-    related = []
-    for c in uniq[1:]:
-        if normalize_question_key(c["question"]) == normalize_question_key(primary["question"]):
+        if is_generic_primary(c["question"]):
             continue
-        related.append(c)
-        if len(related) == 4:
-            break
-
-    # Fill related to 4
-    if len(related) < 4:
-        for g in generated_intents_for(dish, cuisine, pool_evidence):
-            if normalize_question_key(g["question"]) == normalize_question_key(primary["question"]):
-                continue
-            if any(normalize_question_key(g["question"]) == normalize_question_key(r["question"]) for r in related):
-                continue
-            if not g.get("evidence"):
-                continue
-            related.append(g)
-            if len(related) == 4:
-                break
-
-    if len(related) < 4:
-        raise RuntimeError(f"Could not fill 4 related questions (got {len(related)})")
+        hay = f"{c.get('question') or ''} {c.get('source_url') or ''}"
+        if not mentions_dish(hay, dish):
+            continue
+        src = c.get("source")
+        url = c.get("source_url")
+        if src == "quora" and is_quora_question_url(url):
+            community.append(c)
+        elif src == "reddit" and is_reddit_thread_url(url):
+            community.append(c)
+    community.sort(key=lambda c: (0 if c.get("source") == "quora" else 1, -c.get("_score", 0)))
+    if len(community) < 3:
+        raise RuntimeError(
+            f'Need at least 3 same-dish Quora/Reddit links for "{dish}", got {len(community)}'
+        )
+    picked = community[:6]
+    primary = picked[0]
+    related = picked[1:]
 
     def strip(c: dict) -> dict:
         return {
@@ -656,12 +960,14 @@ def select_five(candidates: list[dict], dish: str, cuisine: str) -> dict:
             "evidence_type": c.get("evidence_type"),
             "evidence": (c.get("evidence") or [])[:5],
             "connector": c.get("connector"),
+            "votes": c.get("votes") or 0,
         }
 
     return {
         "recipe": {"title": dish, "cuisine": cuisine},
+        "questions": [strip(c) for c in picked],
         "primary_question": strip(primary),
-        "related_questions": [strip(r) for r in related[:4]],
+        "related_questions": [strip(r) for r in related],
     }
 
 
@@ -681,22 +987,20 @@ def research_recipe(recipe_id: str, *, from_seed: bool = False, refresh: bool = 
 
     candidates: list[dict] = []
 
-    # Always collect recipe-DB evidence (warnings/cues/about) for grounded generated intents
-    db_evidence = recipe_db_evidence(recipe_id, root)
-    for intent in recipe_db_intents(title, recipe_id, root):
-        candidates.append(intent)
-
-    # Seed / manual first (honest curated)
-    for item in load_seed_pack(recipe_id):
-        if validate_provenance(item) and item.get("evidence"):
-            candidates.append(item)
-
+    # Live web research first: Quora/Reddit (votes) then official food sites
     if not from_seed:
+        try:
+            for item in collect_openai_web_candidates(title, cuisine):
+                if validate_provenance(item) and item.get("evidence"):
+                    candidates.append(item)
+        except Exception as e:
+            print(f"    WARN openai research: {e}")
+
         queries = [
-            f"site:quora.com {title} cooking problem OR mistake OR soft OR stick",
+            f'site:www.quora.com "{title}"',
+            f"site:www.quora.com {title} recipe",
+            f"site:www.quora.com how to make {title}",
             f"site:reddit.com {title} recipe tip OR help",
-            f"{title} common cooking mistakes",
-            f"{title} how to make better at home",
         ]
         if tags:
             queries.append(f"{tags[0]} cooking tips problems")
@@ -712,10 +1016,22 @@ def research_recipe(recipe_id: str, *, from_seed: bool = False, refresh: bool = 
                     c["connector"] = "approved_reddit"
                     candidates.append(c)
 
-    # If web/seed thin, fill with generated intents grounded in recipe DB evidence
-    if len([c for c in candidates if validate_provenance(c) and c.get("evidence")]) < 5 and db_evidence:
-        for g in generated_intents_for(title, cuisine, db_evidence):
-            candidates.append(g)
+    # Seed / manual curated (honest Quora URLs)
+    for item in load_seed_pack(recipe_id):
+        if validate_provenance(item) and item.get("evidence"):
+            candidates.append(item)
+
+    real_count = len(
+        [c for c in candidates if c.get("source") in ("quora", "reddit", "food_site") and c.get("source_url")]
+    )
+    # Recipe-DB / generated only to fill remaining slots — never as the first choice
+    db_evidence = recipe_db_evidence(recipe_id, root)
+    if real_count < 5:
+        for intent in recipe_db_intents(title, recipe_id, root):
+            candidates.append(intent)
+        if db_evidence:
+            for g in generated_intents_for(title, cuisine, db_evidence):
+                candidates.append(g)
 
     pack = select_five(candidates, title, cuisine)
     pack["recipe_id"] = recipe_id

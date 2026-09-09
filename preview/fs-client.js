@@ -4,6 +4,44 @@
     "https://firestore.googleapis.com/v1/projects/sattva-srsti/databases/(default)/documents";
   const docCache = Object.create(null);
   const listCache = Object.create(null);
+  const POST_FIELDS = [
+    "status",
+    "slug",
+    "primary_question",
+    "seo_title",
+    "meta_description",
+    "blog_public_url",
+    "humanized",
+    "customize_fixed",
+    "recipe_id",
+    "recipe_title",
+    "image_url",
+    "cuisine",
+    "meal_type",
+    "meal",
+    "display",
+    "community_questions",
+    "research",
+  ];
+  const CARD_FIELDS = [
+    "status",
+    "slug",
+    "primary_question",
+    "humanized",
+    "capability_id",
+    "recipe_id",
+    "recipe_title",
+    "image_url",
+    "cuisine",
+    "meal_type",
+    "meal",
+  ];
+
+  function withFieldMask(url, fieldPaths) {
+    if (!fieldPaths || !fieldPaths.length) return url;
+    const extra = fieldPaths.map((p) => `mask.fieldPaths=${encodeURIComponent(p)}`).join("&");
+    return `${url}${url.includes("?") ? "&" : "?"}${extra}`;
+  }
 
   function fromFs(v) {
     if (v == null) return null;
@@ -30,8 +68,11 @@
   }
 
   async function getDoc(path) {
+    if (!String(path).startsWith("blog_posts/")) {
+      throw new Error("public blog may only read blog_posts");
+    }
     if (docCache[path]) return docCache[path];
-    const res = await fetch(`${FS}/${path}`);
+    const res = await fetch(withFieldMask(`${FS}/${path}`, POST_FIELDS));
     if (!res.ok) throw new Error(`${path} ${res.status}`);
     const fields = docFields(await res.json());
     docCache[path] = fields;
@@ -47,10 +88,13 @@
   }
 
   async function listCollection(collection, pageSize) {
-    const key = `${collection}:${pageSize || 100}`;
+    if (collection !== "blog_posts") {
+      throw new Error("public blog may only list blog_posts");
+    }
+    const key = `${collection}:${pageSize || 100}:cards`;
     if (listCache[key]) return listCache[key];
     const out = [];
-    let url = `${FS}/${collection}?pageSize=${pageSize || 100}`;
+    let url = withFieldMask(`${FS}/${collection}?pageSize=${pageSize || 100}`, CARD_FIELDS);
     while (url) {
       const res = await fetch(url);
       if (!res.ok) throw new Error(`${collection} list ${res.status}`);
@@ -61,7 +105,10 @@
       }
       const token = raw.nextPageToken;
       if (!token) break;
-      url = `${FS}/${collection}?pageSize=${pageSize || 100}&pageToken=${encodeURIComponent(token)}`;
+      url = withFieldMask(
+        `${FS}/${collection}?pageSize=${pageSize || 100}&pageToken=${encodeURIComponent(token)}`,
+        CARD_FIELDS
+      );
     }
     listCache[key] = out;
     return out;
@@ -116,16 +163,17 @@
 
   function cardFromBlog(fields, extra) {
     const H = fields.humanized || {};
+    const D = fields.display || {};
     const related_questions = relatedQuestionTexts(fields);
     const card = {
       slug: fields.slug,
       title: fields.primary_question || H.primary_question || fields.slug,
       hook: H.hook || "",
       recipe_id: fields.recipe_id,
-      recipe_title: (extra && extra.recipe_title) || fields.recipe_title || "",
-      image_url: fields.image_url || "",
-      cuisine: fields.cuisine || "",
-      meal: fields.meal_type || fields.meal || "",
+      recipe_title: (extra && extra.recipe_title) || fields.recipe_title || D.recipe_title || "",
+      image_url: fields.image_url || D.image_url || "",
+      cuisine: fields.cuisine || D.cuisine || "",
+      meal: fields.meal_type || fields.meal || D.meal_type || "",
       related_questions,
       _score: blogQualityScore(fields),
       _updateTime: (extra && extra.updateTime) || "",
@@ -163,39 +211,54 @@
     return dedupePostsByRecipe(ready);
   }
 
+  const ASSET_NAME = /\.(html|js|css|xml|txt|png|jpe?g|webp|svg|json|ico|map)$/i;
+  const RESERVED_PATHS = new Set(["", "index.html", "post.html", "robots.txt", "sitemap.xml"]);
+
+  function publicPostUrl(slug) {
+    const s = String(slug || "").replace(/^\/+/, "");
+    return `https://sattvasrsti.blog/${encodeURIComponent(s)}`;
+  }
+
+  function isHostedBlog() {
+    const h = typeof location === "undefined" ? "" : location.hostname;
+    return (
+      h === "sattvasrsti.blog" ||
+      h === "www.sattvasrsti.blog" ||
+      h.endsWith(".web.app") ||
+      h.endsWith(".firebaseapp.com")
+    );
+  }
+
+  function postHref(slug) {
+    const s = String(slug || "").replace(/^\/+/, "");
+    if (isHostedBlog()) return `/${encodeURIComponent(s)}`;
+    return `./post.html?slug=${encodeURIComponent(s)}`;
+  }
+
+  function slugFromLocation() {
+    const q = new URLSearchParams(location.search).get("slug");
+    if (q && q.trim()) return q.trim();
+    const parts = location.pathname.split("/").filter(Boolean);
+    const last = decodeURIComponent(parts[parts.length - 1] || "");
+    if (!last || RESERVED_PATHS.has(last.toLowerCase()) || ASSET_NAME.test(last)) return "";
+    return last;
+  }
+
   async function getBlogPostBySlug(slug) {
     try {
       return await getDoc(`blog_posts/blog_${slug}`);
     } catch (_) {
       const docs = await listCollection("blog_posts");
       for (const d of docs) {
-        if (d.fields.slug === slug) return d.fields;
+        if (d.fields.slug === slug) return await getDoc(`blog_posts/${d.id}`);
       }
       throw new Error("not_found");
     }
   }
 
-  async function getRecipeRoot(recipeId) {
-    return getDoc(`recipes_v2/${recipeId}`);
-  }
-
-  async function enrichCard(card) {
-    if (card.image_url && card.cuisine && card.recipe_title) {
-      card._searchText = buildSearchText(card);
-      return card;
-    }
-    if (!card.recipe_id) return card;
-    const root = await getDocSoft(`recipes_v2/${card.recipe_id}`);
-    if (!root) return card;
-    const enriched = {
-      ...card,
-      recipe_title: card.recipe_title || root.title || "",
-      image_url: card.image_url || root.image_primary_url || "",
-      cuisine: card.cuisine || root.cuisine || "",
-      meal: card.meal || root.meal_type || "",
-    };
-    enriched._searchText = buildSearchText(enriched);
-    return enriched;
+  function enrichCard(card) {
+    card._searchText = buildSearchText(card);
+    return card;
   }
 
   function matchesSearch(card, query) {
@@ -219,7 +282,10 @@
     dedupePostsByRecipe,
     matchesSearch,
     getBlogPostBySlug,
-    getRecipeRoot,
+    slugFromLocation,
+    postHref,
+    publicPostUrl,
+    isHostedBlog,
     enrichCard,
     clearCache() {
       Object.keys(docCache).forEach((k) => delete docCache[k]);

@@ -1,0 +1,52 @@
+# SattvaSrsti Blog — search OK, AI training not OK.
+# App recipe data is not served from this host.
+
+User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+# Search crawlers (discovery + referral traffic)
+User-agent: Googlebot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+User-agent: Bingbot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+User-agent: OAI-SearchBot
+Content-Signal: ai-train=no, search=yes, ai-input=no
+Allow: /
+
+# Training / corpus crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://sattvasrsti.blog/sitemap.xml

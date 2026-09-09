@@ -1,4 +1,4 @@
-# Daily backup: Cloud Function blogReconcileScheduled is primary (no OPENAI_API_KEY secret).
+# Optional manual backup. Daily posts run on Windows Task Scheduler (SattvaSrstiBlogDaily).
 # Requires repo secret: FIREBASE_SERVICE_ACCOUNT (JSON body) — optional if using CF only.
 name: Blog reconcile
 

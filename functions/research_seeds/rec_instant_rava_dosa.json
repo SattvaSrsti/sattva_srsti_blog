@@ -1,7 +1,13 @@
 {
-  "recipe_id": "rec_mysore_masala_dosa",
-  "recipe_title": "Mysore Masala Dosa",
+  "recipe_id": "rec_instant_rava_dosa",
+  "recipe_title": "Instant Rava Dosa",
   "research_questions": [
+    {
+      "q": "What is the difference between rava dosa and normal dosa in terms of calories?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-difference-between-rava-dosa-and-normal-dosa-in-terms-of-calories",
+      "source_answers": ["Quora cooking question about rava dosa."]
+    },
     {
       "q": "How do we make perfectly crisp dosas that are not roasted but are golden brown?",
       "source": "quora",
@@ -13,12 +19,6 @@
       "source": "quora",
       "source_url": "https://www.quora.com/My-dosa-always-sticks-to-pan-whats-the-solution",
       "source_answers": ["Quora cooking question about dosa sticking."]
-    },
-    {
-      "q": "What is the difference between masala dosa, rava masala dosa and a Mysore masala dosa?",
-      "source": "quora",
-      "source_url": "https://www.quora.com/What-is-the-difference-between-masala-dosa-rava-masala-dosa-and-a-Mysore-masala-dosa",
-      "source_answers": ["Quora cooking question comparing Mysore masala dosa."]
     }
   ]
 }

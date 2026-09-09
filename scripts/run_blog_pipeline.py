@@ -114,7 +114,7 @@ def _firestore_bearer_token() -> str | None:
     return None
 
 
-def _http_json(method: str, url: str, payload: dict | None = None) -> dict:
+def _http_json(method: str, url: str, payload: dict | None = None):
     data = None if payload is None else json.dumps(payload).encode("utf-8")
     headers = {"Content-Type": "application/json"}
     token = _firestore_bearer_token()
@@ -136,6 +136,10 @@ def _http_json(method: str, url: str, payload: dict | None = None) -> dict:
         body = e.read().decode("utf-8", errors="replace")
         raise RuntimeError(f"HTTP {e.code} for {url}: {body[:800]}") from e
 
+# Public blog teaser only — full method stays in recipes_v2 (app; published is anonymously readable).
+TEASER_INGREDIENT_RATIO = 0.7
+TEASER_MAX_STEPS = 4
+
 CUSTOMIZE_FIXED = {
     "title": "Cook the full recipe on SattvaSrsti",
     "body": (
@@ -145,56 +149,9 @@ CUSTOMIZE_FIXED = {
     "cta_label": "Open full recipe on SattvaSrsti",
 }
 
-SYSTEM_PROMPT = """Write the human editorial layer for a SattvaSrsti discovery article.
-
-The article begins with a real cooking question, explains the problem clearly,
-and gives a useful answer grounded in supplied evidence. You are not writing the full recipe.
-
-SOURCE PRINCIPLE:
-Questions may come from Quora, Reddit, or generated_intent.
-Never claim a generated question came from Quora or Reddit.
-The source field in context is authoritative.
-
-You receive compact evidence bullets extracted from research —
-use them; do not invent new cooking claims, times, amounts, or methods.
-
-SATTVASRSTI ANSWER PHILOSOPHY:
-1. Understand the actual cooking problem.
-2. Explain the likely issue clearly.
-3. Give practical guidance grounded in supplied evidence.
-4. Focus on what the cook should notice.
-5. Respect the dish character from title/cuisine only.
-6. Mention the supplied capability at most once, naturally — never as a sales pitch.
-7. Do not invent product features.
-
-VOICE:
-- Conversational. Clear. Specific. Short sentences. Natural Indian English.
-- Story-led but restrained.
-- Believable kitchen situation WITHOUT claiming a real personal event happened.
-- No invented mother, wife, sister, husband, children, guests, or diary experiences.
-- Never use: "you are not alone", "common mistakes when making", "home cooks often struggle",
-  "useful answer first", "product second", "once upon a time", purple prose, SEO stuffing.
-
-DO NOT GENERATE:
-ingredient quantities/lists, full cooking instructions, extra steps, nutrition,
-Ayurveda, unsupported substitutions/storage/safety, hashtags, URLs, source citations,
-Firestore terminology, fabricated cultural history.
-
-OUTPUT valid JSON only with keys:
-primary_question, hook, story, useful_answer, related_problems, emotional_ending, meta_description
-
-RULES:
-- primary_question: use the supplied primary question exactly.
-- hook: one short sentence.
-- story: string of 2–4 short sentences (not a claimed true anecdote).
-- useful_answer: answer primary directly; start with practical insight; use only supplied evidence; 2–4 sentences.
-- related_problems: exactly 4 items matching related_questions order (NOT the primary).
-  Each: {"q":"...","a":"..."}. Each answer: 2–3 sentences grounded in that question's evidence bullets.
-- emotional_ending: 1–3 short sentences; no new factual claims; no hard sell.
-- meta_description: max 155 characters; include recipe name once.
-
-Return JSON only.
-"""
+def _humanize_system_prompt() -> str:
+    """Locked answer voice — prompts/HUMANIZE_SYSTEM.txt (same as Cloud Function)."""
+    return (ROOT / "prompts" / "HUMANIZE_SYSTEM.txt").read_text(encoding="utf-8").strip()
 
 FORBIDDEN_PHRASES = (
     "you are not alone",
@@ -208,6 +165,7 @@ FORBIDDEN_PHRASES = (
 GENERIC_PRIMARY_PATTERNS = (
     "common mistakes when making",
     "not turn out right",
+    "not turning out right",
     "fix common mistakes",
 )
 QUANTITY_RE = re.compile(
@@ -284,8 +242,51 @@ def list_collection_docs(collection: str, *, page_size: int = 100) -> list[dict]
     return out
 
 
+def run_query_status_equals(collection: str, status: str, *, page_size: int = 200) -> list[dict]:
+    """Anonymous-safe list: must match rules (status == published)."""
+    url = (
+        f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}"
+        "/databases/(default)/documents:runQuery"
+    )
+    body = {
+        "structuredQuery": {
+            "from": [{"collectionId": collection}],
+            "where": {
+                "fieldFilter": {
+                    "field": {"fieldPath": "status"},
+                    "op": "EQUAL",
+                    "value": {"stringValue": status},
+                }
+            },
+            "limit": page_size,
+        }
+    }
+    rows = _http_json("POST", url, body)
+    out: list[dict] = []
+    if isinstance(rows, list):
+        for row in rows:
+            doc = row.get("document") if isinstance(row, dict) else None
+            if not doc:
+                continue
+            doc_id = doc["name"].rstrip("/").split("/")[-1]
+            out.append({"id": doc_id, "fields": doc_fields(doc)})
+    return out
+
+
 def list_recipe_ids() -> list[str]:
-    return [d["id"] for d in list_collection_docs("recipes_v2")]
+    """Only published recipes_v2 — matches anonymous app queries."""
+    try:
+        docs = list_collection_docs("recipes_v2")
+        return [
+            d["id"]
+            for d in docs
+            if str(d["fields"].get("status") or "").lower() == "published"
+        ]
+    except RuntimeError as e:
+        err = str(e)
+        if "403" not in err and "PERMISSION" not in err.upper():
+            raise
+        return [d["id"] for d in run_query_status_equals("recipes_v2", "published")]
 
 
 def blog_post_quality_score(*, slug: str, primary_question: str, fields: dict) -> float:
@@ -491,12 +492,42 @@ def cleanup_superseded_blog(recipe_id: str, new_blog_id: str, new_slug: str) -> 
                 print(f"    WARN could not remove {p.name}: {e}")
 
 
+def community_questions_from(research: dict | None, humanized: dict | None) -> list[dict]:
+    research = research or {}
+    humanized = humanized or {}
+    items = research.get("questions") or (
+        [research.get("primary_question") or {}] + list(research.get("related_questions") or [])
+    )
+    related = humanized.get("related_problems") or []
+    useful = humanized.get("useful_answer") or ""
+    if isinstance(useful, dict):
+        useful = useful.get("text") or useful.get("answer") or ""
+    out = []
+    for i, item in enumerate(items[:6]):
+        q = item.get("question")
+        if not q:
+            continue
+        if i == 0:
+            ans = useful
+        else:
+            prev = related[i - 1] if i - 1 < len(related) else {}
+            ans = (prev or {}).get("a") or (prev or {}).get("answer") or ""
+        out.append(
+            {
+                "question": q,
+                "source": item.get("source") or "",
+                "url": item.get("source_url") or "",
+                "answer": str(ans or ""),
+            }
+        )
+    return out
+
+
 def firestore_doc_from_page(page: dict) -> dict:
     """
-    Blog-unique fields ONLY.
-    Do NOT copy recipe facts (ingredients, steps, ayurveda, nutrition,
-    related recipes, about, image, pairings, storage, hashtags, base_ratio) —
-    those already live in recipes_v2 / all_ingredients and are joined at read time.
+    Blog-unique editorial fields plus a capped public `display` teaser.
+    Full ingredients, method, Ayurveda, and nutrition stay in recipes_v2
+    (app only). The public website must not read recipes_v2.
     """
     H = page.get("humanized") or {}
     blog_id = page.get("blog_post_id") or page.get("blog_id")
@@ -517,7 +548,7 @@ def firestore_doc_from_page(page: dict) -> dict:
         a = item.get("a") or item.get("answer")
         if q and a:
             norm_related.append({"q": q, "a": a})
-    return {
+    doc = {
         "blog_id": blog_id,
         "recipe_id": page["recipe_id"],
         "slug": page["slug"],
@@ -540,7 +571,9 @@ def firestore_doc_from_page(page: dict) -> dict:
         },
         "customize_fixed": page.get("customize_fixed") or CUSTOMIZE_FIXED,
         "research": page.get("research") or [],
+        "community_questions": page.get("community_questions") or [],
     }
+    return attach_display_teaser(doc)
 
 
 def slugify(text: str) -> str:
@@ -571,6 +604,175 @@ def fetch_recipe_bundle(recipe_id: str) -> dict:
     except Exception:
         ingredients = root.get("ingredients") or []
     return {"recipe_id": recipe_id, "root": root, "instructions": instructions, "ingredients": ingredients}
+
+
+_ROLE_LABELS = {
+    "base": "Base",
+    "protein": "Protein",
+    "spice": "Spices",
+    "aromatic": "Aromatics",
+    "fat": "Fats & oils",
+    "liquid": "Liquids",
+    "acid": "Acids",
+    "garnish": "Garnish",
+}
+_ROLE_ORDER = ["base", "protein", "spice", "aromatic", "fat", "liquid", "acid", "garnish"]
+
+
+def _role_label(role: str) -> str:
+    key = str(role or "").lower()
+    if key in _ROLE_LABELS:
+        return _ROLE_LABELS[key]
+    if not key:
+        return "Other"
+    return key[0].upper() + key[1:]
+
+
+def _group_ingredients(ings: list) -> list[dict]:
+    groups: dict[str, list] = {}
+    for it in ings or []:
+        if not isinstance(it, dict):
+            continue
+        name = it.get("display_name") or it.get("name") or "Ingredient"
+        notes = []
+        prep = it.get("preparation_state")
+        if prep and prep != "raw":
+            notes.append(str(prep))
+        if str(it.get("requirement_level") or "").lower() == "optional":
+            notes.append("optional")
+        row = {
+            "amount": it.get("amount"),
+            "unit": it.get("unit") or "",
+            "canonical_amount": it.get("canonical_amount"),
+            "canonical_unit": it.get("canonical_unit") or "",
+            "name": name,
+            "note": ", ".join(notes) if notes else "",
+        }
+        role_key = str(it.get("ingredient_role") or "other").lower()
+        groups.setdefault(role_key, []).append(row)
+    ordered = [k for k in _ROLE_ORDER if groups.get(k)]
+    ordered += [k for k in groups if k not in _ROLE_ORDER]
+    return [{"name": _role_label(k), "items": groups[k]} for k in ordered]
+
+
+def _preview_step_label(text: str, i: int) -> str:
+    low = (text or "").lower()
+    if low.startswith("rinse") or low.startswith("soak"):
+        return "Prep"
+    if low.startswith("boil"):
+        return "Boil"
+    if "grind" in low:
+        return "Grind"
+    if "mash" in low or "filling" in low:
+        return "Fill"
+    if "dough" in low or "knead" in low:
+        return "Dough"
+    if "roll" in low:
+        return "Roll"
+    if "cook" in low or "pan" in low or "tawa" in low:
+        return "Cook"
+    return f"Step {i + 1}"
+
+
+def display_teaser_from_bundle(
+    bundle: dict,
+    *,
+    ingredient_ratio: float = TEASER_INGREDIENT_RATIO,
+    max_steps: int = TEASER_MAX_STEPS,
+) -> dict:
+    """Capped public teaser copied onto blog_posts. Not the full recipe."""
+    import math
+
+    root = bundle.get("root") or {}
+    ings = bundle.get("ingredients") or []
+    inst = bundle.get("instructions") or {}
+    steps = inst.get("steps") or []
+    storage = inst.get("leftover_storage") or {}
+    groups = _group_ingredients(ings)
+    total = sum(len(g.get("items") or []) for g in groups)
+    max_show = max(1, math.ceil(total * ingredient_ratio)) if total else 0
+    shown = 0
+    capped = []
+    for g in groups:
+        if shown >= max_show:
+            break
+        items = []
+        for item in g.get("items") or []:
+            if shown >= max_show:
+                break
+            items.append(item)
+            shown += 1
+        if items:
+            capped.append({"name": g["name"], "items": items})
+    preview_steps = []
+    for i, s in enumerate((steps or [])[:max_steps]):
+        if not isinstance(s, dict):
+            continue
+        text = s.get("instruction_text") or s.get("text") or ""
+        preview_steps.append({"label": _preview_step_label(text, i), "text": text})
+    diet = root.get("diet_tags") or []
+    if not isinstance(diet, list):
+        diet = []
+    pairings = root.get("pairing_recommendations") or []
+    if not isinstance(pairings, list):
+        pairings = []
+    pairings = [str(p).replace("_", " ") for p in pairings]
+    tags = root.get("search_tags") or []
+    if not isinstance(tags, list):
+        tags = []
+    tags = [str(t) for t in tags[:3]]
+    yield_info = root.get("base_yield") or {}
+    servings = 1
+    if isinstance(yield_info, dict):
+        servings = yield_info.get("servings") or 1
+    total_time = root.get("total_time_minutes") or (
+        (root.get("prep_time_minutes") or 0) + (root.get("cook_time_minutes") or 0) or None
+    )
+    title = root.get("title") or "Recipe"
+    slug = root.get("slug") or str(title).lower().replace(" ", "-")
+    return {
+        "recipe_title": title,
+        "recipe_slug": slug,
+        "image_url": root.get("image_primary_url") or "",
+        "cuisine": root.get("cuisine") or "",
+        "meal_type": root.get("meal_type") or "",
+        "diet_tags": [str(d) for d in diet],
+        "total_time_minutes": total_time or 0,
+        "difficulty": root.get("difficulty") or "",
+        "spice_tolerance_level": root.get("spice_tolerance_level") or "",
+        "servings": servings,
+        "about_recipe": root.get("about_recipe") or "",
+        "pairing_recommendations": pairings,
+        "search_tags": tags,
+        "ingredient_groups": capped,
+        "ingredient_hidden": max(0, total - shown),
+        "steps": preview_steps,
+        "step_hidden": max(0, len(steps) - max_steps),
+        "storage": {
+            "refrigeration": storage.get("refrigeration") or storage.get("fridge") or "",
+            "reheat": storage.get("reheat") or "",
+            "shelf_life": storage.get("shelf_life") or storage.get("duration") or "",
+        },
+    }
+
+
+def attach_display_teaser(doc: dict, bundle: dict | None = None) -> dict:
+    """Attach capped `display` onto a blog_posts payload. Never writes recipes_v2."""
+    rid = doc.get("recipe_id")
+    if not rid:
+        return doc
+    try:
+        b = bundle or fetch_recipe_bundle(str(rid))
+        teaser = display_teaser_from_bundle(b)
+    except Exception as e:
+        print(f"  warn: display teaser skipped for {rid}: {e}")
+        return doc
+    doc["recipe_title"] = teaser["recipe_title"]
+    doc["image_url"] = teaser["image_url"]
+    doc["cuisine"] = teaser["cuisine"]
+    doc["meal_type"] = teaser["meal_type"]
+    doc["display"] = teaser
+    return doc
 
 
 def eligibility(bundle: dict) -> tuple[bool, str]:
@@ -701,7 +903,7 @@ def build_research_context(research: dict, capability: dict) -> dict:
             "cuisine": recipe.get("cuisine"),
         },
         "primary_question": slim_intent(primary),
-        "related_questions": [slim_intent(q) for q in related[:4]],
+        "related_questions": [slim_intent(q) for q in related[:5]],
         "capability": {
             "id": capability.get("id"),
             "label": capability.get("label"),
@@ -728,11 +930,36 @@ def normalize_humanized(h: dict, research: dict) -> dict:
     pq = (research.get("primary_question") or {}).get("question") or out.get("primary_question") or ""
     pq_key = re.sub(r"[^a-z0-9\s]", "", pq.lower())
     filtered = [x for x in norm if re.sub(r"[^a-z0-9\s]", "", x["q"].lower()) != pq_key]
-    if len(filtered) >= 4:
-        out["related_problems"] = filtered[:4]
+    research_related = research.get("related_questions") or []
+    locked = []
+    used = set()
+    for i, rq in enumerate(research_related):
+        q = str(rq.get("question") or "").strip()
+        a = ""
+        rq_key = re.sub(r"[^a-z0-9\s]", "", q.lower())
+        for j, item in enumerate(filtered):
+            if j in used:
+                continue
+            if re.sub(r"[^a-z0-9\s]", "", item["q"].lower()) == rq_key:
+                a = item["a"]
+                used.add(j)
+                break
+        if not a:
+            for j, item in enumerate(filtered):
+                if j in used:
+                    continue
+                a = item["a"]
+                used.add(j)
+                break
+        if q and a:
+            locked.append({"q": q, "a": a})
+    want = len(research_related)
+    if locked:
+        out["related_problems"] = locked[:want] if want else locked
+    elif filtered:
+        out["related_problems"] = filtered[: max(want, 2)]
     else:
-        out["related_problems"] = norm[:4]
-    # Force primary from research
+        out["related_problems"] = norm[: max(want, 2)]
     if pq:
         out["primary_question"] = pq
     out.pop("common_questions", None)
@@ -741,9 +968,12 @@ def normalize_humanized(h: dict, research: dict) -> dict:
 
 def validate_research_provenance(research: dict) -> list[str]:
     errs = []
-    items = [research.get("primary_question") or {}] + list(research.get("related_questions") or [])
-    if len(research.get("related_questions") or []) != 4:
-        errs.append("related_count")
+    items = research.get("questions") or (
+        [research.get("primary_question") or {}] + list(research.get("related_questions") or [])
+    )
+    items = [x for x in items if x and x.get("question")]
+    if not (3 <= len(items) <= 6):
+        errs.append("community_count")
     for item in items:
         src = item.get("source")
         url = item.get("source_url")
@@ -776,9 +1006,17 @@ def validate_humanized(h: dict, *, research: dict | None = None) -> list[str]:
         errs.append("story_len")
 
     qs = h.get("related_problems") or h.get("common_questions") or []
-    if not isinstance(qs, list) or len(qs) != 4:
+    want = len((research or {}).get("related_questions") or [])
+    if not isinstance(qs, list):
         errs.append("related_problems_count")
-    elif any(not isinstance(x, dict) or not (x.get("q") or x.get("question")) or not (x.get("a") or x.get("answer")) for x in qs):
+    elif want and len(qs) != want:
+        errs.append("related_problems_count")
+    elif not want and not (2 <= len(qs) <= 5):
+        errs.append("related_problems_count")
+    if isinstance(qs, list) and any(
+        not isinstance(x, dict) or not (x.get("q") or x.get("question")) or not (x.get("a") or x.get("answer"))
+        for x in qs
+    ):
         errs.append("related_problems_shape")
 
     pq = str(h.get("primary_question") or "")
@@ -814,12 +1052,12 @@ def validate_humanized(h: dict, *, research: dict | None = None) -> list[str]:
         errs.append("meta_too_long")
 
     # Distinct related questions
-    if isinstance(qs, list) and len(qs) == 4:
+    if isinstance(qs, list) and qs:
         keys = []
         for x in qs:
             q = (x.get("q") or x.get("question") or "").lower().strip()
             keys.append(q)
-        if len(set(keys)) < 4:
+        if len(set(keys)) < len(keys):
             errs.append("related_not_distinct")
         if pq.lower().strip() in keys:
             errs.append("primary_in_related_problems")
@@ -856,7 +1094,7 @@ def openai_call(ctx: dict) -> tuple[dict, dict]:
         "temperature": 0.4,
         "response_format": {"type": "json_object"},
         "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": _humanize_system_prompt()},
             {"role": "user", "content": json.dumps(ctx, ensure_ascii=False)},
         ],
     }
@@ -1002,11 +1240,12 @@ def assemble_blog(bundle: dict, humanized: dict, api_report: dict | None) -> dic
         "recipe_id": recipe_id,
         "slug": post_slug,
         "status": "ready",
+        "blog_public_url": f"{BLOG_PUBLIC_BASE.rstrip('/')}/{post_slug}",
         "purpose": "marketing_acquisition",
         "seo": {
             "title": f"{pq} | SattvaSrsti",
             "meta_description": humanized.get("meta_description") or pq,
-            "canonical_url": f"{BLOG_PUBLIC_BASE.rstrip('/')}/post.html?slug={post_slug}",
+            "canonical_url": f"{BLOG_PUBLIC_BASE.rstrip('/')}/{post_slug}",
             "og_type": "article",
             "robots": "index,follow",
         },
@@ -1286,6 +1525,7 @@ def main() -> int:
         page = assemble_blog(bundle, humanized, report)
         page["capability_id"] = capability["id"]
         page["research"] = bundle["research_provenance"]
+        page["community_questions"] = community_questions_from(research, humanized)
 
     page.setdefault("customize_fixed", CUSTOMIZE_FIXED)
     page["status"] = page.get("status") or "ready"

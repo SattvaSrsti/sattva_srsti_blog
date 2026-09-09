@@ -110,7 +110,7 @@ def main() -> int:
 
     deleted: list[str] = []
     if args.cleanup_duplicates:
-        print("[cleanup] duplicate blog_posts per recipe_id …")
+        print("[cleanup] duplicate blog_posts per recipe_id ...")
         deleted = cleanup_firestore_duplicates(dry_run=args.dry_run)
         print(f"  duplicates targeted: {len(deleted)}")
 
@@ -150,13 +150,16 @@ def main() -> int:
         to_create = missing
         if args.max_create > 0:
             to_create = missing[: args.max_create]
-        print(f"[create] running pipeline for {len(to_create)} recipe(s) …")
+        print(f"[create] running pipeline for {len(to_create)} recipe(s) ...")
         for rid in to_create:
             print(f"\n=== {rid} ===")
             outcome = run_pipeline(rid, skip_write=args.skip_write)
             (created if outcome["ok"] else failed).append(outcome)
             if not outcome["ok"]:
                 print(f"  FAIL exit={outcome['exit_code']}")
+                tail = (outcome.get("stderr_tail") or outcome.get("stdout_tail") or "").strip()
+                if tail:
+                    print(tail[-800:])
             else:
                 print("  OK")
 
@@ -168,7 +171,7 @@ def main() -> int:
         )
 
     if args.sync_firestore and not args.dry_run:
-        print("[sync] local blog JSON → Firestore …")
+        print("[sync] local blog JSON -> Firestore ...")
         sync = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "sync_blog_posts_to_firestore.py")],
             cwd=str(ROOT),

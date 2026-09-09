@@ -1,13 +1,24 @@
 rules_version = '2';
 
-// Deployed for SattvaSrsti blog pipeline.
-// recipes_v2 / all_ingredients: public read, no client writes.
-// blog_posts: public read (site renderer); write allowed for pipeline (tighten later with Admin SDK).
+// Public blog may read only blog_posts (capped teaser). It must not query recipes_v2.
+// App: anonymous recipes_v2 reads are published-only; list queries must
+// where('status', '==', 'published'). Drafts stay signed-in. Writes: catalog admin.
 service cloud.firestore {
   match /databases/{database}/documents {
 
     function isSignedIn() {
       return request.auth != null;
+    }
+
+    function isCatalogAdmin() {
+      return isSignedIn() && (
+        request.auth.token.catalogAdmin == true
+        || request.auth.token.admin == true
+      );
+    }
+
+    function recipeIsPublished(recipeId) {
+      return get(/databases/$(database)/documents/recipes_v2/$(recipeId)).data.status == 'published';
     }
 
     function isOwner(uid) {
@@ -74,13 +85,18 @@ service cloud.firestore {
       allow write: if false;
     }
 
-    match /recipes_v2/{document=**} {
-      allow read: if true;
-      allow write: if false;
+    match /recipes_v2/{recipeId} {
+      allow read: if resource.data.status == 'published' || isSignedIn();
+      allow write: if isCatalogAdmin();
+
+      match /{document=**} {
+        allow read: if recipeIsPublished(recipeId) || isSignedIn();
+        allow write: if isCatalogAdmin();
+      }
     }
 
     match /all_ingredients/{document=**} {
-      allow read: if true;
+      allow read: if isSignedIn();
       allow write: if false;
     }
 

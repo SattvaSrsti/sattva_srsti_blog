@@ -1,0 +1,69 @@
+{
+  "recipe": {
+    "title": "Paneer Ghee Roast",
+    "cuisine": "Indian"
+  },
+  "primary_question": {
+    "question": "Why is my Paneer Ghee Roast too spicy or bland?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not burn the spices; keep stirring."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Paneer Ghee Roast stick or tear?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Stir continuously to prevent sticking."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "Why does the oil or fat stage matter for Paneer Ghee Roast?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Paneer Ghee Roast is a flavorful Indian dish featuring paneer cubes roasted in aromatic spices and ghee.",
+        "Originating from Mangalore, it is known for its rich taste and is often served during special occasions."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Paneer Ghee Roast?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting the paneer too small as it may break during cooking.",
+        "Do not burn the spices; keep stirring.",
+        "Ensure the paste is smooth without chunks.",
+        "Do not let the onions burn.",
+        "Stir continuously to prevent sticking."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Paneer Ghee Roast?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting the paneer too small as it may break during cooking.",
+        "Do not burn the spices; keep stirring.",
+        "Ensure the paste is smooth without chunks.",
+        "Do not let the onions burn.",
+        "Stir continuously to prevent sticking."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_paneer_ghee_roast",
+  "slug": "paneer-ghee-roast"
+}

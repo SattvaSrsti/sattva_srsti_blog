@@ -6,7 +6,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "deploy": "firebase deploy --only functions:blog:blogReconcileScheduled --project sattva-srsti"
+    "deploy": "firebase deploy --only functions:blog --project sattva-srsti"
   },
   "dependencies": {
     "firebase-admin": "^12.7.0",

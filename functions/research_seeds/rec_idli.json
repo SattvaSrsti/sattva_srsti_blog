@@ -1,0 +1,24 @@
+{
+  "recipe_id": "rec_idli",
+  "recipe_title": "Idli",
+  "research_questions": [
+    {
+      "q": "How can I make idli fluffy?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-can-I-make-idli-fluffy",
+      "source_answers": ["Quora cooking question about fluffy idli."]
+    },
+    {
+      "q": "Why does idli come out hard and how can it be fixed?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Why-does-idli-come-out-hard-and-how-can-it-be-fixed",
+      "source_answers": ["Quora cooking question about hard idli."]
+    },
+    {
+      "q": "What are some signs that your idli batter has gone bad?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-are-some-signs-that-your-idli-batter-has-gone-bad",
+      "source_answers": ["Quora cooking question about idli batter."]
+    }
+  ]
+}

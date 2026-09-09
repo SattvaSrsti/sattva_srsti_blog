@@ -1,0 +1,4 @@
+{
+  "note": "Do not use a shared cross-recipe pool. Put Quora/Reddit links only in recipe-specific seed files (rec_*.json).",
+  "research_questions": []
+}

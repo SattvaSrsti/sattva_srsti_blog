@@ -4,57 +4,69 @@
     "cuisine": "South Indian"
   },
   "primary_question": {
-    "question": "Why does my Rava Idli taste bitter or burnt?",
+    "question": "Why is my Rava Idli batter not right?",
     "source": "generated_intent",
     "source_url": null,
     "evidence_type": "recipe_warning",
     "evidence": [
-      "Do not stop stirring or the rava may scorch"
+      "Avoid lumps in the batter."
     ],
     "connector": "recipe_db"
   },
   "related_questions": [
     {
-      "question": "Why does the oil or fat stage matter for Rava Idli?",
+      "question": "Why is my Rava Idli too spicy or bland?",
       "source": "generated_intent",
       "source_url": null,
       "evidence_type": "recipe_warning",
       "evidence": [
-        "Stand back when curry leaf hits hot ghee because it may splutter"
+        "Do not burn the spices."
       ],
       "connector": "recipe_db"
     },
     {
-      "question": "Why does my Rava Idli curdle or split?",
+      "question": "How can I improve my Rava Idli?",
       "source": "generated_intent",
       "source_url": null,
       "evidence_type": "recipe_warning",
       "evidence": [
-        "Do not add curd while the mixture is hot or it may split"
+        "Avoid lumps in the batter.",
+        "Do not burn the spices.",
+        "Do not overmix after adding eno.",
+        "Do not overfill the molds.",
+        "Avoid opening the steamer too early."
       ],
       "connector": "recipe_db"
     },
     {
-      "question": "Why is my Rava Idli batter not right?",
+      "question": "How do I get better texture for Rava Idli?",
       "source": "generated_intent",
       "source_url": null,
       "evidence_type": "recipe_warning",
       "evidence": [
-        "Do not make the batter runny; rava idli batter should be thick"
+        "Avoid lumps in the batter.",
+        "Do not burn the spices.",
+        "Do not overmix after adding eno.",
+        "Do not overfill the molds.",
+        "Avoid opening the steamer too early."
       ],
       "connector": "recipe_db"
     },
     {
-      "question": "Why is my Rava Idli too dense or dry?",
+      "question": "How can I improve the taste of my Rava Idli?",
       "source": "generated_intent",
       "source_url": null,
       "evidence_type": "recipe_warning",
       "evidence": [
-        "Do not leave lumps of dry rava at the bottom"
+        "Avoid lumps in the batter.",
+        "Do not burn the spices.",
+        "Do not overmix after adding eno.",
+        "Do not overfill the molds.",
+        "Avoid opening the steamer too early."
       ],
       "connector": "recipe_db"
     }
   ],
-  "recipe_id": "rec_rava_idli",
+  "recipe_id": "rec_rava_edli",
   "slug": "rava-idli"
 }

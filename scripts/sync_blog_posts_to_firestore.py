@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from rebuild_posts_index import score_blog_file  # noqa: E402
 from run_blog_pipeline import (  # noqa: E402
+    attach_display_teaser,
     cleanup_superseded_blog,
     firestore_doc_from_page,
     read_doc,
@@ -39,15 +40,9 @@ def best_local_blogs() -> dict[str, tuple[Path, dict]]:
 
 
 def enrich_doc_from_recipe(doc: dict, recipe_id: str) -> dict:
-    """Denormalize card fields onto blog_posts at sync time (homepage reads only)."""
-    try:
-        root = read_doc(f"recipes_v2/{recipe_id}")
-        doc["image_url"] = root.get("image_primary_url") or ""
-        doc["cuisine"] = root.get("cuisine") or ""
-        doc["meal_type"] = root.get("meal_type") or ""
-    except Exception as e:
-        print(f"  warn: could not enrich {recipe_id}: {e}")
-    return doc
+    """Denormalize capped public teaser onto blog_posts (website never reads recipes_v2)."""
+    doc["recipe_id"] = doc.get("recipe_id") or recipe_id
+    return attach_display_teaser(doc)
 
 
 def main() -> int:

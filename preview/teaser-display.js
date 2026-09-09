@@ -3,7 +3,7 @@
   function capIngredientGroups(grouped, ratio) {
     const total = (grouped || []).reduce((n, g) => n + (g.items || []).length, 0);
     if (!total) return { groups: [], total: 0, shown: 0, hidden: 0 };
-    const maxShow = Math.max(1, Math.ceil(total * (ratio || 0.8)));
+    const maxShow = Math.max(1, Math.ceil(total * (ratio || 0.7)));
     let shown = 0;
     const out = [];
     for (const g of grouped) {

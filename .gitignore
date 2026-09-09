@@ -4,6 +4,7 @@
 .DS_Store
 .firebase/
 deploy/public/
+logs/
 preview/data/*.llm-context.json
 preview/data/*.api-report.json
 preview/data/*.live.json

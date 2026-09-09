@@ -17,8 +17,10 @@ gives a useful SattvaSrsti-quality answer, and leads the reader to the full reci
 in the SattvaSrsti app. You are not writing the full recipe.
 
 SOURCE PRINCIPLE:
-Questions may come from Quora, Reddit, or generated_intent.
-Use verified questions when they exist.
+Questions may come from Quora, Reddit, official food sites, or generated_intent.
+Use verified community questions when they exist (prefer higher votes / more answers).
+Use the supplied primary_question and related_questions EXACTLY — do not rewrite or genericize.
+Never use "Why is my {dish} not turning out right?"
 Never claim a generated question came from Quora or Reddit.
 The source field in context is authoritative. Do not invent sources.
 
@@ -56,8 +58,9 @@ OUTPUT RULES:
 - hook: one short sentence connecting to the cooking problem.
 - story: string of 2–4 short sentences; believable situation, not a claimed true anecdote.
 - useful_answer: answer the primary question directly; start with practical insight; use only supplied evidence.
-- related_problems: exactly 4 items matching the supplied related_questions (not the primary).
-  Each item: {"q": "...", "a": "..."}. Concise, practical, grounded in that question's evidence.
+- related_problems: one item per supplied related_questions (2–5 items). Total questions (primary + related) is 3–6.
+  Copy each related question text into q exactly. Each item: {"q": "...", "a": "..."}.
+  Concise, practical, grounded in that question's evidence.
 - emotional_ending: 1–3 short sentences; clarity and confidence; no new factual claims.
 - meta_description: max 155 characters; include recipe name once.
 
@@ -110,7 +113,7 @@ Never send ingredients, steps, warnings, cues, pairings, nutrition, Ayurveda, st
 }
 ```
 
-`related_problems` length must be **exactly 4**. Page FAQ = primary + these 4.
+`related_problems` length matches supplied `related_questions` (2–5). Page FAQ = primary + related (3–6 total).
 
 ## FIXED OUTSIDE THE MODEL
 

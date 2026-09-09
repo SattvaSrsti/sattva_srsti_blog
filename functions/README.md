@@ -1,4 +1,4 @@
-# Blog Cloud Functions
+# Blog pipeline runners
 
 OpenAI key comes from Firestore **`admin/dummy`** — no `OPENAI_API_KEY` env secret.
 
@@ -8,24 +8,13 @@ OpenAI key comes from Firestore **`admin/dummy`** — no `OPENAI_API_KEY` env se
 | `iv` | Base64 IV |
 | `oKey` | Encrypted OpenAI API key (AES-256-CBC, same as main Sattva app) |
 
-## Functions (codebase `blog`)
+Daily posts are created on this Windows PC by Task Scheduler (`SattvaSrstiBlogDaily` at 23:11), not by a Cloud Function.
 
-| Function | Schedule / access | Purpose |
-|----------|-------------------|---------|
-| `blogReconcileScheduled` | Daily 12:00 AM IST | Decrypt `oKey`, check recipes vs `blog_posts`, create up to 5 missing |
-| `blogReconcileManual` | Private HTTP | Manual reconcile run |
-| `blogOpenAiKeyHealth` | Private HTTP | Verify decrypt works (never returns key) |
-
-## Deploy
-
-```bash
-cd functions
-npm install
-cd ..
-firebase deploy --only functions:blog --project sattva-srsti
+```powershell
+node functions/run_reconcile_once.js
 ```
 
-Do **not** run `firebase deploy --only functions` — that can affect other codebases in the same project.
+The scheduled Cloud Function `blogReconcileScheduled` was removed. Private HTTP helpers (`blogReconcileManual`, `blogAttachTeasersManual`, `blogOpenAiKeyHealth`) remain for one-off tests.
 
 ## Crypto
 

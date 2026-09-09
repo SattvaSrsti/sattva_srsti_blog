@@ -1,0 +1,72 @@
+{
+  "recipe": {
+    "title": "Ginger Tea",
+    "cuisine": "Global"
+  },
+  "primary_question": {
+    "question": "Why does the oil or fat stage matter for Ginger Tea?",
+    "source": "generated_intent",
+    "source_url": null,
+    "evidence_type": "recipe_warning",
+    "evidence": [
+      "Do not let the water boil over."
+    ],
+    "connector": "recipe_db"
+  },
+  "related_questions": [
+    {
+      "question": "Why does my Ginger Tea taste bitter or burnt?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Do not steep too long to avoid bitterness."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve my Ginger Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting ginger too thick.",
+        "Do not let the water boil over.",
+        "Do not let it boil vigorously.",
+        "Do not steep too long to avoid bitterness.",
+        "Ensure all solids are strained out."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How do I get better texture for Ginger Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting ginger too thick.",
+        "Do not let the water boil over.",
+        "Do not let it boil vigorously.",
+        "Do not steep too long to avoid bitterness.",
+        "Ensure all solids are strained out."
+      ],
+      "connector": "recipe_db"
+    },
+    {
+      "question": "How can I improve the taste of my Ginger Tea?",
+      "source": "generated_intent",
+      "source_url": null,
+      "evidence_type": "recipe_warning",
+      "evidence": [
+        "Avoid cutting ginger too thick.",
+        "Do not let the water boil over.",
+        "Do not let it boil vigorously.",
+        "Do not steep too long to avoid bitterness.",
+        "Ensure all solids are strained out."
+      ],
+      "connector": "recipe_db"
+    }
+  ],
+  "recipe_id": "rec_ginger_tea",
+  "slug": "ginger-tea"
+}
