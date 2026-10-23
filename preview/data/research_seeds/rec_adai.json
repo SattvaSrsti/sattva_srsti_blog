@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_adai",
+  "recipe_title": "Adai",
+  "research_questions": [
+    {
+      "q": "What is the difference between dosa and Adai?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-are-the-various-sub-types-of-the-Indian-Dosa-and-the-difference-between-Dosa-and-ADai-Utappam-Aapam-Peserettu-and-any-other-not-listed-here",
+      "source_answers": ["Quora cooking question about Adai vs dosa."]
+    },
+    {
+      "q": "Why is Adai considered the healthiest dosa?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-healthiest-dosa-in-terms-of-nutrition-and-taste",
+      "source_answers": ["Quora answers often point to Adai as the healthiest dosa."]
+    },
+    {
+      "q": "Is Adai a better dosa option for diabetics than regular idli or dosa?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Is-idli-or-dosa-is-good-for-diabetics",
+      "source_answers": ["Quora answers mention Adai/Pesarattu-style batters for diabetics."]
+    },
+    {
+      "q": "How does Adai make dosa more protein rich?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-dosa-more-protein-rich",
+      "source_answers": ["Quora answers discuss Adai Dosa as a lentil-heavy protein option."]
+    }
+  ]
+}

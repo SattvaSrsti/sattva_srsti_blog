@@ -1,0 +1,24 @@
+{
+  "recipe_id": "rec_bangalore_masala_puri",
+  "recipe_title": "Bangalore Masala Puri",
+  "research_questions": [
+    {
+      "q": "How do I make Bangalore-style masala puri in Panipuri Wala style?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-masala-puri-in-Panipuri-Wala-style",
+      "source_answers": ["Quora cooking question about masala puri."]
+    },
+    {
+      "q": "Is there any difference between pani puri, puchka or gol gappa?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Is-there-any-difference-between-pani-puri-puchka-or-gol-gappa-Or-is-it-same-thing-with-different-names",
+      "source_answers": ["Quora cooking question about puri street snacks."]
+    },
+    {
+      "q": "Always pani puri's puri turns out soft after a few minutes. What is the correct recipe for crispy shop-like puri?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Always-pani-puri-s-puri-turns-out-soft-after-a-few-minutes-What-is-the-correct-recipe-and-consistency-to-get-crispy-shop-like-puri",
+      "source_answers": ["Quora cooking question about crispy puri."]
+    }
+  ]
+}

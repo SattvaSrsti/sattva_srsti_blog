@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_khichadi",
+  "recipe_title": "Khichadi",
+  "research_questions": [
+    {
+      "q": "How do I make masala khichdi at home?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-masala-khichdi-at-home",
+      "source_answers": ["Quora cooking question about khichdi."]
+    },
+    {
+      "q": "How can I make rice khichdi?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-can-I-make-rice-khichdi",
+      "source_answers": ["Quora cooking question about rice khichdi."]
+    },
+    {
+      "q": "How should one cook khichdi on an induction pan without a pressure cooker?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-should-one-cook-khichdi-on-an-induction-pan-when-one-doesnt-have-a-pressure-cooker",
+      "source_answers": ["Quora cooking question about cooking khichdi."]
+    },
+    {
+      "q": "What is the dal kichadi recipe for one?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-dal-kichadi-recipe-for-one",
+      "source_answers": ["Quora cooking question about dal khichadi."]
+    }
+  ]
+}

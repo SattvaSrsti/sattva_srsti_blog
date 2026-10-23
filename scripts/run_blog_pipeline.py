@@ -50,7 +50,27 @@ def _load_dotenv() -> None:
 _load_dotenv()
 
 PROJECT_ID = os.environ.get("FIREBASE_PROJECT_ID", "sattva-srsti")
-FS_BASE = f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
+BLOG_DATABASE_ID = os.environ.get("FIRESTORE_BLOG_DATABASE", "blog")
+FS_DEFAULT_BASE = (
+    f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/(default)/documents"
+)
+FS_BLOG_BASE = (
+    f"https://firestore.googleapis.com/v1/projects/{PROJECT_ID}/databases/{BLOG_DATABASE_ID}/documents"
+)
+
+
+def fs_base_for_path(path: str) -> str:
+    if path.startswith("recipes_v2/") or path.startswith("all_ingredients/"):
+        return FS_DEFAULT_BASE
+    if path.startswith("blog_posts/"):
+        return FS_BLOG_BASE
+    return FS_BLOG_BASE
+
+
+def fs_base_for_collection(collection: str) -> str:
+    if collection == "blog_posts":
+        return FS_BLOG_BASE
+    return FS_DEFAULT_BASE
 ALLOWED_WRITE_COLLECTION = "blog_posts"
 APP_BASE = os.environ.get("APP_RECIPE_BASE", "https://sattvasrsti.com/recipe")
 BLOG_PUBLIC_BASE = os.environ.get("BLOG_PUBLIC_BASE", "https://sattvasrsti.blog")
@@ -223,13 +243,14 @@ def to_fs(value: Any) -> dict:
 
 
 def read_doc(path: str) -> dict:
-    return doc_fields(_http_json("GET", f"{FS_BASE}/{path}"))
+    return doc_fields(_http_json("GET", f"{fs_base_for_path(path)}/{path}"))
 
 
 def list_collection_docs(collection: str, *, page_size: int = 100) -> list[dict]:
     """Paginate a top-level Firestore collection. Returns [{id, fields}, ...]."""
     out: list[dict] = []
-    url = f"{FS_BASE}/{collection}?pageSize={page_size}"
+    base = fs_base_for_collection(collection)
+    url = f"{base}/{collection}?pageSize={page_size}"
     while url:
         raw = _http_json("GET", url)
         for doc in raw.get("documents") or []:
@@ -238,7 +259,7 @@ def list_collection_docs(collection: str, *, page_size: int = 100) -> list[dict]
         token = raw.get("nextPageToken")
         if not token:
             break
-        url = f"{FS_BASE}/{collection}?pageSize={page_size}&pageToken={token}"
+        url = f"{base}/{collection}?pageSize={page_size}&pageToken={token}"
     return out
 
 
@@ -414,7 +435,7 @@ def write_blog_post_only(blog_id: str, payload: dict, *, replace: bool = True) -
         raise ValueError(f"Unsafe blog_id: {blog_id}")
     if collection != "blog_posts":
         raise RuntimeError("Write aborted: only blog_posts is allowed")
-    url = f"{FS_BASE}/{collection}/{blog_id}"
+    url = f"{FS_BLOG_BASE}/{collection}/{blog_id}"
     if replace:
         # Drop stale fields when rules allow DELETE; otherwise PATCH overwrites known fields.
         try:
@@ -441,7 +462,7 @@ def delete_blog_post_admin(blog_id: str) -> bool:
     if not firebase_admin._apps:
         cred = credentials.Certificate(str(sa_path))
         firebase_admin.initialize_app(cred, {"projectId": PROJECT_ID})
-    ref = firestore.client().collection(ALLOWED_WRITE_COLLECTION).document(blog_id)
+    ref = firestore.client(database_id=BLOG_DATABASE_ID).collection(ALLOWED_WRITE_COLLECTION).document(blog_id)
     if not ref.get().exists:
         return False
     ref.delete()
@@ -452,7 +473,7 @@ def delete_blog_post_only(blog_id: str) -> bool:
     """Delete a superseded blog_posts doc (same collection guard as write)."""
     if "/" in blog_id or blog_id.startswith("recipes_") or blog_id.startswith("all_"):
         raise ValueError(f"Unsafe blog_id: {blog_id}")
-    url = f"{FS_BASE}/{ALLOWED_WRITE_COLLECTION}/{blog_id}"
+    url = f"{FS_BLOG_BASE}/{ALLOWED_WRITE_COLLECTION}/{blog_id}"
     try:
         _http_json("DELETE", url)
         return True

@@ -50,3 +50,7 @@ User-agent: PerplexityBot
 Disallow: /
 
 Sitemap: https://sattvasrsti.blog/sitemap.xml
+
+# Machine-readable article list (no login required)
+# https://sattvasrsti.blog/posts-index.json
+# https://sattvasrsti.blog/llms.txt

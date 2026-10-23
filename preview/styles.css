@@ -1323,6 +1323,49 @@ body.photo-viewer-open .sticky-cta-bar {
   .post-card--lead { grid-column: auto; }
 }
 
+.crawl-index {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line, rgba(0, 0, 0, 0.08));
+}
+.crawl-index h3 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+.crawl-index .crawl-index-note {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+.crawl-index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 1;
+  column-gap: 2rem;
+}
+@media (min-width: 720px) {
+  .crawl-index-list { columns: 2; }
+}
+@media (min-width: 1024px) {
+  .crawl-index-list { columns: 3; }
+}
+.crawl-index-list li {
+  break-inside: avoid;
+  margin: 0 0 0.65rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+.crawl-index-list a { text-decoration: none; color: var(--ink, #1a1a1a); }
+.crawl-index-list a:hover { text-decoration: underline; }
+.crawl-index-list .crawl-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
 .fine { font-size: 0.9rem; color: var(--ink-soft); }
 
 .visually-hidden {

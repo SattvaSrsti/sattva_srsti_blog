@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_mango_kulfi",
+  "recipe_title": "Mango Kulfi",
+  "research_questions": [
+    {
+      "q": "How does one make kulfi at home, and is it better than store-bought ones?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-does-one-make-kulfi-at-home-and-is-it-better-than-store-bought-ones",
+      "source_answers": ["Quora cooking question about homemade kulfi."]
+    },
+    {
+      "q": "How is the malai kulfi made?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-is-the-malai-kulfi-made",
+      "source_answers": ["Quora cooking question about malai kulfi; mango puree is a common flavour add-in."]
+    },
+    {
+      "q": "What is the difference between kulfi and ice cream?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-difference-between-kulfi-and-ice-cream",
+      "source_answers": ["Quora cooking question comparing kulfi and ice cream."]
+    },
+    {
+      "q": "How do I make mango ice cream at home for a mango kulfi-style freeze?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-mango-ice-cream-at-home",
+      "source_answers": ["Quora cooking question about mango frozen dessert."]
+    }
+  ]
+}

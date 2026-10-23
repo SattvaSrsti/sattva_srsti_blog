@@ -28,7 +28,8 @@ async function main() {
   const { researchRealQuestions, lockHumanizedToResearch, isGenericQuestion } = require("./research_questions");
   const { openaiHumanize, writeBlogPost } = require("./blog_reconcile");
 
-  const snap = await admin.firestore().collection("recipes_v2").doc(recipeId).get();
+  const { defaultDb, blogDb } = require("./firestore_databases");
+  const snap = await defaultDb().collection("recipes_v2").doc(recipeId).get();
   if (!snap.exists) throw new Error("recipe not found: " + recipeId);
   const recipe = { id: recipeId, ...snap.data() };
   const apiKey = await getOpenAiApiKeyFromFirestore();
@@ -60,7 +61,7 @@ async function main() {
   humanized = lockHumanizedToResearch(humanized, pack);
   const blogId = await writeBlogPost(recipe, primaryQuestion, humanized, pack);
 
-  const old = await admin.firestore().collection("blog_posts").where("recipe_id", "==", recipeId).get();
+  const old = await blogDb().collection("blog_posts").where("recipe_id", "==", recipeId).get();
   const deleted = [];
   for (const doc of old.docs) {
     if (doc.id === blogId) continue;

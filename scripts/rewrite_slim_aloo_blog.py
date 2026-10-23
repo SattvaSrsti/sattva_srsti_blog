@@ -20,9 +20,10 @@ from run_blog_pipeline import (  # noqa: E402
 )
 
 BLOG_ID = "blog_aloo-paratha-dough-kept-tearing"
+BLOG_DATABASE_ID = "blog"
 FS_DOC = (
     "https://firestore.googleapis.com/v1/projects/sattva-srsti/"
-    f"databases/(default)/documents/blog_posts/{BLOG_ID}"
+    f"databases/{BLOG_DATABASE_ID}/documents/blog_posts/{BLOG_ID}"
 )
 
 

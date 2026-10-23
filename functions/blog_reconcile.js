@@ -1,12 +1,35 @@
 const fsNode = require('fs');
 const path = require('path');
 const { logger } = require('firebase-functions');
-const admin = require('firebase-admin');
 const { getOpenAiApiKeyFromFirestore } = require('./crypto');
+const { defaultDb, blogDb } = require('./firestore_databases');
 
 const OPENAI_CHAT_URL = 'https://api.openai.com/v1/chat/completions';
 const DEFAULT_MODEL = 'gpt-4o-mini';
-const MAX_CREATE_PER_RUN = 5;
+/** Nightly default 5; set BLOG_MAX_CREATE_PER_RUN=0 to attempt all missing in one run. */
+function maxCreatePerRun() {
+  const raw = process.env.BLOG_MAX_CREATE_PER_RUN;
+  if (raw === undefined || raw === '') return 5;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return Infinity;
+  return Math.floor(n);
+}
+/** Typo IDs, ingredient-only docs, and known bad duplicates — never auto-blog these. */
+const SKIP_RECIPE_IDS = new Set([
+  'rec_coffeee',
+  'rec_panner_ghee_roast',
+  'rec_ghee',
+  'rec_urad_dal',
+  'rec_rasam_powder',
+]);
+
+function normalizeTitleKey(title) {
+  return String(title || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 const INGREDIENT_SHOW_RATIO = 0.7;
 const MAX_PREVIEW_STEPS = 4;
 const ROLE_LABELS = {
@@ -21,24 +44,13 @@ const ROLE_LABELS = {
 };
 const ROLE_ORDER = ['base', 'protein', 'spice', 'aromatic', 'fat', 'liquid', 'acid', 'garnish'];
 
-function ensureAdmin() {
-  if (!admin.apps.length) {
-    admin.initializeApp();
-  }
-}
-
-function fs() {
-  ensureAdmin();
-  return admin.firestore();
-}
-
 async function listRecipeIds() {
-  const snap = await fs().collection('recipes_v2').where('status', '==', 'published').select().get();
+  const snap = await defaultDb().collection('recipes_v2').where('status', '==', 'published').select().get();
   return snap.docs.map((d) => d.id);
 }
 
 async function listBlogPostsByRecipe() {
-  const snap = await fs().collection('blog_posts').get();
+  const snap = await blogDb().collection('blog_posts').get();
   const byRecipe = {};
   for (const doc of snap.docs) {
     const data = doc.data() || {};
@@ -55,7 +67,7 @@ function hasReadyBlog(posts) {
 }
 
 async function fetchRecipeRoot(recipeId) {
-  const doc = await fs().collection('recipes_v2').doc(recipeId).get();
+  const doc = await defaultDb().collection('recipes_v2').doc(recipeId).get();
   if (!doc.exists) return null;
   return { id: recipeId, ...doc.data() };
 }
@@ -165,14 +177,14 @@ async function buildDisplayTeaser(recipe) {
   let steps = [];
   let storage = {};
   try {
-    const ingSnap = await fs().collection('recipes_v2').doc(rid).collection('ingredients').doc('details').get();
+    const ingSnap = await defaultDb().collection('recipes_v2').doc(rid).collection('ingredients').doc('details').get();
     if (ingSnap.exists) {
       const d = ingSnap.data() || {};
       ings = d.ingredients || d.items || ings;
     }
   } catch (_) {}
   try {
-    const instSnap = await fs().collection('recipes_v2').doc(rid).collection('instructions').doc('details').get();
+    const instSnap = await defaultDb().collection('recipes_v2').doc(rid).collection('instructions').doc('details').get();
     if (instSnap.exists) {
       const d = instSnap.data() || {};
       steps = d.steps || [];
@@ -274,7 +286,7 @@ async function writeBlogPost(recipe, primaryQuestion, humanized, research) {
       })),
     };
   }
-  await fs().collection('blog_posts').doc(blogId).set(doc, { merge: true });
+  await blogDb().collection('blog_posts').doc(blogId).set(doc, { merge: true });
   return blogId;
 }
 
@@ -283,7 +295,7 @@ async function writeBlogPost(recipe, primaryQuestion, humanized, research) {
  * Full recipes stay in recipes_v2 (not public).
  */
 async function attachDisplayTeasersToExistingPosts() {
-  const snap = await fs().collection('blog_posts').get();
+  const snap = await blogDb().collection('blog_posts').get();
   let updated = 0;
   let skipped = 0;
   const failed = [];
@@ -329,23 +341,45 @@ async function runBlogReconcile() {
   const recipeIds = await listRecipeIds();
   const byRecipe = await listBlogPostsByRecipe();
 
-  const missing = recipeIds.filter((rid) => !hasReadyBlog(byRecipe[rid]));
+  const coveredTitles = new Set();
+  for (const posts of Object.values(byRecipe)) {
+    for (const p of posts || []) {
+      if (!['ready', 'published'].includes(String(p.status || '').toLowerCase())) continue;
+      const key = normalizeTitleKey(p.recipe_title);
+      if (key) coveredTitles.add(key);
+    }
+  }
+
+  const missing = recipeIds.filter((rid) => {
+    if (SKIP_RECIPE_IDS.has(rid)) return false;
+    return !hasReadyBlog(byRecipe[rid]);
+  });
   logger.info('blog reconcile', {
     recipes: recipeIds.length,
     blogRecipeIds: Object.keys(byRecipe).length,
     missing: missing.length,
+    skippedIds: [...SKIP_RECIPE_IDS].filter((id) => recipeIds.includes(id)),
   });
 
   const created = [];
   const failed = [];
+  const skipped = [];
 
   const { researchRealQuestions, lockHumanizedToResearch, isGenericQuestion } = require('./research_questions');
 
-  for (const rid of missing.slice(0, MAX_CREATE_PER_RUN)) {
+  const createCap = maxCreatePerRun();
+  const toCreate = Number.isFinite(createCap) ? missing.slice(0, createCap) : missing;
+  for (const rid of toCreate) {
     try {
       const recipe = await fetchRecipeRoot(rid);
       if (!recipe || !recipe.title) {
         failed.push({ rid, error: 'recipe_not_found' });
+        continue;
+      }
+      const titleKey = normalizeTitleKey(recipe.title);
+      if (titleKey && coveredTitles.has(titleKey)) {
+        skipped.push({ rid, error: 'duplicate_title_has_blog', title: recipe.title });
+        logger.info('skip duplicate title', { rid, title: recipe.title });
         continue;
       }
       const pack = await researchRealQuestions(apiKey, recipe);
@@ -375,13 +409,14 @@ async function runBlogReconcile() {
       };
       let humanized = await openaiHumanize(apiKey, ctx);
       humanized = lockHumanizedToResearch(humanized, pack);
-  const blogId = await writeBlogPost(recipe, primaryQuestion, humanized, pack);
+      const blogId = await writeBlogPost(recipe, primaryQuestion, humanized, pack);
       created.push({
         rid,
         blogId,
         primary: primaryQuestion,
         source: pack.primary_question.source,
       });
+      if (titleKey) coveredTitles.add(titleKey);
       logger.info('created blog', { rid, blogId, source: pack.primary_question.source });
     } catch (err) {
       failed.push({ rid, error: String(err.message || err) });
@@ -395,6 +430,7 @@ async function runBlogReconcile() {
     missing: missing.length,
     created,
     failed,
+    skipped,
   };
 }
 

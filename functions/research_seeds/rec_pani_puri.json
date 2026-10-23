@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_pani_puri",
+  "recipe_title": "Pani Puri",
+  "research_questions": [
+    {
+      "q": "What is the process of making pani puri (golgappa)?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-process-of-making-golgappa-panipuri",
+      "source_answers": ["Quora cooking question about pani puri."]
+    },
+    {
+      "q": "Is there any difference between pani puri, puchka or gol gappa?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Is-there-any-difference-between-pani-puri-puchka-or-gol-gappa-Or-is-it-same-thing-with-different-names",
+      "source_answers": ["Quora cooking question about pani puri names."]
+    },
+    {
+      "q": "Always pani puri's puri turns out soft after a few minutes. What is the correct recipe for crispy shop-like puri?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Always-pani-puri-s-puri-turns-out-soft-after-a-few-minutes-What-is-the-correct-recipe-and-consistency-to-get-crispy-shop-like-puri",
+      "source_answers": ["Quora cooking question about crispy pani puri shells."]
+    },
+    {
+      "q": "Are Gol Gappa and Pani Puri the same or different?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Are-Gol-Gappa-and-Pani-Puri-the-same-or-different",
+      "source_answers": ["Quora cooking question comparing pani puri and gol gappa."]
+    }
+  ]
+}

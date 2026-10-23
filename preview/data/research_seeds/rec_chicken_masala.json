@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_chicken_masala",
+  "recipe_title": "Chicken Masala",
+  "research_questions": [
+    {
+      "q": "Does chicken masala use any dairy?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Does-chicken-masala-use-any-dairy",
+      "source_answers": ["Quora cooking question about chicken masala and dairy."]
+    },
+    {
+      "q": "Can we add both chicken masala and garam masala in chicken curry?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Can-we-add-both-chicken-masala-and-garam-masala-in-chicken-curry",
+      "source_answers": ["Quora cooking question about chicken masala spices."]
+    },
+    {
+      "q": "What is the main difference between a chicken and mutton masala?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-main-difference-between-a-chicken-and-mutton-masala",
+      "source_answers": ["Quora cooking question comparing chicken masala."]
+    },
+    {
+      "q": "How much garam masala should be used for chicken curry?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-much-garam-masala-should-be-used-for-chicken-curry",
+      "source_answers": ["Quora cooking question about chicken curry masala amounts."]
+    }
+  ]
+}

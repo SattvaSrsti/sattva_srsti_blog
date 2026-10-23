@@ -90,7 +90,19 @@ function dishAliasTokens(dish) {
   if (/paneer/.test(title)) aliases.add('paneer');
   if (/dosa/.test(title)) aliases.add('dosa');
   if (/idli/.test(title)) aliases.add('idli');
-  if (/biryani/.test(title)) aliases.add('biryani');
+  if (/biryani|biriyani/.test(title)) {
+    aliases.add('biryani');
+    aliases.add('biriyani');
+  }
+  if (/khichadi|khichdi|kichadi|kichdi/.test(title)) {
+    aliases.add('khichadi');
+    aliases.add('khichdi');
+    aliases.add('kichadi');
+  }
+  if (/puri|poori/.test(title)) {
+    aliases.add('puri');
+    aliases.add('poori');
+  }
   if (/gulab|jamun/.test(title)) {
     aliases.add('gulab');
     aliases.add('jamun');
@@ -474,6 +486,28 @@ async function researchRealQuestions(apiKey, recipe) {
     quora: candidates.filter((c) => c.source === 'quora').length,
     reddit: candidates.filter((c) => c.source === 'reddit').length,
   });
+
+  // Recipe-specific seeds are the reliable path; skip live search when enough.
+  const seedCommunity = candidates.filter((c) => c.source === 'quora' || c.source === 'reddit');
+  if (seedCommunity.length >= 3) {
+    try {
+      const pack = pickCommunity(candidates, title, cuisine);
+      logger.info('research questions (seeds only)', {
+        title,
+        count: pack.questions.length,
+        primary: pack.primary_question.question,
+        primarySource: pack.primary_question.source,
+        primaryUrl: pack.primary_question.source_url,
+        sources: pack.questions.map((q) => q.source),
+      });
+      return pack;
+    } catch (err) {
+      logger.warn('seed pack incomplete, falling back to live search', {
+        dish: title,
+        err: String(err.message || err),
+      });
+    }
+  }
 
   const quoraPrompt = `Find Quora question pages about cooking "${title}".
 Search with: site:www.quora.com "${title}" recipe

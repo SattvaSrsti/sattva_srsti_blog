@@ -10,8 +10,9 @@ const { UserRefreshClient } = require("../functions/node_modules/google-auth-lib
 const { displayTeaserFromParts } = require("../functions/blog_reconcile");
 
 const PROJECT_ID = "sattva-srsti";
+const BLOG_DATABASE_ID = process.env.FIRESTORE_BLOG_DATABASE || "blog";
 const FN_URL = "https://us-central1-sattva-srsti.cloudfunctions.net/blogAttachTeasersManual";
-const FS_BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
+const FS_BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/${BLOG_DATABASE_ID}/documents`;
 const CLIENT_ID =
   process.env.FIREBASE_CLIENT_ID ||
   "563584335869-fgrhgmd47bqnekij5i8b5pr03hoak96q.apps.googleusercontent.com";

@@ -34,9 +34,18 @@ async function main() {
     });
   }
 
+  const { BLOG_DATABASE_ID } = require("./firestore_databases");
   const { runBlogReconcile } = require("./blog_reconcile");
+  console.log(`blog Firestore database: ${BLOG_DATABASE_ID}`);
   const result = await runBlogReconcile();
   console.log(JSON.stringify(result, null, 2));
+  const teaserFailed = (result.teasers && result.teasers.failed && result.teasers.failed.length) || 0;
+  if (teaserFailed > 0) {
+    process.exitCode = 1;
+    return;
+  }
+  // Missing research / OpenAI for some recipes is normal; nightly job still succeeded.
+  process.exitCode = 0;
 }
 
 main().catch((err) => {

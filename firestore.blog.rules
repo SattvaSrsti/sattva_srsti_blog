@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// Public marketing database — only blog_posts; no app/user/recipe catalog data.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /blog_posts/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

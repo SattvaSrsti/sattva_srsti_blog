@@ -10,8 +10,9 @@ const path = require("path");
 const { UserRefreshClient } = require("../functions/node_modules/google-auth-library");
 
 const PROJECT_ID = "sattva-srsti";
+const BLOG_DATABASE_ID = process.env.FIRESTORE_BLOG_DATABASE || "blog";
 const BUCKET = "sattva-srsti.appspot.com";
-const FS_BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents`;
+const FS_BASE = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/${BLOG_DATABASE_ID}/documents`;
 const CLIENT_ID =
   process.env.FIREBASE_CLIENT_ID ||
   "563584335869-fgrhgmd47bqnekij5i8b5pr03hoak96q.apps.googleusercontent.com";

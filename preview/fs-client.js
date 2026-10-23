@@ -1,7 +1,8 @@
 /** Firestore REST client for public blog (read-only). */
 (function () {
+  const BLOG_DATABASE_ID = "blog";
   const FS =
-    "https://firestore.googleapis.com/v1/projects/sattva-srsti/databases/(default)/documents";
+    `https://firestore.googleapis.com/v1/projects/sattva-srsti/databases/${BLOG_DATABASE_ID}/documents`;
   const docCache = Object.create(null);
   const listCache = Object.create(null);
   const POST_FIELDS = [

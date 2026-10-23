@@ -1,8 +1,5 @@
 rules_version = '2';
 
-// Public blog may read only blog_posts (capped teaser). It must not query recipes_v2.
-// App: anonymous recipes_v2 reads are published-only; list queries must
-// where('status', '==', 'published'). Drafts stay signed-in. Writes: catalog admin.
 service cloud.firestore {
   match /databases/{database}/documents {
 
@@ -10,44 +7,36 @@ service cloud.firestore {
       return request.auth != null;
     }
 
-    function isCatalogAdmin() {
-      return isSignedIn() && (
-        request.auth.token.catalogAdmin == true
-        || request.auth.token.admin == true
-      );
-    }
-
-    function recipeIsPublished(recipeId) {
-      return get(/databases/$(database)/documents/recipes_v2/$(recipeId)).data.status == 'published';
-    }
-
     function isOwner(uid) {
       return isSignedIn() && request.auth.uid == uid;
     }
 
-    match /users/{uid} {
-      allow read: if isOwner(uid);
+    // Catalog admin: bootstrap email now; scale with custom claim admin:true later.
+    function isCatalogAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'sattvasrsti@gmail.com'
+        || request.auth.token.admin == true
+      );
+    }
 
-      allow create: if isOwner(uid)
-        && !request.resource.data.keys().hasAny(['creditBalance', 'aiCreditLimit', 'creditsSeededAt']);
+    function isPublishedCatalogDoc() {
+      return resource.data.get('status', '') == 'published';
+    }
 
-      allow update: if isOwner(uid)
-        && clientMayUpdateCreditFields();
+    function recipeIsPublished(recipeId) {
+      return get(/databases/$(database)/documents/recipes_v2/$(recipeId))
+        .data.get('status', '') == 'published';
+    }
 
-      match /subscriptions/{document=**} {
-        allow read: if isOwner(uid);
-        allow write: if false;
-      }
+    function dishFamilyIsPublished(familyId) {
+      return familyId == '_catalog'
+        || get(/databases/$(database)/documents/dish_families/$(familyId))
+          .data.get('status', '') == 'published';
+    }
 
-      match /subscription_history/{paymentId} {
-        allow read: if isOwner(uid);
-        allow write: if false;
-      }
-
-      match /ai_usage/{monthId} {
-        allow read: if isOwner(uid);
-        allow write: if false;
-      }
+    // Signed-in users read all catalog docs; anonymous reads published only (blog, export, SEO).
+    function canReadPublishedCatalog() {
+      return isSignedIn() || isPublishedCatalogDoc();
     }
 
     function clientMayUpdateCreditFields() {
@@ -66,6 +55,178 @@ service cloud.firestore {
       return creditOk && limitOk && seededOk;
     }
 
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+
+      allow create: if isOwner(uid)
+        && !request.resource.data.keys().hasAny(['creditBalance', 'aiCreditLimit', 'creditsSeededAt']);
+
+      allow update: if isOwner(uid)
+        && clientMayUpdateCreditFields();
+
+      allow delete: if false;
+
+      // Server-owned billing / usage (client read-only)
+      match /subscriptions/{document=**} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      match /subscription_history/{paymentId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      match /ai_usage/{monthId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      match /realtime_usage/{sessionId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+
+      // User-owned profile domains (singleton docs under each collection)
+      match /taste_profile/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /health_profile/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /nutrition_profile/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /cooking_preferences/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /ai_preferences/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /dashboard_preferences/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /body_metrics_history/{entryId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /nutrition_target_history/{entryId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /diet_plan_state/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /diet_plans/{planId} {
+        allow read, write: if isOwner(uid);
+
+        match /days/{dayId} {
+          allow read, write: if isOwner(uid);
+        }
+      }
+
+      match /meal_logs/{logId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /meal_log_events/{eventId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /diet_dashboard/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /diet_adherence/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /weekly_summaries/{weekId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /hungry_preferences/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      // User-owned list / activity data
+      match /user_pantry/{itemId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /shopping_list/{itemId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /saved_recipes/{recipeId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /recipe_views/{recipeId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /hungry_signals/{recipeId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /hungry_time_stats/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /cooking_history/{entryId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /recipe_collections/{collectionId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /kitchen_templates/{templateId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /ai_conversations/{conversationId} {
+        allow read, write: if isOwner(uid);
+
+        match /messages/{messageId} {
+          allow read, write: if isOwner(uid);
+        }
+      }
+
+      match /recipe_customizations/{recipeId} {
+        allow read, write: if isOwner(uid);
+
+        match /versions/{versionId} {
+          allow read, write: if isOwner(uid);
+        }
+      }
+
+      // Legacy e-commerce paths (read/write for signed-in owner)
+      match /address/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /wishlist/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /orders/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /cart/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
     match /bakra/{document=**} {
       allow read, write: if false;
     }
@@ -77,37 +238,72 @@ service cloud.firestore {
 
     match /admin/{doc} {
       allow read: if isSignedIn();
-      allow write: if false;
+      allow write: if isCatalogAdmin();
     }
 
     match /ai_models/{modelId} {
       allow read: if isSignedIn();
+      allow write: if isCatalogAdmin();
+    }
+
+    match /knowledge_gaps/{gapId} {
+      allow read: if isSignedIn();
+      allow write: if isCatalogAdmin();
+    }
+
+    match /app_kitchen_templates/{templateId} {
+      allow read: if isSignedIn();
+      allow write: if isCatalogAdmin();
+    }
+
+    match /recipe_search_index/{recipeId} {
+      allow read: if canReadPublishedCatalog();
       allow write: if false;
     }
 
     match /recipes_v2/{recipeId} {
-      allow read: if resource.data.status == 'published' || isSignedIn();
+      allow read: if canReadPublishedCatalog();
       allow write: if isCatalogAdmin();
 
-      match /{document=**} {
-        allow read: if recipeIsPublished(recipeId) || isSignedIn();
+      match /comments/{userId} {
+        allow read: if isSignedIn() || recipeIsPublished(recipeId);
+        allow create: if isSignedIn() && request.auth.uid == userId;
+        allow update, delete: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      match /{subcollection}/{docId} {
+        allow read: if isSignedIn() || recipeIsPublished(recipeId);
         allow write: if isCatalogAdmin();
       }
     }
 
-    match /all_ingredients/{document=**} {
-      allow read: if isSignedIn();
-      allow write: if false;
+    match /dish_families/{familyId} {
+      allow read: if isSignedIn() || dishFamilyIsPublished(familyId);
+      allow write: if isCatalogAdmin();
+
+      match /members/{memberId} {
+        allow read: if isSignedIn() || dishFamilyIsPublished(familyId);
+        allow write: if isCatalogAdmin();
+      }
     }
 
-    // Blog marketing layer — public read; writes via Admin SDK only (sync script / pipeline)
+    // Nested recipes_v2/{id}/... rules do not apply to collectionGroup() queries.
+    // Path constraints here would reject the query (rules are not filters).
+    match /{path=**}/identity_ingredient_ids/{document} {
+      allow read: if isSignedIn();
+      allow write: if isCatalogAdmin();
+    }
+
+    // Ingredient reference catalog — public read for blog/export; writes admin-only.
+    match /all_ingredients/{document=**} {
+      allow read: if true;
+      allow write: if isCatalogAdmin();
+    }
+
+    // Blog marketing layer — public read; writes via Admin SDK only (pipeline / scripts).
     match /blog_posts/{docId} {
       allow read: if true;
       allow write: if false;
-    }
-
-    match /{document=**} {
-      allow read, write: if isSignedIn();
     }
   }
 }

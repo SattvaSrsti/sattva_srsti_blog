@@ -1,0 +1,30 @@
+{
+  "recipe_id": "rec_masala_dosa",
+  "recipe_title": "Masala Dosa",
+  "research_questions": [
+    {
+      "q": "How do I make a masala dosa recipe at home?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-I-make-a-masala-dosa-recipe-at-home",
+      "source_answers": ["Quora cooking question about masala dosa."]
+    },
+    {
+      "q": "How do we make perfectly crisp dosas that are not roasted but are golden brown?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/How-do-we-make-perfectly-crisp-dosas-that-are-not-roasted-but-are-golden-brown",
+      "source_answers": ["Quora cooking question about crisp dosa for masala dosa."]
+    },
+    {
+      "q": "Why is a dosa not turned on both sides in restaurants but done so at home?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/Why-is-a-dosa-not-turned-on-both-sides-in-restaurants-but-done-so-at-home",
+      "source_answers": ["Quora cooking question mentioning masala dosa technique."]
+    },
+    {
+      "q": "What is the best dosa batter recipe?",
+      "source": "quora",
+      "source_url": "https://www.quora.com/What-is-the-best-dosa-batter-recipe",
+      "source_answers": ["Quora cooking question about dosa batter for masala dosa."]
+    }
+  ]
+}

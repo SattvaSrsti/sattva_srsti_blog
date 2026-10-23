@@ -1,7 +1,10 @@
 {
-  "firestore": {
-    "rules": "firestore.rules"
-  },
+  "firestore": [
+    {
+      "database": "blog",
+      "rules": "firestore.blog.rules"
+    }
+  ],
   "functions": [
     {
       "source": "functions",
@@ -56,6 +59,46 @@
             {
               "key": "Content-Type",
               "value": "application/xml; charset=utf-8"
+            }
+          ]
+        },
+        {
+          "source": "/index.html",
+          "headers": [
+            {
+              "key": "Link",
+              "value": "</sitemap.xml>; rel=\"sitemap\", </posts-index.json>; rel=\"alternate\"; type=\"application/json\""
+            }
+          ]
+        },
+        {
+          "source": "/",
+          "headers": [
+            {
+              "key": "Link",
+              "value": "</sitemap.xml>; rel=\"sitemap\", </posts-index.json>; rel=\"alternate\"; type=\"application/json\""
+            }
+          ]
+        },
+        {
+          "source": "posts-index.json",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=3600"
+            }
+          ]
+        },
+        {
+          "source": "llms.txt",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain; charset=utf-8"
             }
           ]
         },

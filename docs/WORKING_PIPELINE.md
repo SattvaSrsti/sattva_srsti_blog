@@ -81,7 +81,9 @@ python scripts/blog_agent.py --reconcile --cleanup-duplicates --sync-firestore
 python scripts/reconcile_blog_posts.py --max-create 3 --sync-firestore
 ```
 
-**Daily job:** Windows Task Scheduler `SattvaSrstiBlogDaily` at 23:11 local time runs `node functions/run_reconcile_once.js` (uses `admin/dummy.oKey`). There is no scheduled Cloud Function.
+**Daily job:** Windows Task Scheduler `SattvaSrstiBlogDaily` at 23:11 runs `scripts/run_daily_blog.ps1` → `node functions/run_reconcile_once.js`. Writes go to Firestore database **`blog`**; recipes read from `(default)`. Default **5** new posts per night (`BLOG_MAX_CREATE_PER_RUN=5`). Logs: `logs/blog-daily-*.log`.
+
+**SEO deploy (after reconcile or index rebuild):** `python scripts/rebuild_posts_index.py` → `python scripts/build_deploy.py` → `npx firebase-tools deploy --only hosting:blog --project sattva-srsti`. Then submit `https://sattvasrsti.blog/sitemap.xml` in [Google Search Console](https://search.google.com/search-console).
 
 Set secret **`FIREBASE_SERVICE_ACCOUNT`** only if using the GitHub workflow.
 
@@ -113,7 +115,7 @@ Deploy:
 
 ```bash
 python scripts/build_deploy.py
-npx firebase-tools deploy --only hosting:blog,firestore:rules --project sattva-srsti
+npx firebase-tools deploy --only hosting:blog,firestore:blog --project sattva-srsti
 ```
 
 Hosting site: **sattvasrsti-blog** → [https://sattvasrsti.blog](https://sattvasrsti.blog)
